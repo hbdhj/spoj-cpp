@@ -1,0 +1,73 @@
+//
+//  9861.cpp
+//  SPOJ
+//
+//  Created by Haijun Deng on 12-12-28.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+/*
+ Input
+ 5 12
+ 2 1 3 4 5
+ output
+ 12
+ input
+ 4 9
+ 7 3 5 6
+ output
+ 8
+ */
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int i, j, hotelNum, hotelPrice;
+    unsigned long long int lottery, max, tobuy, total = 0;
+    scanf("%d %llu", &hotelNum, &lottery);
+    vector<int> hotelList;
+    for(i=0;i<hotelNum;i++)
+    {
+        scanf("%d", &hotelPrice);
+        total += hotelPrice;
+        hotelList.push_back(hotelPrice);
+    }
+    //printf("total = %llu\n", total);
+    if(total<=lottery)
+        printf("%llu",total);
+    else
+    {
+        max =0;
+        for(i=0;i<hotelNum;i++)
+        {
+            j=i;
+            tobuy = 0;
+            while((tobuy<=lottery)&&(j<hotelNum))
+            {
+                tobuy+=hotelList[j];
+                j++;
+            }
+            //printf("max = %llu, tobuy = %llu, j = %d, lottery = %llu\n", max, tobuy, j, lottery);
+            if(tobuy>lottery)
+            {
+                j--;
+                tobuy-=hotelList[j];
+            }
+            //printf("max = %llu, tobuy = %llu, j = %d, lottery = %llu\n", max, tobuy, j, lottery);
+            if(max<tobuy)
+                max=tobuy;
+            //printf("max = %llu, tobuy = %llu, j = %d, lottery = %llu\n", max, tobuy, j, lottery);
+            if((j==hotelNum)||(max==lottery))
+                break;
+        }
+        printf("%llu\n", max);
+    }
+    return 0;
+}
+
+
+
+
+
