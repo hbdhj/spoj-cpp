@@ -81,12 +81,14 @@ int main()
             int c=inputs[i][j];
             inputs[i][j] = inputs[i][k];
             inputs[i][k] = c;
-            sort(inputs[i].begin()+k+1, inputs[i].end());
+            //sort(inputs[i].begin()+k+1, inputs[i].end());
         }
         if(found)
         {
-            for(j=0;j<inputs[i].size();j++)
+            for(j=0;j<k+1;j++)
                 printf("%d",inputs[i][j]);
+            for(j=inputs[i].size()-1;j>k;j--)
+		printf("%d", inputs[i][j]);
             printf("\n");    
         }
         else
