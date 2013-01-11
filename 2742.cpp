@@ -65,5 +65,5 @@ int main()
         printf("%llu\n",((sum-cows[i])*other+self*(cows[i]))%MOD);
     }
     
-    return 0;
 }
+    return 0;
