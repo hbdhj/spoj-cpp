@@ -32,7 +32,8 @@ unsigned long long int Invert(unsigned long long int n)
         }
         else
         {
-            return 3*n*(n-2)/8;
+            unsigned long long int m=n/2;
+            return (m+1)*m/2+(m-1)*(m-2);
         }
     }
 }
