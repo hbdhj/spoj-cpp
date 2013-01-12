@@ -49,6 +49,7 @@ int main()
     if(threequater<=quater)
     {
         pies+=threequater;
+        quater-=threequater;
         pies+=ceil(float(half)/2+float(quater)/4);
         /*quater-=threequater;
         if(half<=quater/2)
