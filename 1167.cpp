@@ -12,6 +12,7 @@
  */
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -23,9 +24,11 @@ unsigned long long int Invert(unsigned long long int n)
         return 1;
     else if(n==3)
         return 2;
+    else if(n==4)
+        return 3;
     else
     {
-        if(n%2)
+        /*if(n%2)
         {
             unsigned long long int m=n/2;
             return m*(m-1)+m*(m+1)/2;
@@ -34,7 +37,9 @@ unsigned long long int Invert(unsigned long long int n)
         {
             unsigned long long int m=n/2;
             return (m+1)*m/2+(m-1)*(m-2);
-        }
+        }*/
+        unsigned long long int m=ceil(double(n)/3);
+        return m*(m-1)+(n-m)*(n-m-1)/2;
     }
 }
 
