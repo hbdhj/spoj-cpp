@@ -38,8 +38,8 @@ unsigned long long int Invert(unsigned long long int n)
             unsigned long long int m=n/2;
             return (m+1)*m/2+(m-1)*(m-2);
         }*/
-        unsigned long long int m=ceil(double(n)/3);
-        return m*(m-1)+(n-m)*(n-m-1)/2;
+        unsigned long long int m=(n+2)/3;
+        return m*(m-1)+(n-m*2+2)*(n-m*2+1)/2;
     }
 }
 
