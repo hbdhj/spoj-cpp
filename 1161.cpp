@@ -70,9 +70,7 @@ bool isOK(string m)
         return false;
     else if(nO==nX)
     {
-        //Should No success O
-        if(success(m, 'O'))
-            return false;
+        //Should No success X
         if(success(m, 'X'))
             return false;    
     }
