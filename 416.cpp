@@ -6,7 +6,18 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
-
+416. Divisibility by 15
+Input:
+4
+02041
+30
+51
+155
+Output:
+4200
+30
+15
+15
 */
 #include <iostream>
 #include <vector>
@@ -40,7 +51,7 @@ void div15(string str)
         int i=1;
         //int n=nums[i];
         int times=0;
-        while(((total%3)!=0)&&(i<10)) {
+        /*while(((total%3)!=0)&&(i<10)) {
             //times++;
             //if(times>100)
             //    break;
@@ -58,9 +69,26 @@ void div15(string str)
                 //n--;
                 nums[i]--;
             }
-        }
+        }*/
         //printf("%d %d %d\n", total, n, i);
-        if(total>0)
+        printf("total%3=%d")
+        int tail=total%3;
+        if(tail)
+        {
+            while(tail<10)
+            {
+                if(nums[tail])
+                {
+                    nums[tail]--;
+                    tail=0;
+                    break;
+                }
+                tail+=3;
+            }
+        }
+        if(tail)
+            printf("impossible\n");
+        else    
         {
             for(int i=9;i>0;i--)
             {
@@ -78,8 +106,6 @@ void div15(string str)
                 printf("0\n");    
             }    
         }
-        else
-            printf("impossible\n");
     }
 }
 
