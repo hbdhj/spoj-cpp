@@ -24,10 +24,32 @@ int main()
         scanf("%d", &inputs[i]);
     }
     sort(inputs.begin(), inputs.end());
+    int check=0;
+    int checkNum=0;
     for(i=0;i<tN;i++)
     {
-        printf("%d ", inputs[i]);
+        //printf("i = %d, inputs[%d] = %d, check = %d, checkNum = %d\n", i, i, inputs[i], check, checkNum);
+        if(check!=inputs[i])
+        {
+            if(checkNum==1)
+                break;
+            else if(checkNum==0)
+            {
+                checkNum++;
+                check=inputs[i];
+            }
+            else
+            {
+                checkNum=1;
+                check=inputs[i];
+            }
+        }
+        else
+            checkNum++;        
     }
-    printf("\n");
+    if(i!=tN-1)
+        printf("%d\n", check);
+    else
+        printf("%d\n", inputs[tN-1]);
     return 0;
 }
