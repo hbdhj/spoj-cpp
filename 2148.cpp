@@ -3,23 +3,20 @@
 using namespace std;
 int main()
 {
-    //vector<unsigned long> inputs;
     int tN;
     cin>>tN;
     vector<string> output;
     for(int i=0; i<tN; i++)
     {
-        //cout<<"Now get the "<<i<<"th cases"<<endl;
-        unsigned long childrenNum;
+        unsigned long long int childrenNum;
         cin>>childrenNum;
-        cin>>childrenNum;
-        //cout<<"There are "<<childrenNum<<" children."<<endl;
         unsigned long long int candyNumber;
         unsigned long long int candyNumTotal = 0;
         for(int j =0; j<childrenNum; j++)
         {
             cin>>candyNumber;
             candyNumTotal+=candyNumber;
+            candyNumTotal=candyNumTotal%childrenNum;
         }
         if(candyNumTotal%childrenNum)
             output.push_back("NO");
