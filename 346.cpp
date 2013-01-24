@@ -1,6 +1,13 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+unsigned long get(unsigned long n)
+{
+    if(n>11)
+        return get(n/2)+get(n/3)+get(n/4);
+    else
+        return n;
+}
 int main()
 {
     vector<unsigned long> inputs;
@@ -12,7 +19,8 @@ int main()
     }
     for(int i=0;i<inputs.size();i++)
     {
-        cout<<inputs[i]/12*13+inputs[i]%12<<endl;
+        //cout<<inputs[i]/12*13+inputs[i]%12<<endl;
+        cout<<get(inputs[i])<<endl;
     }
     return 0;
 }
