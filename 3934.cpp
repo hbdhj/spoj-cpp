@@ -14,7 +14,7 @@ using namespace std;
 int main()
 {
     int n;
-    cin>>n;
+    scanf("%d", &n);
     vector<int> input;
     int max = 0;
     while(n>0)
@@ -22,7 +22,7 @@ int main()
         if(max<n)
             max=n;
         input.push_back(n);
-        cin>>n;
+        scanf("%d", &n);
     }
     vector<long long> matrix(max+1,0);
     for(int i=1;i<max+1;i++)
@@ -36,7 +36,7 @@ int main()
     cout<<endl;
     for(int i=0;i<input.size();i++)
     {
-        cout<<matrix[input[i]]<<endl;
+        scanf("%lld\n", matrix[input[i]]);
     }
     return 0;
 }
