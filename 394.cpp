@@ -4,10 +4,21 @@ Input:
 25114
 1111111111
 3333333333
+10 
+101 
+110 
+1101 
+1022 
+1010
 0
 Output:
 6
 89
+1
+1
+1
+1
+2
 1
 */
 #include <iostream>
@@ -17,48 +28,21 @@ using namespace std;
 
 int count(string str)
 {
-    if(str.length()>2)
+    vector<int> cnt(str.length()+1);
+    cnt[0]=1;
+    cnt[1]=1;
+    for(int i=1;i<str.length();i++)
     {
-        int bp=0;
-        for(int i=0; i<str.length()-1;i++)
-            if(((str[i]-'0')*10+(str[i+1]-'0'))>26)
-            {
-                bp=i+1;
-                break;
-            }
-        if(bp!=0)
-        {
-            cout<<"bp = "<<bp<<endl;        
-            string head = str.substr(0, bp);
-            string tail = str.substr(bp, str.length());
-            cout<<"head = "<<head<<", tail = "<<tail<<endl;
-            /*int d;
-            sscanf(head.c_str(), "%d", &d);
-            if((d>26)||(d<11))
-                return count(tail);
-            else
-                return 2*count(tail);
-            }*/
-            return count(head)*count(tail);
-        }
-        else
-        {
-            /*string head = str.substr(0, str.length()/2-1);
-            string tail = str.substr(str.length()/2+1, str.length());
-            cout<<"head = "<<head<<", tail = "<<tail<<endl;*/
-            return (str.length()+1)*str.length()-1;
-        }    
+        if(((str[i]-'0'+(str[i-1]-'0')*10)>26)||(str[i-1]=='0'))
+            cnt[i+1]=cnt[i];
+        else if (str[i]=='0')
+            cnt[i+1]=cnt[i-1];
+        else    
+            cnt[i+1]=cnt[i]+cnt[i-1];
     }
-    else
-    {
-        int d;
-        sscanf(str.c_str(), "%d", &d);
-        if((d>26)||(d<11))
-            return 1;
-        else
-            return 2;
-    }
+    return cnt[str.length()];
 }
+
 int main()
 {
     string str;
