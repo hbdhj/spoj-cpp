@@ -1,77 +1,58 @@
-#include <iostream>
-#include <vector>
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
 
-using namespace std;
-
-string getResult(string input)
+int pwr(int n, int p)
 {
-	char digits[8], ret[8];
-	int b1, b2;
-	digits[7] = '\0';
-	sscanf(input.c_str(), "%7c %d %d", digits, &b1, &b2);
-	//cout<<"digits = "<<digits<<", b1 = "<<b1<<", b2 = "<<b2<<endl;
-	int l = 0;
-	int bs1 = 1;
-	for(int i = 6; i>=0; i--)
-	{
-		if((digits[i]<='9')&&(digits[i]>'0'))
-			l += (digits[i] - '0')*bs1;
-		else if ((digits[i]>='A')&&(digits[i]<='F'))
-			l += (digits[i] - 'A' + 10)*bs1;
-
-		bs1 *= b1;
-	}
-	//cout<<"l = "<<l<<endl;
-	int left = l;
-	int bs2 = b2;
-	char bit;
-	ret[7] = '\0';
-	for(int i=6; i>=0; i--)
-	{
-		bit = left%b2;
-		if((b2>10)&&(bit>=10))
-		{
-			//cout<<"1 - "<<endl;
-			//ret[i] = 'A' + bit - 10;
-			ret[i] = 65 + bit - 10;
-		}
-		else if(left==0)
-		{
-			//cout<<" 2 -"<<endl;
-			ret[i] = ' ';
-		}
-		else
-		{
-			//cout<<" 3 -"<<endl;
-			ret[i] = '0' + bit;
-		}
-		left = (left - bit)/b2;
-		//cout<<"bit = "<<(int)bit<<", left = "<<left<<", bs2 = "<<bs2<<endl;
-		//cout<<"ret["<<i<<"] = "<<ret[i]<<" - " <<int(ret[i])<<endl;
-		
-	}
-	string str = ret;
-	//cout<<"str = "<<str<<endl; 
-	if(left)
-		return "  ERROR";
-	else
-		return str;
+	int ret = 1;
+	for(;p;p--) ret *= n;
+	return ret;
 }
 
 int main()
 {
-	vector<string> inputs;
-	//cout<<'A'<<int('A')<<endl;
-	inputs.push_back("1111000 2 10");
-	inputs.push_back("1111000 2 16");
-	inputs.push_back("2102101 3 10");
-	inputs.push_back("2102101 3 15");
-	inputs.push_back("  12312 4  2");
-	inputs.push_back("     1A 15 2");
-	inputs.push_back("1234567 10 16");
-	inputs.push_back("   ABCD 16 15");
-	for(int i = 0; i<inputs.size(); i++)
+	char str1[8], str2[8], hx[7] = {"ABCDEF"}, er[6] = {"ERROR"};
+	int i, j, dec, b1, b2, n, len, cnt, tmp;
+	while(scanf("%s%d%d",str1, &b1, &b2)==3)
 	{
-		cout<<getResult(inputs[i])<<endl;
-	} 
+		dec = 0; j = 0; cnt = 1;
+		len = strlen(str1);
+		for(i=len-1;i>=0;i--)
+		{
+			n = (isalpha(str1[i])!=0) ? str1[i]-'A'+10 : str1[i]-'0';
+			if(n>=b1)
+			{
+				cnt = 0;
+				break;
+			}
+			dec += n*pwr(b1,len-1-i);
+		}
+		if(dec==0)
+			str2[j++] = 0+'0';
+		while(dec && cnt)
+		{
+			if(j>=7)
+			{
+				cnt = 0;
+				break;
+			}
+			tmp = dec%b2;
+			str2[j++] = (tmp<10) ? tmp+'0' : hx[tmp-10];
+			dec /= b2;
+		}
+		str2[j] = 0;
+		if(cnt==0)
+			printf("%7s\n",er);
+		else
+		{
+			for(i=j-1,j=0;j<i;j++,i--)
+			{
+				str2[i] ^= str2[j];
+				str2[j] ^= str2[i];
+				str2[i] ^= str2[j];
+			}
+			printf("%7s\n",str2);
+		}
+	}
+	return 0;
 }
