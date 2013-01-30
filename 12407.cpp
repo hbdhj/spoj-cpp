@@ -7,46 +7,47 @@ Sample Output
 1. 1
 */
 
-//#include <iostream>
-#include <stdio.h>
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <queue>
+#include <stack>
+#include <bitset>
 #include <vector>
-
+#include <cstdio>
+#include <string>
+#include <sstream>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <algorithm>
 using namespace std;
+#define PB push_back
+#define MP make_pair
+#define SZ(v) ((int)(v).size())
+#define abs(x) ((x) > 0 ? (x) : -(x))
+typedef long long LL;
 
-int main()
+int cnt[1000005];
+int main(int argc, char const *argv[])
 {
-	int i,j,t,n,m;
-	scanf("%d",&t);
-	vector<int> xs(t,0);
-	vector<vector<int> > ns(t, vector<int>(1000, 0));
-	for(i=0;i<t;i++)
-	{
-		scanf("%d",&xs[i]);
-		scanf("%d",&n);
-		for(j=0;j<n;j++)
-		{
-			scanf("%d",&m);
-			ns[i][m]++;
-		}
-	}
-	for(i=0;i<t;i++)
-	{
-		unsigned long long r=0;
-		if(xs[i]%2==0)
-		{
-			if(xs[i]/2<1000)
-			{
-				for(j=xs[i]/2-1;(j>=0)&&((xs[i]-j)<1000);j--)
-					r+=ns[i][j]*ns[i][xs[i]-j];
-				r+=ns[i][xs[i]/2]*(ns[i][xs[i]/2]-1)/2;
+	int Test;
+	scanf("%d", &Test);
+	for (int cas = 1; cas <= Test; cas++) {
+		printf("%d. ", cas);
+		int x, n, a;
+		scanf("%d%d", &x, &n);
+		LL ret = 0;
+		memset(cnt, 0, sizeof(cnt));
+		for (int i = 0; i < n; i++) {
+			scanf("%d", &a);
+			if (x - a >= 0) {
+				ret += (LL)cnt[x - a];
 			}
+			cnt[a]++;
 		}
-		else
-		{
-			for(j=xs[i]/2;(j>=0)&&((xs[i]-j)<1000);j--)
-				r+=ns[i][j]*ns[i][xs[i]-j];
-		}
-		printf("%d. %lld\n", i+1,r);
+		printf("%lld\n", ret);
 	}
 	return 0;
 }
