@@ -1,395 +1,210 @@
 /*
  * 2012/11/29
  */
-#include  <iostream>
-#include <math.h>
+#include <iostream>
+#include <sstream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+
+/*STL *algorithm* */
+#include <queue>
+#include <stack>
+#include <list>
 #include <vector>
+#include <map>
+#include <set>
 
-using namespace std; 
+#define DEBUG 1
+#define MAX_SIZE 500
 
-#define TASK_NUM 1000
+std::string calculate_sum(std::string num1, std::string num2){
+   std::string output;
+   char ch;
 
-string reverse(string input)
-{
-    string ret = input;
-    int size = input.size();
-    for (int i=0;i<size;i++)
-        ret[i] = input[size-1-i];
-    return ret;
-}
-
-int printSpace(int i)
-{
-    while(i)
-    {
-        cout<<" ";
-        i--;
-    }
-}
-int printBash(int i)
-{
-    while(i)
-    {
-        cout<<"-";
-        i--;
-    }
-}
-
-string getAddArithmeticsStr(string first_number, string second_number)
-{
-    string big, small, ret;
-    if (first_number.size()>second_number.size())
-    {
-        big = "0" + first_number;
-        small = second_number;
-    }
-    else
-    {
-        big = "0" + second_number;
-        small = first_number;
-    }
-    big = reverse(big);
-    small = reverse(small);        
-    ret = big;
-    int small_size = small.size();
-    int big_size = big.size();
-    int increase = 0;
-    for(int i=0; i<small_size; i++ )
-    {
-        if(((big[i]+small[i]+increase)-'0')>'9')
-        {
-            ret[i] = big[i]+small[i]+increase-'0' -10;
-            increase = 1;
-        }
-        else
-        {
-            ret[i] = big[i]+small[i]+increase-'0';
-            increase = 0;
-        }
-    }
-    for(int i=small_size; i<big_size; i++ )
-    {
-        if((big[i]+increase)>'9')
-        {
-            ret[i] = big[i]+increase-10;
-            increase = 1;
-        }
-        else
-        {
-            ret[i] = big[i]+increase;
-            increase = 0;
-        }
-    }
-    ret = reverse(ret);
-    while ((ret[0]=='0')&&(ret.size()>1))
-        ret=ret.substr(1, ret.size()-1);
-    
-    return ret;
-}
-
-int getAddArithmetics(string first_number, string second_number)
-{
-    string big, small, ret;
-    if (first_number.size()>second_number.size())
-    {
-        big = "0" + first_number;
-        small = second_number;
-    }
-    else
-    {
-        big = "0" + second_number;
-        small = first_number;
-    }
-    big = reverse(big);
-    small = reverse(small);        
-    ret = big;
-    int small_size = small.size();
-    int big_size = big.size();
-    int increase = 0;
-    for(int i=0; i<small_size; i++ )
-    {
-        if(((big[i]+small[i]+increase)-'0')>'9')
-        {
-            ret[i] = big[i]+small[i]+increase-'0' -10;
-            increase = 1;
-        }
-        else
-        {
-            ret[i] = big[i]+small[i]+increase-'0';
-            increase = 0;
-        }
-    }
-    for(int i=small_size; i<big_size; i++ )
-    {
-        if((big[i]+increase)>'9')
-        {
-            ret[i] = big[i]+increase-10;
-            increase = 1;
-        }
-        else
-        {
-            ret[i] = big[i]+increase;
-            increase = 0;
-        }
-    }
-    ret = reverse(ret);
-    if (ret[0]=='0')
-        ret=ret.substr(1, ret.size()-1);
-    int max_length = first_number.size();
-    if ((second_number.size()+1)>max_length)
-        max_length = second_number.size()+1;
-    if (ret.size()>max_length)
-        max_length = ret.size();
-    printSpace(max_length - first_number.size());
-    cout<<first_number<<endl;
-    printSpace(max_length - second_number.size() -1);
-    cout<<"+"<<second_number<<endl;
-    printBash(max_length);
-    cout<<endl;
-    printSpace(max_length - ret.size());
-    cout<<ret<<endl;
-    return 0;
-}
-
-int getMinusArithmetics(string first_number, string second_number)
-{
-    string first_rev, second_rev, ret;
-    first_rev = reverse(first_number);
-    second_rev = reverse(second_number);        
-    int second_size = second_number.size();
-    int first_size = first_rev.size();
-    int decrease = 0;
-    ret = first_number;
-    for(int i=0; i<second_size; i++ )
-    {
-        if(((first_rev[i]-second_rev[i]-decrease))<0)
-        {
-            ret[i] = first_rev[i]-second_rev[i]-decrease+'0'+10;
-            decrease = 1;
-        }
-        else
-        {
-            ret[i] = first_rev[i]-second_rev[i]-decrease+'0';
-            decrease = 0;
-        }
-    }
-    for(int i=second_size; i<first_size; i++ )
-    {
-        if((first_rev[i]-decrease)<'0')
-        {
-            ret[i] = first_rev[i]-decrease+10;
+   int len1, len2, carry, sum, p1, p2;
+   len1 = num1.length(); len2 = num2.length();
+   carry = 0;
+//   std::cout << len1  << "  "  << len2    << std::endl;      
+//   std::cout << num1  << "  "  << num2 << std::endl;            
+  
+   while( len1 > 0 || len2 > 0 ){
+      p1 = len1 > 0 && (num1[len1-1] != ' ')? num1[len1-1] - '0' : 0;
+      p2 = len2 > 0 && (num2[len2-1] != ' ')? num2[len2-1] - '0' : 0;
             
-            decrease = 1;
-        }
-        else
-        {
-            ret[i] = first_rev[i]-decrease;
-            decrease = 0;
-        }
-    }
-    ret = reverse(ret);
-    while (ret[0]=='0')
-        ret=ret.substr(1, ret.size()-1);
-    int max_length = first_number.size();
-    if ((second_number.size()+1)>max_length)
-        max_length = second_number.size()+1;
-    if (ret.size()>max_length)
-        max_length = ret.size();
-    printSpace(max_length - first_number.size());
-    cout<<first_number<<endl;
-    printSpace(max_length - second_number.size() -1);
-    cout<<"-"<<second_number<<endl;
-    printBash(max_length);
-    cout<<endl;
-    printSpace(max_length - ret.size());
-    cout<<ret<<endl;
-    return 0;
-}
-
-string getTimesArithmetics(char first_number, char second_number)
-{
-    int first = first_number - '0';
-    int second = second_number - '0';
-    if (first*second>9)
-    {
-        char cret_10 = first*second/10+'0';
-        char cret_1 = first*second%10+'0';
-        string ret(2, '0');
-        ret[0] = cret_10;
-        ret[1] = cret_1;
-        return ret;
-    }
-    else
-    {
-        char cret = first*second+'0';
-        string ret(1, '0');
-        ret[0] = cret;
-        return ret;
-    }
-}
-
-string getTimesArithmetics(string first_number, char second_number)
-{
-    if(second_number=='0')
-    {
-        return "0";
-    }
-    if(second_number=='1')
-    {
-        return first_number;
-    }
-    string ret="0";
-    string first_rev = reverse(first_number);
-    //cout<<"first_rev = "<<first_number<<endl;
-    int first_size = first_number.size();
-    for(int i=0; i<first_size; i++)
-    {
-        string bit_ret = getTimesArithmetics(first_rev[i], second_number);
-        //cout<<"bit_ret = "<<bit_ret<<endl;
-        int bit = i;
-        while (bit)
-        {
-            bit_ret = bit_ret + "0";
-            bit--;
-        }
-        //cout<<"bit_ret = "<<bit_ret<<endl;
-        ret = getAddArithmeticsStr(ret, bit_ret);
-    }
-    //cout<<ret<<endl;
-    return ret;
-}
-
-string getTimesArithmeticsStr(string first_number, string second_number)
-{
-    vector<string> retVector;
-    string bit_ret, first_rev, second_rev;
-    first_rev = reverse(first_number);
-    second_rev = reverse(second_number);        
-    int second_size = second_number.size();
-    for(int i=0; i<second_size; i++ )
-    {
-        bit_ret = getTimesArithmetics(first_number, second_rev[i]);
-        retVector.push_back(bit_ret);
-    }
-    string final_ret="0";
-    for(int i=0; i<second_size; i++)
-    {
-        string bit_shift_ret = retVector[i];
-        int bit = i;
-        while (bit)
-        {
-            bit_shift_ret = bit_shift_ret + "0";
-            bit--;
-        }
-        final_ret = getAddArithmeticsStr(final_ret, bit_shift_ret);
-    }
-    return final_ret;
-}
-int getTimesArithmetics(string first_number, string second_number)
-{
-    vector<string> retVector;
-    string bit_ret, first_rev, second_rev;
-    first_rev = reverse(first_number);
-    second_rev = reverse(second_number);        
-    int second_size = second_number.size();
-    for(int i=0; i<second_size; i++ )
-    {
-        bit_ret = getTimesArithmetics(first_number, second_rev[i]);
-        //cout<<"bit_ret = "<<bit_ret<<endl;
-        retVector.push_back(bit_ret);
-    }
-    string final_ret="0";
-    for(int i=0; i<second_size; i++)
-    {
-        string bit_shift_ret = retVector[i];
-        int bit = i;
-        while (bit)
-        {
-            bit_shift_ret = bit_shift_ret + "0";
-            bit--;
-        }
-        final_ret = getAddArithmeticsStr(final_ret, bit_shift_ret);
-    }
-    //cout<<"final_ret = "<<final_ret<<endl;
-    int max_length = first_number.size();
-    if ((second_number.size()+1)>max_length)
-        max_length = second_number.size()+1;
-    if (final_ret.size()>max_length)
-        max_length = final_ret.size();
-    printSpace(max_length - first_number.size());
-    cout<<first_number<<endl;
-    printSpace(max_length - second_number.size() -1);
-    cout<<"*"<<second_number<<endl;
-    if(second_number.size()>1)
-    {
-        printSpace(max_length - second_number.size() -1);
-        printBash(second_number.size() + 1);
-        cout<<endl;
-        for(int i=0; i<second_size; i++)
-        {
-            printSpace(max_length-retVector[i].size()-i);
-            cout<<retVector[i]<<endl;
-        }
-    }
-    printBash(max_length);
-    cout<<endl;
-    printSpace(max_length - final_ret.size());
-    cout<<final_ret<<endl;
-    return 0;
+      sum   = carry + p1 + p2;
+      carry = sum/10;
+      ch = sum%10+'0';
+      output = ch + output;
+      len1--; len2--;
+//      std::cout << p1  << "  "  << p2    << std::endl;
+//      std::cout << sum%10 << "  "  << carry << "  " << output << std::endl;
+   }
+   if(carry > 0){
+      ch     = carry + '0';
+      output = ch + output;
+   }
+   return output;
 }
 
 
-int getArithmetics(string input)
-{
-    
-    int token_id; //1:+ 2:- 3:*
-    size_t pos;
-    if(input.find('+')!=string::npos)
-    {
-        pos = input.find('+');
-        token_id = 1;
-    }
-    if(input.find('-')!=string::npos)
-    {
-        pos = input.find('-');
-        token_id = 2;
-    }
-    if(input.find('*')!=string::npos)
-    {
-        pos = input.find('*');
-        token_id = 3;
-    }
-    string first_number, second_number;
-    first_number = input.substr(0, pos);
-    second_number = input.substr(pos+1, input.size());
-    //cout<<"first_number = "<<first_number<<", second_number = "<<second_number<<endl;
-    if (token_id == 1)
-        getAddArithmetics(first_number, second_number);
-    else if (token_id == 2)
-        getMinusArithmetics(first_number, second_number);
-    else if (token_id == 3)
-        getTimesArithmetics(first_number, second_number);
-    return 0;
+std::string calculate_diff(std::string num1, std::string num2){
+   std::string output;
+   char ch;
+
+   int len1, len2, carry, diff, p1, p2;
+   len1 = num1.length(); len2 = num2.length();
+   carry = 0;
+//   std::cout << len1  << "  "  << len2    << std::endl;      
+//   std::cout << num1  << "  "  << num2 << std::endl;            
+   if(num1 == num2){
+     output = '0';
+   }else{  
+      while( len1 > 0 || len2 > 0 ){
+         p1 = len1 > 0 ? num1[len1-1] - '0' : 0;
+         p2 = len2 > 0 ? num2[len2-1] - '0' : 0;
+               
+         p1 += carry; carry = 0;
+         if(p1 < p2) { carry = -1; p1 += 10;}
+         diff = p1 - p2;
+         
+         ch = diff+'0';
+         output = ch + output;
+         len1--; len2--;
+//         std::cout << p1  << "  "  << p2    << std::endl;
+//         std::cout << diff << "  "  << carry << "  " << output << std::endl;
+      }
+      output = output.substr(output.find_first_not_of("0"));
+   }
+   return output;
 }
-int main() 
-{
-    int taskNumber;
-    cin>>taskNumber; // Read the next number
-    //if ((taskNumber>0)&&(taskNumber<=TASK_NUM))
-    {
-        vector<string> input;
-        for(int i= 0; i<taskNumber; i++) 
-        {
-            string str;
-            cin>>str; // Read the next number
-            input.push_back(str);
-        }
-        for(int i= 0; i<taskNumber; i++) 
-        {    
-            getArithmetics(input[i]);
-            //cout<<endl;
-        }
-    }  
-    
-    return 0;
+
+
+std::vector<std::string> calculate_mult(std::string num1, std::string num2){
+   std::string output;
+   std::vector<std::string> partial_mult;
+   std::map<int, std::string> map_mult;
+   char ch;
+
+   int len1, len2, carry, mult, p1, p2, count;
+   len1 = num1.length(); len2 = num2.length();
+   count = 0;
+//   std::cout << "size: " << len1  << "  "  << len2    << std::endl;      
+//   std::cout << "num:  " << num1  << "  "  << num2 << std::endl;            
+   map_mult[0] = '0';  //spcl case :: Check TestCase
+  
+   while(len2 > 0 ){
+      output = ""; carry = 0;
+      p2 = num2[len2-1] - '0';
+      
+      if(map_mult.find(p2) != map_mult.end()){ // We already have this partial pdt
+         output = map_mult[p2];
+      }
+      else{
+         len1 = num1.length();
+         while(len1 > 0){
+            p1    = num1[len1-1] - '0';                 
+            mult  = carry + p1*p2;
+            carry = mult/10;
+            ch    = mult%10+'0';
+            output = ch + output;         
+            len1--;
+//            std::cout << p1  << "  "  << p2    << std::endl;
+//            std::cout << mult << "  "  << carry << "  " << output << std::endl;         
+         }
+         if(carry > 0){
+            ch     = carry + '0';
+            output = ch + output;
+         }
+         map_mult[p2] = output;
+      }
+      
+      ch = ' ';
+      for(int i = 0; i < count; i++){ output += ch; }
+      partial_mult.push_back(output);      
+      len2--; count++;
+   }
+   return partial_mult;
+}
+
+std::string calculate_sum_pdt(std::vector<std::string> partial_mult){
+   std::string output;
+   while(partial_mult.size() > 1){
+//      std::cout << "size (decr): " << partial_mult.size() << std::endl;
+      output = calculate_sum(partial_mult[0], partial_mult[1]);
+      partial_mult.erase(partial_mult.begin(), partial_mult.begin()+2);
+      partial_mult.push_back(output);
+   }
+   return partial_mult[0];
+}
+
+int max(int a, int b, int c){
+   return a > b ? (a > c ? a : c) : (b > c ? b : c);
+}
+
+void print_del(int count, int total){
+   std::string _temp;
+   while(count-- > 0) { _temp += "-"; }
+   std::cout << std::setfill(' ') << std::setw(total) << _temp << std::endl;
+}
+
+// **************************************************
+int main(){
+    int num_test_cases, pos, _max;
+    std::cin >> num_test_cases; // num of test cases
+    char op;
+    std::string expression, num1, num2, _ret;
+    std::vector<std::string> partial_mult; 
+           
+    for(int i = 0; i < num_test_cases; i++){
+       std::cin >> expression;
+                    
+       while(1){
+         pos = expression.find('+');
+         if(pos != -1){ op = '+'; break; }
+
+         pos = expression.find('-');
+         if(pos != -1){ op = '-'; break; }
+         
+         pos = expression.find('*');
+         if(pos != -1){ op = '*'; break; }         
+       }
+       expression[pos] = ' ';
+//       std::cout << expression << std::endl;            
+       std::istringstream temp(expression, std::istringstream::in);
+       temp >> num1 >> num2;
+//       std::cout << num1 << "  " << op << "  "  << num2 << std::endl;
+       
+       _ret = "";
+       if(op == '+' || op == '-'){ 
+          if(op == '+') _ret = calculate_sum(num1, num2);
+          if(op == '-') _ret = calculate_diff(num1, num2);
+          num2 = op + num2;
+          _max = max(num1.length(), num2.length(), _ret.length());
+          std::cout << std::setfill(' ') << std::setw(_max) << num1 << std::endl;
+          std::cout << std::setfill(' ') << std::setw(_max) << num2 << std::endl;
+          print_del( max(_ret.length(), num2.length(), 0), _max);
+       }
+       else if(op == '*') {
+          partial_mult = calculate_mult(num1, num2);
+          _ret = calculate_sum_pdt(partial_mult);
+          if(_ret[0] == '0') _ret = "0";
+          num2 = op + num2;
+          _max = max(num1.length(), num2.length(), _ret.length());
+          std::cout << std::setfill(' ') << std::setw(_max) << num1 << std::endl;
+          std::cout << std::setfill(' ') << std::setw(_max) << num2 << std::endl;
+          if(partial_mult.size() > 1){
+             print_del( max(num2.length(), partial_mult[0].size(), 0), _max);
+             for(int i = 0; i < partial_mult.size(); i++){
+                std::cout << std::setfill(' ') << std::setw(_max) << partial_mult[i] << std::endl;
+             }
+             print_del( max(_ret.length(), partial_mult[partial_mult.size()-1].size(), 0), _max);
+          }else{
+             print_del( max(_ret.length(), num2.length(), 0), _max);
+          }
+       }
+       std::cout << std::setfill(' ') << std::setw(_max) << _ret << std::endl;
+       std::cout << std::endl;    
+    }
+//    while(1) { continue; }
 }
