@@ -1,42 +1,31 @@
 /*
 3934. Recaman's Sequence
+ad-hoc
 7
 10000
 -1
 */
 
-#include <vector>
-#include <iostream>
-#include <algorithm>
+#include <stdio.h>
 
-using namespace std;
+const int MAX = 500000, RNG = 5000000;
+
+bool flag[RNG+1];
+int a[MAX+1];
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    vector<int> input;
-    int max = 0;
-    while(n>0)
-    {
-        if(max<n)
-            max=n;
-        input.push_back(n);
-        scanf("%d", &n);
-    }
-    vector<long long> matrix(max+1,0);
-    for(int i=1;i<max+1;i++)
-    {
-        if(((matrix[i-1]-i)>0)&&(find(matrix.begin(),matrix.begin()+i,matrix[i-1]-i)==matrix.begin()+i))
-            matrix[i] = matrix[i-1]-i;
-        else
-            matrix[i] = matrix[i-1]+i;
-        cout<<matrix[i]<<" ";
-    }
-    cout<<endl;
-    for(int i=0;i<input.size();i++)
-    {
-        scanf("%lld\n", matrix[input[i]]);
-    }
-    return 0;
+	int i, n, p;
+	for(i=1; i<=MAX; i++)
+	{
+		p = a[i-1];
+		if(p > i && !flag[p-i]) 
+            a[i] = p - i;
+		else 
+            a[i] = p + i;
+		flag[a[i]] = 1;
+	}
+	while(scanf("%d", &n)==1 && n!=-1) 
+        printf("%d\n", a[n]);
+	return 0;
 }
