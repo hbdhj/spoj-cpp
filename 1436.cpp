@@ -36,7 +36,8 @@ bool bfs(int s)
 		for(i=0; i<sz; i++)
 		{
 			v = G[u][i];
-			if(pre[u] != v && flag[v]) return false;
+			if(pre[u] != v && flag[v]) 
+                return false;
 			else if(!flag[v])
 			{
 				pre[v] = u;
@@ -62,11 +63,14 @@ int main()
 		G[u].push_back(v);
 		G[v].push_back(u);
 	}
-	if(E!=N-1) printf("NO\n");
+	if(E!=N-1) 
+        printf("NO\n");
 	else
 	{
-		if(bfs(s)) printf("YES\n");
-		else printf("NO\n");
+		if(bfs(s)) 
+            printf("YES\n");
+		else 
+            printf("NO\n");
 	}
 	return 0;
 }
