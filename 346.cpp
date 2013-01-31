@@ -1,26 +1,77 @@
-#include <iostream>
-#include <vector>
+/*
+346. Bytelandian gold coins
+Input:
+12
+2
+
+Output:
+13
+2
+*/
+#include <cstdio>
+#include <map>
+
 using namespace std;
-unsigned long get(unsigned long n)
-{
-    if(n>11)
-        return get(n/2)+get(n/3)+get(n/4);
-    else
-        return n;
+
+map< long long int, long long int > mymap;
+
+unsigned long long int find( unsigned long long int n ) {
+	if ( n == 0 ) {
+		return 0;
+	}
+	if ( mymap[ n ] ) {
+		return mymap[ n ];
+	}
+	unsigned long long int k, l, m;
+	k = n / 2;
+	l = n / 3;
+	m = n / 4;
+	unsigned long long int kf, lf, mf;
+	kf = find( k );
+	lf = find( l );
+	mf = find( m );
+	if ( kf > k ) {
+		mymap[ k ] = kf;
+		k = kf;
+	}
+	else {
+		mymap[ k ] = k;
+	}
+	if ( lf > l ) {
+		mymap[ l ] = lf;
+		l = lf;
+	}
+	else {
+		mymap[ l ] = l;
+	}
+	if ( mf > m ) {
+		mymap[ m ] = mf;
+		m = mf;
+	}
+	else {
+		mymap[ m ] = m;
+	}
+	unsigned long long int nf = n;
+	if ( k + l + m > nf ) {
+		nf = k + l + m;
+		mymap[ n ] = nf;
+		return nf;
+	}
+	else {
+		mymap[ n ] = n;
+		return n;
+	}
 }
-int main()
-{
-    vector<unsigned long> inputs;
-    for(int i=0;i<10;i++)
-    {
-        unsigned long j;
-        cin>>j;
-        inputs.push_back(j);
-    }
-    for(int i=0;i<inputs.size();i++)
-    {
-        //cout<<inputs[i]/12*13+inputs[i]%12<<endl;
-        cout<<get(inputs[i])<<endl;
-    }
-    return 0;
+
+int main() {
+	long long int n;
+	while ( scanf( "%lld", &n ) ) {
+		if ( n == -1 ) {
+			break;
+		}
+		printf( "%lld\n", find( n ) );
+		n = -1;
+	}
+
+	return 0;
 }
