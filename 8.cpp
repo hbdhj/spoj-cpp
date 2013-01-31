@@ -1,76 +1,50 @@
 /*
  * 2012/11/28
+ 8. Complete the Sequence!
+4
+6 3
+1 2 3 4 5 6
+8 2
+1 2 4 7 11 16 22 29
+10 2
+1 1 1 1 1 1 1 1 1 2
+1 10
+3
+
+Sample Output:
+
+7 8 9
+37 46
+11 56
+3 3 3 3 3 3 3 3 3 3
  */
 #include <iostream>
-#include <math.h>
-#include <vector>
 
-#define MAX_CASE_NUM 10000
+using namespace std;
 
-using namespace std; 
+const int MAX = 101;
 
-vector<int> strSplit(string str, char c)
-{
-    vector<int> ret;
-    while(str.size())
-    {
-        size_t pos = str.find(c);
-        if(pos!=string::npos)
-        {
-            if(pos)
-            {
-                string intStr = str.substr(0, 1);
-                int i;
-                scanf(intStr.c_str(),"%d", &i);
-                ret.push_back(i);
-                cout<<i<<" ";
-                str = str.substr(pos+1, str.size());
-            }
-            else
-            {
-                str = str.substr(1, str.size());
-            }
-        }
-    }
-    cout<<endl;
-    return ret;
-}
-int completeSequence(string str1, string str2)
-{
-    cout<<"str1 = "<<str1<<endl;
-    cout<<"str2 = "<<str2<<endl;
-    return 0;
-}
+int seq[MAX][MAX];
 
-int main() 
-{
-  int caseNum;
-  //cin>>caseNum; // Read the next number
-  caseNum=3;
-  if ((caseNum>0)&&(caseNum<MAX_CASE_NUM))
-  {
-    vector<string> inputs;
-    /*for(int i =0; i<caseNum; i++) 
-    {
-        string caseStr1, caseStr2;
-        cin>>caseStr1; // Current number and expected number
-        inputs.push_back(caseStr1);
-        cin>>caseStr2; // Read the sequence
-        inputs.push_back(caseStr2);
-    }*/
-    strSplit("6 3", ' ');
-    strSplit("1 2 3 4 5 6", ' ');
-    strSplit("1  2  3  4  5  6", ' ');
-    inputs.push_back("6 3");
-    inputs.push_back("1 2 3 4 5 6");
-    inputs.push_back("8 2");
-    inputs.push_back("1 2 4 7 11 16 22 29");
-    inputs.push_back("1 10");
-    inputs.push_back("3");
-    for(int i =0; i<caseNum; i++) 
-    {
-        completeSequence(inputs[i*2], inputs[i*2+1]);
-    }
-  }
-  return 0;
+int main() {
+	int t, given, asked, i, j;
+	scanf("%d", &t);
+	while(t--) {
+		scanf("%d%d", &given, &asked);
+		for(i = 0; i < given; i++) 
+            scanf("%d", &seq[0][i]);
+		for(i = 1; i < given; i++)
+			for(j = 0; j < given-i; j++)
+				seq[i][j] = seq[i-1][j+1] - seq[i-1][j];
+		for(i = 1; i <= asked; i++) 
+            seq[given-1][i] = seq[given-1][i-1];
+		for(i = given-2; i >= 0; i--)
+			for(j = given-i; j < given-i+asked; j++)
+				seq[i][j] = seq[i+1][j-1] + seq[i][j-1];
+		printf("%d", seq[0][given]);
+		for(i = 1; i < asked; i++) 
+            printf(" %d", seq[0][given+i]);
+		printf("\n");
+	}
+	return 0;
 }
