@@ -1,82 +1,83 @@
-/* 3261 Race against Time */
+/* 
+3261 Race against Time
+ */
 
-#include <iostream>
-#include <vector>
-
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <cstdio>
+#include <algorithm>
 using namespace std;
 
-#define LINE_LENGTH 50
-//#define unsigned int unsigned long
+const int MAX = 100000;
+const int LEN = 700;
 
-struct Query
-{
-	bool action;	//true - M, false - C
-	unsigned int u1;	// i for M, P for C
-	unsigned int u2;	// X for M, Q for C
-	unsigned int u3;	// no for M, X for C
-};
+int num[MAX], seg[MAX];
 
-int main()
-{
-	char input[LINE_LENGTH];
-	cin.getline(input, LINE_LENGTH);
-	unsigned int CowNum, QueryNum;
-	cout<<input<<endl;
-	sscanf(input, "%u %u", &CowNum, &QueryNum);
-	cout<<CowNum<<", "<<QueryNum<<endl;
-	vector<unsigned long> cowId;
-	for(unsigned int i = 0; i<CowNum; i++)
-	{
-		cin.getline(input, LINE_LENGTH);
-		unsigned int CowId;
-		sscanf(input, "%u", & CowId);
-		cout<<"The "<<i<<"the cow's id ="<<CowId <<endl;
-		cowId.push_back(CowId);
+int lowerbound(int *a, int st, int en, int val) {
+	int idx, cnt, stp;
+	cnt = en - st;
+	while(cnt > 0) {
+		stp = cnt >> 1; idx = st + stp;
+		if(a[idx] < val) st = ++idx, cnt -= stp+1;
+		else cnt = stp;
 	}
-	vector<Query> cowQuery;
-	for(unsigned int i = 0; i<QueryNum; i++)
-	{
-		cin.getline(input, LINE_LENGTH);
-		
-		unsigned int u1, u2, u3;
-		bool act;
-		char c_act[1];
-		Query query;
-		if(input[0]=='M')
-		{
-			sscanf(input, "%c %u %u", c_act, &u1, &u2);
-			cout<<"u1 = "<<u1<<", u2 = "<<u2<<endl;
-			query.action = true;
-			query.u1 = u1;
-			query.u2 = u2;
-			query.u3 = 0;
-		}
-		else
-		{
-			sscanf(input, "%c %u %u %u", c_act, &u1, &u2, &u3);
-			cout<<"u1 = "<<u1<<", u2 = "<<u2<<", u3 = "<<u3<<endl;
-			query.action = false;
-			query.u1 = u1;
-			query.u2 = u2;
-			query.u3 = u3;
-		}
-		cowQuery.push_back(query);
+	return st;
+}
+
+int upperbound(int *a, int st, int en, int val) {
+	int idx, cnt, stp;
+	cnt = en - st;
+	while(cnt > 0) {
+		stp = cnt >> 1; idx = st + stp;
+		if(a[idx] <= val) st = ++idx, cnt -= stp+1;
+		else cnt = stp;
 	}
-	for(unsigned long i = 0; i<QueryNum; i++)
-	{
-		if(cowQuery[i].action)
-		{
-			cowId[cowQuery[i].u1] = cowQuery[i].u2;
-		}
-		else
-		{
-			unsigned long count = 0;
-			for(unsigned long l = cowQuery[i].u1 - 1 ; l < cowQuery[i].u2; l++)
-			{
-				if(cowId[l]<=cowQuery[i].u3)
-					count++;
+	return st;
+}
+
+void insert(int st, int en, int j, int v, int x) {
+	int i = j; seg[j] = num[x] = v;
+	for(i = j; i + 1 < en && seg[i] > seg[i + 1]; i++) swap(seg[i], seg[i + 1]);
+	for(i = j; i - 1 >= st && seg[i] < seg[i - 1]; i--) swap(seg[i], seg[i - 1]);
+}
+
+int main() {
+	int n, q, i, j, k, sz, x, y, v, st, en;
+	char op[2];
+	scanf("%d %d", &n, &q);
+	for(i = 0; i < n; i++) {
+		scanf("%d", &num[i]);
+		seg[i] = num[i];
+	}
+	for(i = 0; i < n; i++) {
+		j = min(i + LEN, n);
+		sort(seg + i, seg + j);
+		i = j - 1;
+	}
+	sz = (n + LEN - 1) / LEN;
+	while(q--) {
+		scanf("%s", op);
+		switch(op[0]) {
+		case 'C':
+			scanf("%d %d %d", &x, &y, &v);
+			st = --x / LEN; en = --y / LEN;
+			if(st == en) {
+				for(i = x, k = 0; i <= y; i++) k += (num[i] <= v);
+				printf("%d\n", k);
 			}
-			cout<<cout<<endl;
+			else {
+				j = min((st + 1)*LEN, n);
+				for(i = x, k = 0; i < j; i++) k += (num[i] <= v);
+				for(i = en * LEN; i <= y; i++) k += (num[i] <= v);
+				for(i = st + 1; i <= en - 1; i++) k += upperbound(seg, i * LEN, min((i+1) * LEN, n), v) - i * LEN;
+				printf("%d\n", k);
+			}
+		break;
+		case 'M':
+			scanf("%d %d", &x, &v);
+			k = --x / LEN;
+			j = lowerbound(seg, st = k*LEN, en = min((k+1)*LEN, n), num[x]);
+			insert(st, en, j, v, x);
 		}
 	}
+	return 0;
 }
