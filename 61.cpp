@@ -20,121 +20,56 @@
  YES
  NO
  */
-#include <iostream>
-#include <vector>
+#include <algorithm>
+#include <cstdio>
+
+#define NMAX 32768
+#define TMAX 65536
 
 using namespace std;
 
-int actionCheck(string str, vector<int> act)
-{
-    if(str.length()%2!=0)
-    {
-        for(int i=0;i<act.size();i++)
-        {
-            if(act[i]==0)
-            {
-                cout<<"No"<<endl;
-            }
-        }
-    }
-    else
-    {
-        vector<int> init(str.length(),0);
-        if(str[0]=='(')
-            init[0]= 1;
-        else if (str[0]==')')
-            init[0] = -1;
-        for(int i=1;i<str.length();i++)
-        {
-            if(str[i]=='(')
-                init[i]=init[i-1]+1;
-            else if(str[i]==')')
-                init[i]=init[i-1]-1;
-        }
-        int total = init[str.length()-1];
-        for(int i=0;i<act.size();i++)
-        {
-            if(act[i]==0)
-            {
-                if (total)
-                {
-                    cout<<"No"<<endl;
-                }
-                else
-                {
-                    
-                    if (str[0]==')')
-                    {
-                        cout<<"No"<<endl;
-                    }
-                    else
-                    {
-                        init[0]=1;
-                        bool belowZero=false;
-                        for(int i=1;i<str.length();i++)
-                        {
-                            if(str[i]=='(')
-                                init[i]=init[i-1]+1;
-                            else if(str[i]==')')
-                                init[i]=init[i-1]-1;
-                            if(init[i]<0)
-                            {
-                                belowZero=true;
-                                break;
-                            }
-                        }
-                        if(belowZero)
-                            cout<<"No"<<endl;
-                        else
-                            cout<<"Yes"<<endl;
-                    }
-                    
-                }
-            }
-            else
-            {
-                if(str[act[i]-1]=='(')
-                {
-                    total-=2;
-                    str[act[i]-1]=')';
-                }
-                else
-                {    
-                    total+=2;
-                    str[act[i]-1]='(';
-                }
-            }
-        }
-    }
-    return 0;
+char seq[NMAX];
+struct Node { int sum, minsum; } Tree[TMAX];
+
+void init(int Node, int i, int j) {
+	if(i==j) {
+		Tree[Node].sum = Tree[Node].minsum = (seq[i]=='(' ? 1 : -1);
+		return;
+	}
+	int m = (i+j)/2;
+	init(2*Node, i, m);
+	init(2*Node+1, m+1, j);
+	Tree[Node].sum = Tree[2*Node].sum + Tree[2*Node+1].sum;
+	Tree[Node].minsum = min(Tree[2*Node].minsum, Tree[2*Node].sum + Tree[2*Node+1].minsum);
 }
 
-int main()
-{
-    int bracketNum, actionNum, i, j;
-    int tN = 10;
-    vector<string> backets;
-    vector<vector<int> > actions;
-    for(i=0;i<tN;i++)
-    {
-        cin>>bracketNum;
-        string str;
-        cin>>str;
-        backets.push_back(str);
-        cin>>actionNum;
-        vector<int> action;
-        for(j=0;j<actionNum;j++)
-        {
-            int act;
-            cin>>act;
-            action.push_back(act);
-        }
-        actions.push_back(action);
-    }
-    for(i=0;i<tN;i++)
-    {
-        cout<<"Test "<<i+1<<":"<<endl;
-        actionCheck(backets[i], actions[i]);
-    }
-    return 0;
+void update(int Node, int i, int j, int idx) {
+	if(i==j) {
+		Tree[Node].sum = Tree[Node].minsum = -Tree[Node].sum;
+		return;
+	}
+	int m = (i+j)/2;
+	if(idx<=m) update(2*Node, i, m, idx);
+	else update(2*Node+1, m+1, j, idx);
+	Tree[Node].sum = Tree[2*Node].sum + Tree[2*Node+1].sum;
+	Tree[Node].minsum = min(Tree[2*Node].minsum, Tree[2*Node].sum + Tree[2*Node+1].minsum);
+}
+
+int main() {
+	int len, q, i, idx, test = 1;
+	while(scanf("%d", &len)==1) {
+		scanf("%s", seq);
+		init(1, 0, len-1);
+		printf("Test %d:\n", test++);
+		scanf("%d", &q);
+		for(i=0; i<q; i++) {
+			scanf("%d", &idx);
+			if(!idx) {
+				if(!Tree[1].sum && !Tree[1].minsum) printf("YES\n");
+				else printf("NO\n");
+			}
+			else update(1, 0, len-1, idx-1);
+		}
+	}
+	return 0;
 }

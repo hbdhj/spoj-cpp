@@ -11,67 +11,134 @@ Thursday
 Friday
 */
 
+#include <iostream>
 #include <stdio.h>
-#include <time.h>
-#include <vector>
+#include <stdlib.h>
 
 using namespace std;
 
-int day_month[] ={31,28,31,30,31,30,31,31,30,31,30,31};
-
-bool isLeapYear(int year)
+int leapcount(int year)
 {
-    if((year%4==0)&&(year%100!=0))
-        return true;
-    else if(year%400==0)
-        return true;
-    else
-        return false;
-}
-
-
-//get the days from 01/01/2000
-int getdays(int year, int month, int day)
-{
-    int passed_years=year-2000;
-    int passed_days=passed_years*365+passed_years/4-passed_years/100+passed_years/400;
-    //Add the one more for 2000 is a leap year
-    if(passed_years)
-        passed_days++;
-    //Add the one more for this leap year.
-    if(isLeapYear(year)&&(month<2))
-        passed_days--;
-    if(month>1)
-    while (--month) {
-        passed_days+=day_month[month-1];
-    }
-    passed_days+=day;
-    return passed_days;
-}
-
-int main ()
-{
-    int year, month ,day, n;
-    char * weekday[] = { "Sunday", "Monday",
-                       "Tuesday", "Wednesday",
-                       "Thursday", "Friday", "Saturday"};
-    scanf ("%d", &n);                   
-    vector<int> inputs(3*n);
-    for(int i=0;i<n;i++)
+    int i=0,j=0;
+    for(i=0;i<year;i++)
     {
-        // prompt user for date
-        scanf ("%d %d %d", &day, &month, &year);
-        inputs[3*i]=year;
-        inputs[3*i+1]=month;
-        inputs[3*i+2]=day;
+                       if(i%4==0&&i%100!=0)
+                          j++;
+                       else if(i%400==0)
+                          j++;
     }
-    for(int i=0;i<n;i++)
-    {    
-        year=inputs[3*i];
-        month=inputs[3*i+1];
-        day=inputs[3*i+2];
-        int passwd_days=getdays(year,month,day);
-        printf ("%s\n", weekday[(passwd_days+5)%7]);
-    }
-    return 0;
+    return j;
+}
+int leapcheck(int y)
+{
+	   if(y%4==0&&y%100!=0)
+          return 1;
+       else if(y%400==0)
+          return 1;
+	   else return 0;
+
+}
+int validdatecheck(int d,int m,int y)
+{
+	int f=0;
+	if(y<1) return 0;
+	else if(d>31) return 0;
+    else if(m=2)
+	{
+		f=leapcheck(y);
+		if(f==0&&d<=28) return 1;
+		else if(f==1&&d<=29) return 1;
+		else return 0;
+	}
+	else if((m==4||m==6||m==9||m==11)&&d<=30)
+		return 1;
+	else if((m==1||m==3||m==5||m==7||m==8||m==10||m==12)&&d<=31)
+		return 1;
+	else return 0;
+}
+
+int main()
+{
+  float x=0;
+  int monthreq,date,month=1,year;
+  int noy,noly,flag=0;
+  unsigned long nod;
+  int t;
+  scanf("%d",&t);
+  while(t--)
+  {
+      scanf("%d %d %d",&date,&monthreq,&year);
+  noy=year;
+  noly=leapcount(year);
+  nod=(year-1)*365+noly;
+  nod=nod%7;
+
+  flag=leapcheck(year);
+  switch(monthreq)
+  {
+       case 1:
+          nod+=date;
+          break;
+       case 2:
+          nod+=31+date;
+          break;
+       case 3:
+          nod+=flag+31+28+date;
+          break;
+       case 4:
+          nod+=flag+31*2+28+date;
+          break;
+       case 5:
+          nod+=flag+31*2+28+date+30;
+          break;
+       case 6:
+          nod+=flag+31*3+28+date+30;
+          break;
+       case 7:
+          nod+=flag+31*3+28+date+30*2;
+          break;
+       case 8:
+          nod+=flag+31*4+28+date+30*2;
+          break;
+       case 9:
+          nod+=flag+31*5+28+date+30*2;
+          break;
+       case 10:
+          nod+=flag+31*5+28+date+30*3;
+          break;
+       case 11:
+          nod+=flag+31*6+28+date+30*3;
+          break;
+       case 12:
+          nod+=flag+31*6+28+date+30*4;
+          break;
+       default: exit(0);
+  }
+  nod=(nod-1)%7;
+  switch(nod)
+  {
+       case 1:
+          cout<<"Monday\n";
+          break;
+       case 2:
+          cout<<"Tuesday\n";
+		  break;
+	   case 3:
+		  cout<<"Wednesday\n";
+		  break;
+	   case 4:
+		  cout<<"Thursday\n";
+		  break;
+	   case 5:
+		  cout<<"Friday\n";
+		  break;
+	   case 6:
+	      cout<<"Saturday\n";
+		  break;
+       case 0:
+		  cout<<"Sunday\n";
+		  break;
+   }
+  }
+return 0;
 }
