@@ -1,59 +1,79 @@
-/*7753*/
-#include <iostream>
-#include <vector>
-#include <algorithm>
+/*
+7753. Happy Numbers II
+ALGO: pre-calculation
+Input:
+2
+19
+204
 
+Output:
+4
+-1
+*/
+#include <cstdio>
 using namespace std;
 
-int get(int n)
-{
-	int ret = 0;
-	while(n>0)
-	{
-		ret += (n%10)*(n%10);
-		n=n/10;
+int happy[111] = {
+  1,  7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97,100,103,109,129,130,133,139,167,176,188,190,192,193,203,208,219,226,230,
+236,239,262,263,280,291,293,301,302,310,313,319,320,326,329,331,338,356,362,365,367,368,376,379,383,386,391,392,397,404,409,440,446,464,469,478,487,
+490,496,536,556,563,565,566,608,617,622,623,632,635,637,638,644,649,653,655,656,665,671,673,680,683,694,700,709,716,736,739,748,761,763,784,790,793
+};
+
+int cycle[800], curr;
+
+inline int next(int n) {
+	int ret = 0, m;
+	while(n) {
+		m = n % 10;
+		n /= 10;
+		ret += m * m;
 	}
 	return ret;
 }
 
-int main()
-{
-    int tN,i,m;
-    scanf("%d", &tN);
-    vector<int> input;
-    for(i=0;i<tN;i++)
-    {
-        scanf("%d", &m);
-        input.push_back(m);
-    }
-    vector<int> repeats;
-    for(i=0;i<tN;i++)
-    {
-        m = get(input[i]);
-        int repeated = false;
-        vector<int> results;
-        while(m>1)
-        {
-            //cout<<m<<endl;
-            if(find(repeats.begin(), repeats.end(), m)!=repeats.end())
-            {
-                repeated = true;
-                break;
-            }
-            else if(find(results.begin(), results.end(), m)!=results.end())
-            {
-                repeated = true;
-                repeats.push_back(m);
-                break;
-            }
-            else
-                results.push_back(m);
-            m = get(m);
-        }
-        if(repeated)
-            printf("-1\n");
-        else
-            printf("%d\n",results.size()+1);
-    }
+void fill(int n) {
+	if(n==1) {
+		curr = 0;
+		return;
+	}
+	if(cycle[n]) {
+		curr = cycle[n];
+		return;
+	}
+	fill(next(n));
+	cycle[n] = ++curr;
+}
+
+void calc() {
+	for(int i = 110; i; i--) {
+		if(!cycle[happy[i]]) {
+			fill(happy[i]);
+		}
+	}
+}
+
+static char buff[12960000], *ptr = buff;
+
+inline int nextInt() {
+	int ret = 0;
+	while(*ptr < '0' || *ptr > '9') ptr++;
+	do { ret = ret * 10 + *ptr++ - '0';
+	} while(*ptr >= '0' && *ptr <= '9');
+	return ret;
+}
+
+
+int main() {
+	calc();
+	fread_unlocked(buff, 12960000, 1, stdin);
+	int n, t = nextInt(), s, f;
+	while(t--) {
+		n = nextInt();
+		f = (n > happy[110]);
+		if(f) s = next(n);
+		else s = n;
+		if(!cycle[s]) printf("-1\n");
+		else printf("%d\n", cycle[s] + f);
+	}
 	return 0;
 }
