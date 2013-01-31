@@ -1,53 +1,72 @@
-//
-//  1436.cpp
-//  
-//
-//  Created by Haijun Deng on 12-12-25.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
+/*
+1436. Is it a tree
+ALGO: breadth first search
+Input:
+3 2
+1 2
+2 3
 
-#include <iostream>
+Output:
+YES
+*/
+
+#include <cstdio>
 #include <vector>
-#include <algorithm>
-#include <map>
-
+#include <queue>
 using namespace std;
+
+#define MAX 10001
+
+int N, E;
+vector< int > G[MAX];
+bool flag[MAX];
+int pre[MAX];
+
+bool bfs(int s)
+{
+	int i, u, v, sz;
+	queue< int > Q;
+	Q.push(s);
+	flag[s] = 1;
+	while(!Q.empty())
+	{
+		u = Q.front();
+		Q.pop();
+		sz = G[u].size();
+		for(i=0; i<sz; i++)
+		{
+			v = G[u][i];
+			if(pre[u] != v && flag[v]) return false;
+			else if(!flag[v])
+			{
+				pre[v] = u;
+				flag[v] = 1;
+				Q.push(v);
+			}
+		}
+	}
+	for(i=1; i<=N; i++)
+		if(!flag[i])
+			return false;
+	return true;
+}
 
 int main()
 {
-    int i, nodeNum, edgeNum, firstNode, secondNode;
-    cin>>nodeNum;
-    cin>>edgeNum;
-    cout<<"nodeNum = "<<nodeNum<<", edgeNum = "<<edgeNum<<endl;
-    multimap<int,int> edges;
-    multimap<int,int>::iterator it;
-    pair<multimap<int,int>::iterator,multimap<int,int>::iterator> ret;
-    for(i=0;i<edgeNum;i++)
-    {
-        cin>>firstNode;
-        cin>>secondNode;
-        pair<int, int> edge1(firstNode, secondNode);
-        edges.insert(edge1);
-        //pair<int, int> edge2(secondNode, firstNode);
-        //edges.insert(edge2);
-    }
-    for(i=0;i<nodeNum;i++)
-    {
-        ret = edges.equal_range(i+1);
-        //if(ret!=edges.end())
-        {
-            vector<int> checked(nodeNum, 0);
-            cout<<(i+1)<<" connect to ";
-            for (it=ret.first; it!=ret.second; ++it)
-            {
-                checked[i+1]=1;
-                while()
-                {
-                }
-                cout << " " << (*it).second;
-            }
-            cout<<endl;
-        }
-    }
-    return 0;
+	int i, u, v, s;
+	scanf("%d %d", &N, &E);
+	for(i=0; i<E; i++)
+	{
+		scanf("%d %d", &u, &v);
+		s = u;
+		G[u].push_back(v);
+		G[v].push_back(u);
+	}
+	if(E!=N-1) printf("NO\n");
+	else
+	{
+		if(bfs(s)) printf("YES\n");
+		else printf("NO\n");
+	}
+	return 0;
 }

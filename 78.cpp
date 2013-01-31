@@ -1,30 +1,42 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+/*
+78. Marbles
+Input:
+2
+10 10
+30 7
+
+Output:
+1
+475020
+*/
+#include <stdio.h>
+#include <stdlib.h>
+
+unsigned long long comb(int a, int b)
+{
+  int min = b > a-b ? a-b : b;
+  unsigned long long ans = 1;
+  int i;
+  for(i=1;i<=min;i++)
+      {
+         ans = (ans*(a - i + 1))/i ;    
+      }        
+  return ans;    
+}
+
 int main()
 {
-	int tN, n1, n2;
-	cin>>tN;
-	vector<int> numbers;
-	for(int i=0; i<tN; i++)
-	{
-		cin>>n1;
-		cin>>n2;
-		numbers.push_back(n1);
-		numbers.push_back(n2);
-	}
-	for(int i=0;i<tN;i++)
-	{
-		unsigned long long int ret=1;
-		n1=numbers[2*i];
-		n2=numbers[2*i+1];
-		if(2*n2>n1)
-			n2=n1-n2;
-		for(int j=0; j<n2; j++)
-			ret*=(n1-j);
-		for(int j=1; j<=n2;j++)
-			ret/=j;
-		cout<<ret<<endl;
-	}
-	return 0;
+ int t;
+ scanf("%d",&t);
+ for(int i=0;i<t;i++)
+         {
+            int a,b;
+            scanf("%d %d",&a,&b);
+            if (a==b)
+                printf("1\n");
+            else
+                printf("%llu\n",comb(a-1,b-1));            
+         }
+  system("PAUSE");
+  return 0;       
 }
