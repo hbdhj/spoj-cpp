@@ -1,7 +1,18 @@
-#include <stdio.h>
-#include <math.h>
+#include <ios>
+#include <algorithm>
 int main()
-{int i,t,m;scanf("%d",&t);int* n=new int[t];
-for(i=0;i<t;i++)scanf("%d",&n[i]);
-for(i=0;i<t;i++){m=n[i];float l=(m+sqrt(float(4+5*m*m)))/2;float k=(l*m+1)/(l-m);printf("%d\n",int(k+l));}
-delete n;}
+{
+    long long a,c,t,b;
+    scanf("%lld",&t);
+    while(t--)
+    {
+        scanf("%lld",&a);
+        c=1;
+        c<<=60;
+        for(b=a+1;b<=2*a+1;b++)
+            if((a*b+1)%(b-a)==0)
+                c=std::min(c,b+(a*b+1)/(b-a));
+        printf("%lld\n",c);
+    }
+    return 0;
+}
