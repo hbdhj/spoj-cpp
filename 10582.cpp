@@ -7,74 +7,37 @@ Input:
 Output:
 3 3 4 5 5 5 6
 */
-#include <iostream>
-#include <vector>
+#include <stdio.h>
+#include <set>
+#include <algorithm>
+
 using namespace std;
+#define SI(n) scanf("%d",&n)
+
+#define N 1000000
+int vals[N+1];
+typedef multiset<int,greater<int> > mi;
+
+void solve(int n, int k)
+{
+  mi v(vals,vals+k);
+  int i=k;
+  for(;i<n;++i)
+  {
+    printf("%d ",*v.begin());
+    v.erase(v.find(vals[i-k]));
+    v.insert(vals[i]);
+  }
+  printf("%d\n",*v.begin());
+}
+
 int main()
 {
-    int n, k, a, i, j, max, sec, max_pos, sec_pos;
-    cin>>n;
-    vector<int> inputs;
-    for(i=0;i<n;i++)
-    {
-        cin>>a;
-        inputs.push_back(a);
-    }
-    cin>>k;
-    /*for(i=k;i<=n;i++)
-    {
-        max = 0;
-        for(j=i-k;j<i;j++)
-        {
-            if(inputs[j]>max)
-                max=inputs[j];
-        }
-        cout<<max<<" ";
-    }*/
-    if(k==1)
-    {
-        for(i=0;i<n-1;i++)
-            cout<<inputs[i]<<" ";
-        cout<<inputs[n-1]<<endl;
-    }
-    else
-    {
-        max = 0;
-        for(i=0;i<=n;i++)
-        {
-            if(i<k)
-            {
-                if(inputs[i]>max)
-                {
-                    max=inputs[i];
-                    max_pos=i;
-                }
-            }
-            else
-            {
-                cout<<max<<" ";
-                if(max_pos<i-k)
-                {
-                    max=0;
-                    for(j=i-k;j<i;j++)
-                    {
-                        if(inputs[j]>max)
-                        {
-                            max=inputs[j];
-                            max_pos=j;
-                        }
-                    }
-                }
-                else
-                {
-                    if(inputs[i]>max)
-                    {
-                        max=inputs[i];
-                    }
-                }
-            }
-        }
-        cout<<endl;
-    }
-    return 0;
+  int t,i;
+  int n,k;
+  SI(n);
+  for(i=0;i<n;++i) SI(vals[i]);
+  SI(k);
+  solve(n,k);
+  return 0;
 }
