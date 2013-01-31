@@ -36,94 +36,53 @@ impossible
 0
 0
 */
-#include <iostream>
-#include <vector>
+#include <cstdio>
 
-using namespace std;
-
-void div15(string str)
-{
-    vector<int> nums(10,0);
-    int total=0;
-    for(int i=0;i<str.length();i++)
-    {
-        nums[str[i]-'0']++;
-        total+=str[i]-'0';
-    }
-    if((nums[5]==0)&&(nums[0]==0))
-    {
-        printf("impossible\n");
-        return;
-    }
-    else
-    {
-        if(nums[0]==0)
-            nums[5]--;
-        if(total==0)
-            printf("0\n");
-        else
-        {
-            int tail=total%3;
-            if(tail)
-            {
-                while(tail<10)
-                {
-                    if(nums[tail])
-                    {
-                        nums[tail]--;
-                        total-=tail;
-                        tail=0;
-                        break;
-                    }
-                    tail+=3;
-                }
-            }
-            if((tail)||(total==0))
-            {
-                //printf("nums[0] = %d", nums[0]);
-                if(nums[0])
-                    printf("0\n");
-                else
-                    printf("impossible\n");
-            }
-            else    
-            {
-                for(int i=9;i>0;i--)
-                {
-                    int n=nums[i];
-                    while(n--)
-                        printf("%d",i);
-                }
-                if(nums[0]==0)
-                    printf("5\n");
-                else
-                {
-                    int n=nums[0];
-                    while(--n)
-                        printf("%d",0);
-                    printf("0\n");    
-                }    
-            }
-        }
-    }
-}
-
-int main()
-{
-    int tN;
-    vector<string> inputs;
-    scanf("%d", &tN);
-    for(int i=0;i<tN;i++)
-    {
-        char c[1001];
-        scanf("%s", c);
-        string str=c;
-        inputs.push_back(str);
-    }
-    
-    for(int i=0;i<tN;i++)
-    {
-        div15(inputs[i]);
-    }
-    return 0;
+int h[10];
+char digits[1024];
+int main(void){
+	int sum, t; scanf("%d", &t);
+	while(t--){
+		for(int i = 0; i < 10; ++i) h[i] = 0; sum = 0;
+		scanf("%s", digits);
+		for(int i = 0; digits[i]; ++i) ++h[digits[i]-'0'], sum += digits[i] - '0';
+		bool impossible = false, need5end = !h[0];
+		if(need5end){
+			impossible |= !h[5];
+			if(h[5]) --h[5];
+		}
+		if(sum % 3 == 1){
+			if(h[1]) --h[1], --sum;
+			else if(h[4]) --h[4], sum -= 4;
+			else if(h[7]) --h[7], sum -= 7;
+			else {
+				for(int i = 2; (sum % 3) && i < 10; i += 3)
+					for(int j = i; (sum % 3) && j < 10; j += 3){
+						if(i == j && h[i] > 1) h[i] -= 2, sum -= 2*i;
+						if(i != j && h[i] && h[j]) h[i]--, h[j]--, sum -= i + j;
+					}
+			}
+			impossible |= sum % 3 != 0;
+		} else if(sum % 3 == 2){
+			if(h[2]) --h[2], sum -= 2;
+			else if(h[5]) --h[5], sum -= 5;
+			else if(h[8]) --h[8], sum -= 8;
+			else {
+				for(int i = 1; (sum % 3) && i < 10; i += 3)
+					for(int j = i; (sum % 3) && j < 10; j += 3){
+						if(i == j && h[i] > 1) h[i] -= 2, sum -= 2*i;
+						if(i != j && h[i] && h[j]) h[i]--, h[j]--, sum -= i + j;
+					}
+			}
+			impossible |= sum % 3 != 0;
+		}
+		if(impossible || (!sum && !h[0])) puts("impossible");
+		else if(!sum) puts("0");
+		else {
+			for(int i = 10; i--; ) while(h[i]--) putc(i + '0', stdout);
+			if(need5end) putc('5', stdout);
+			putc(10, stdout);
+		}
+	}
+	return 0;
 }
