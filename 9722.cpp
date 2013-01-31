@@ -11,48 +11,62 @@ for i <- 2 to N
 2 1 3 1 2
 */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
-int main()
-{
-    int tN, i, n, nn;
-    cin>>tN;
-    vector<vector<int> > nss;
-    for(int i=0; i<tN; i++)
-    {
-        cin>>nn;
-        vector<int> ns;
-        for(int i=0;i<nn; i++)
-        {
-            cin>>n;
-            ns.push_back(n);
-        }
-        nss.push_back(ns);
-    }
-    for(int m=0;m<nss.size();m++)
-    {
-        int swaptime=0;
-        for (int i = 1; i<nss[m].size(); i++)
-        {
-            int j = i;
-            while((j >= 1)&&(nss[m][j]<nss[m][j - 1]))
-            {
-                //swap nss[j] and nss[j - 1]
-                int swap = nss[m][j];
-                nss[m][j] = nss[m][j - 1];
-                nss[m][j - 1] = swap;
-                j = j - 1;
-                swaptime++;
+#include<stdio.h>
+//#include<conio.h>
+static long long int cntr=0;
+void merge(long long int [],int,int,int);
+void mergeSort(long long int arr[],int low, int high){
+     if(low>=high)return;
+     int mid=(low+high)/2;
+     mergeSort(arr,low,mid);
+	 mergeSort(arr,mid+1,high);		
+	 merge(arr,low,mid,high);
+}
+void merge(long long int arr[], int low, int mid, int high){
+    long long int a[high-low+1];
+    int i = low;
+	int j = mid+1;
+	int k = 0;
+	while(i<=mid && j<=high){
+		if(arr[i]>arr[j]){
+			a[k]=arr[j];
+			cntr+=mid-i+1;
+			j++;
+		}
+		else{
+			a[k]=arr[i];
+			i++;
+		}
+		k++;
+	}
+	while(i<=mid){
+		a[k]=arr[i];
+		k++;i++;
+	}
+	while(j<=high){
+		a[k]=arr[j];
+		k++;j++;
+	}
+    int p=0;
+	for(int m=low;m<=high;m++,p++){
+		arr[m]=a[p];
+	}
+}
+int main(){
+    int t;
+    scanf("%d",&t);
+    for(;t>0;t--){
+            cntr=0;
+            long long int n;
+            scanf("%lld",&n);
+            long long int arr[n];
+            for(int i=0;i<n;i++){
+                    scanf("%lld",&arr[i]);       
             }
-        }
-        /*for(int l=0; l<nss[m].size(); l++)
-            cout<<nss[m][l]<<", ";*/
-        cout<<swaptime<<endl;
-        
+            mergeSort(arr, 0, n-1);        
+            printf("%lld\n",cntr);   
     }
-    return 0;
+    //getch();
+    return 0;    
+  
 }
