@@ -11,32 +11,25 @@ Output:
 3 715
 */
 
-#include <iostream>
-#include <vector>
-
+#include <cstdio>
 using namespace std;
 
-int main()
-{
-	int tN;
-	cin>>tN;
-	vector<int> inputs;
-	for(int i = 0; i<tN; i++)
-	{
-		int input;
-		cin>>input;
-		cin>>input;
-		inputs.push_back(input);
+long long dp[65][10];
+
+int main() {
+	int test, cs, n, i, j, k;
+	for(i = 0; i < 10; i++) dp[0][i] = 1;
+	for(i = 1; i < 65; i++) {
+		for(j = 0; j < 10; j++) {
+			for(k = 0; k <= j; k++) {
+				dp[i][j] += dp[i-1][k];
+			}
+		}
 	}
-    for(int i =0; i<tN; i++)
-	{
-        unsigned long long int ret=1;
-        for(int j=0;j<inputs[i];j++)
-            ret=ret*(10+j);
-        for(int j=inputs[i];j>1;j--)
-            ret=ret/j;
-        cout<<i+1<<" "<<ret<<endl;
-    }
-	
+	scanf("%d", &test);
+	while(test--) {
+		scanf("%d %d", &cs, &n);
+		printf("%d %lld\n", cs, dp[n][9]);
+	}
 	return 0;
 }
