@@ -70,7 +70,8 @@ int compute()
 			edist[u] = eccen;
 			//printf("Next %d, Longest distance from %d is %d\n", next, u, edist[u]);
 			//printf("Previous longest distance was %d from %d\n", edist[v], v);
-			if(edist[v] >= edist[u]) return edist[v];
+			if(edist[v] >= edist[u]) 
+                return edist[v];
 			v = u;
 			u = next;
 		}
