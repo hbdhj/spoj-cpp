@@ -1,6 +1,6 @@
 /*
 297. Aggressive cows
-greedy
+algorithm: binary search
 Input:
 1
 5 3
@@ -19,62 +19,66 @@ Output:
 
 using namespace std;
 
-int main()
-{
-    int i,j,t,n,c;
-    scanf("%d",&t);
-    while(t--)
+//const int INF = 1000000001;
+const int INF = 101;
+const int MAX = 100001;
+
+int a[MAX];
+
+// Check whether we can find c number, which the interval is greater then dist
+// e.g. possible(5, 3, 3) = true and possible(5, 3, 2) = true but possible(5, 3, 4) = false
+// So return 3
+
+bool possible(int n, int c, int dist) {
+	int i, put = 1, last = a[0];
+	for(i = 1; i < n && put < c; i++) 
     {
-        scanf("%d %d",&n,&c);
-        unsigned long long max=0;
-        unsigned long long min=1000000000;
-        vector<unsigned long long> stalls(n);
-        for(i=0;i<n;i++)
+		if(a[i]-last >= dist) 
         {
-            scanf("%lld", &stalls[i]);
-            if(min>stalls[i])
-                min=stalls[i];
-            if(max<stalls[i])
-                max=stalls[i];    
-        }
-        unsigned long long interval = (max-min)/(c-1);
-        /*printf("%lld %lld %lld\n", min, max, interval);
-        for(i=0;i<n;i++)
+			put++;
+			last = a[i];
+		}
+	}
+	return (put == c);
+}
+int setmax(int &a, int&b)
+{
+    if(a<b)
+        a=b;
+}
+int main() {
+	int t, n, i, c, maxdiff, mindiff, middiff, best;
+	scanf("%d", &t);
+	while(t--) 
+    {
+		scanf("%d%d", &n, &c);
+		for(i = 0; i < n; i++)
         {
-            printf("%lld ", stalls[i]);
+            scanf("%d", &a[i]);
         }
-        printf("\n");*/
-        sort(stalls.begin(),stalls.end());
-        /*for(i=0;i<n;i++)
-        {
-            printf("%lld ", stalls[i]);
-        }
-        printf("\n");*/
-        unsigned long long finterval=interval;
-        unsigned long long former=min;
-        unsigned long long expected=former+interval;
-        for(i=1;i<n;i++)
-        {
-            if((expected>=stalls[i-1])&&(stalls[i]>=expected))
-            {
-                //printf("stalls[%d] = %lld, expected = %lld, stalls[%d] = %lld\n",i-1,stalls[i-1],expected,i,stalls[i]);
-                if((expected-stalls[i-1])<=(stalls[i]-expected))
-                {
-                    if(finterval>(stalls[i-1]-former))
-                        finterval=stalls[i-1]-former;
-                    former=stalls[i-1];
-                }
-                else
-                {
-                    if(finterval>(stalls[i]-former))
-                        finterval=stalls[i]-former;
-                    former=stalls[i];
-                }
-                expected=former+interval;
-            }
-        }
+		sort(a, a+n);
         
-        printf("%lld\n", finterval);
-    }
-    return 0;
+		maxdiff = a[n-1]-a[0];
+		//maxdiff = INF;
+		mindiff = best = 0;
+		while(mindiff <= maxdiff) 
+        {
+            middiff = (maxdiff + mindiff) >> 1;
+			//printf("mindiff = %d, middiff = %d, maxdiff = %d, best = %d\n", mindiff, middiff, maxdiff, best);
+			if(possible(n, c, middiff)) 
+            {
+                //printf("possible(%d, %d, %d) = true\n", n, c, middiff);
+				if(best<middiff)
+                    best=middiff;
+				mindiff = middiff + 1;
+			}
+			else 
+            {
+                //printf("possible(%d, %d, %d) = false\n", n, c, middiff);
+				maxdiff = middiff - 1;
+            }
+		}
+		printf("%d\n", best);
+	}
+	return 0;
 }
