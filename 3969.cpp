@@ -1,5 +1,6 @@
 /*
 3969. M&M Game
+algorithm nim game Bouton's Theorem
 Sample input: 
 2 
 3 
@@ -11,45 +12,38 @@ John
 Brother 
 */
 
-#include <stdio.h>
-#include <vector>
-//int ai[4747];
+#include <cstdio>
 using namespace std;
 
-int main()
-{
-    int t,n,m;
-    scanf("%d",&t);
-    vector<int> out(t);
-    while(t--)
-    {
-        scanf("%d",&n);
-        m=n;
-        int ones=0;
-        int ai(n);
-        while(n--)
-        {
-            scanf("%d",&ai);
-            if(ai==1)
-                ones++;
-            
-        }
-        if(ones==m)
-        {
-            if(ones%2==0)
-                out[t]=0;   //printf("John\n");
-            else
-                out[t]=1;   //printf("Brother\n");
-        }
-        else
-            out[t]=0;   //printf("John\n");
-    }
-    for(int i=out.size();i>0;i--)
-    {
-        if(out[i-1]==0)
-            printf("John\n");
-        else
-            printf("Brother\n");
-    }
-    return 0;
+int main(){
+       int t, n, i, a[50];
+       scanf("%d", &t);
+       while(t--)
+       {
+               scanf("%d", &n);
+               int cnt = 0;
+               for(i=0; i<n; i++)
+               {
+                    scanf("%d", &a[i]);
+                    if(a[i]==1) 
+                        cnt++;
+               }
+               if(cnt==n)
+               {
+                    if(n&1)
+                        puts("Brother");
+                    else
+                        puts("John");
+               }
+               else 
+               {
+                    for(i=1; i<n; i++)
+                        a[0]^=a[i];
+                    if(a[0]==0) 
+                        puts("Brother");
+                    else
+                        puts("John");
+               }
+       }
+       return 0;
 }
