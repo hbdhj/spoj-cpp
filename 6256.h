@@ -1,5 +1,6 @@
 /*
 6256. Inversion Count
+divide and conquer - merge sort
 Input:
 2
 3
@@ -16,39 +17,56 @@ Output:
 2
 5
 */
-#include <stdio.h>
-#include <vector>
+#include <cstdio>
 using namespace std;
+
+#define MAX 200002
+
+int a[MAX], L[MAX/2+1], R[MAX/2+1];
+long long total;
+
+void Merge(int *a, int p, int q, int r)
+{
+	int i, j, k, n1 = q-p+1, n2 = r-q;
+	for(i=0;i<n1;i++) 
+		L[i] = a[p+i];
+	for(j=0;j<n2;j++) 
+		R[j] = a[q+j+1];
+	for(k=p,i=j=0;k<=r;k++)
+	{
+		if(j>=n2 || (i<n1 && L[i]<=R[j])) 
+			a[k] = L[i++];
+		else
+		{
+			total += n1-i;
+			a[k] = R[j++];
+		}
+	}
+}
+
+void Merge_Sort(int *a, int p, int r)
+{
+	if(p<r)
+	{
+		int q = (p+r)/2;
+		Merge_Sort(a,p,q);
+		Merge_Sort(a,q+1,r);
+		Merge(a,p,q,r);
+	}
+}
+
 int main()
 {
-	int i,j,k,t,n;
-	scanf("%d",&t);
-	vector<vector<int> > inputs;
+	int i, n, t;
+	scanf("%d", &t);
 	while(t--)
 	{
 		scanf("%d",&n);
-		vector<int> in(n);
-		for(i=0;i<n;i++)
-			scanf("%d",&in[i]);
-		inputs.push_back(in);	
-	}
-	for(i=0;i<inputs.size();i++)
-	{
-		int ret=0;
-		//printf("%d\n",ret);
-		for(j=0;j<inputs[i].size()-1;j++)
-		{
-			for(k=j+1;k<inputs[i].size();k++)
-			{
-				//printf("Checking inputs[%d][%d] = %d and inputs[%d][%d] = %d\n",i,j,inputs[i][j],i,k,inputs[i][k]);
-				if(inputs[i][j]>inputs[i][k])
-				{
-					ret++;
-					//printf("ret = %d\n",ret);
-				}	
-			}
-		}
-		printf("%d\n",ret);
+		total = 0;
+		for(i=0;i<n;i++) 
+			scanf("%d",&a[i]);
+		Merge_Sort(a,0,n-1);
+		printf("%lld\n", total);
 	}
 	return 0;
-}
+} 
