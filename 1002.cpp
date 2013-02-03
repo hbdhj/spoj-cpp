@@ -8,55 +8,29 @@ Output:
 1
 59049
 */
-#include <stdio.h>
-#include <vector>
-using namespace std;
-int C(int a, int b)
-{
-	int ret=1;
-	if(b>a/2)
-		b=a-b;
-	for(int i=0;i<b;i++)
-	{
-		ret*=(a-i);
-	}
-	for(int i=0;i<b;i++)
-	{
-		ret=ret/(i+1);
-	}
-	//printf("C(%d,%d)=%d\n",a,b,ret);
-	return ret;
-}
-
-int P(int n, int d)
-{
-	if(n==1)
-		return 1;
-	int ret=0;
-	for(int i=0;i<=d;i++)
-	{
-		ret+=C(d,i)*P(d-i, n-1);
-	}
-	//printf("P(%d,%d)=%d\n",n,d,ret);
-	return ret;
-}
+#include <ios>
+#define i64 unsigned long long
 
 int main()
 {
-	int d,n;
-	vector<int> ds;
-	vector<int> ns;
-	scanf("%d %d", &n, &d);
-	printf("n=%d d=%d\n",n,d);
-	while((d!=0)&&(n!=0))
+	int d, i, j, k;
+	i64 n, c, r[555], a, m=1000000000000000LL, t;
+	while(scanf("%llu%d",&n,&d)==2&&(n||d))
 	{
-		ds.push_back(d);
-		ns.push_back(n);
-		scanf("%d %d", &n, &d);
-		printf("n=%d d=%d\n",n,d);
+		for(i=k=r[0]=1;i<=d;i++)
+		{
+			for(j=c=0;j<k||c;j++)
+			{
+				t = ((j<k)?r[j]:0)*n;
+				r[j] = (t+c)%m;
+				c = (t+c)/m;
+			}
+			k = j;
+		}
+		printf("%llu",r[--k]);
+		for(--k;k>=0;k--) 
+			printf("%015llu",r[k]);
+		printf("\n");
 	}
-	for(int i=0;i<ds.size();i++)
-	{
-		printf("%d\n", P(ns[i],ds[i]));
-	}
+	return 0;
 }
