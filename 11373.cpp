@@ -1,48 +1,38 @@
 /*
 11373. Coke madness
+INPUT
 2
 5
 4 -10 4 4 4
 5
 1 2 3 4 5
+OUTPUT
+Scenario #1: 7
+Scenario #2: 1
 */
 
-#include <vector>
-#include <iostream>
-
-using namespace std;
-
+#include<stdio.h>
 int main()
 {
-    int tN, n, i, j;
-    scanf("%d", &tN);
-    vector<vector<int> > inputs;
-    for(i=0;i<tN;i++)
-    {
-        scanf("%d", &n);
-        vector<int> input(n);
-        for(j=0;j<n;j++)
-        {
-            scanf("%d", &input[j]);
-        }
-        inputs.push_back(input);
-    }
-    for(i=0;i<tN;i++)
-    {
-        long long int min=0;
-        long long int sum=0;
-        for(j=0;j<n;j++)
-        {
-            sum+=inputs[i][j];
-            if(j)
-                sum-=1;
-            if(min>sum)
-                min=sum;
-        }
-        if(min<0)
-            printf("Scenario #%d: %lld\n", i+1, 0-min);
-        else
-            printf("Scenario #%d: 1\n", i+1);
-    }
-    return 0;
+	int t, i = 1;
+	long long int m, n, sum, ans;
+	scanf("%d", &t);
+	while(i <= t)
+	{
+		scanf("%lld", &n);
+		ans = 0; sum = 0;
+		while(n--)
+		{
+			scanf("%lld", &m);
+			sum += m;
+			if(sum < 0)	//reason we failed before
+			{
+				ans = ans - sum; 
+				sum = 0;
+			}
+		}
+		printf("Scenario #%d: %lld\n", i, ans + 1);
+		i++;
+	}
+	return 0;
 }
