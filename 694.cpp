@@ -44,11 +44,14 @@ int main() {
 	int i, t, tot;
 	char mn;
 	t = atoi(gets(A));
-	while(t--) {
+	while(t--) 
+    {
 		gets(A);
 		mn = 256;
-		for(i = 0; A[i]; i++) mn = min(mn, A[i]);
-		for(i = 0; A[i]; i++) P[0][i] = A[i] - mn;
+		for(i = 0; A[i]; i++) 
+            mn = min(mn, A[i]);
+		for(i = 0; A[i]; i++) 
+            P[0][i] = A[i] - mn;
 		N = i;
 		for(stp = 1, cnt = 1; (cnt >> 1) < N; stp++, cnt <<= 1) 
         {
