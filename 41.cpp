@@ -35,18 +35,35 @@ int main()
 		vector<int> ends(26,0);
 		for(j=0;j<wordNum[i];j++)
 		{
-			char word[1000];
+			char word[1001];
 			scanf("%s", word);
-			starts[word[0]-'a']++;
-			ends[word[strlen(word)-1]-'a']++;
-			//words.push_back(string(word));
+			if(word[0]!=word[strlen(word)-1])
+			{
+				//printf("word[%d] (%c) != word[%d] (%c)\n",0,word[0],strlen(word)-1,word[strlen(word)-1]);
+				starts[word[0]-'a']++;
+				ends[word[strlen(word)-1]-'a']++;
+			}
+			else
+			{
+				//printf("word[%d] (%c) == word[%d] (%c)\n",0,word[0],strlen(word)-1,word[strlen(word)-1]);
+				starts[word[0]-'a']--;
+				ends[word[strlen(word)-1]-'a']--;
+			}
 		}
 		for(j=0;j<26;j++)
 		{
-			if(starts[j]!=ends[j])
+			//printf("starts[%d](%c)=%d,ends[%d](%c)=%d\n",j,'a'+j,starts[j],j,'a'+j,ends[j]);
+			if((starts[j]<0||ends[j]<0))
 			{
-				rets[i]+=starts[j];
-				rets[i]+=ends[j];
+				rets[i]=3;
+				break;
+			}
+			else if(starts[j]!=ends[j])
+			{
+				if(starts[j]>ends[j])
+					rets[i]+=starts[j]-ends[j];
+				if(starts[j]<ends[j])
+					rets[i]+=ends[j]-starts[j];
 			}
 		}
 	}
