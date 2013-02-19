@@ -51,7 +51,8 @@ inline int cntdiv(int n)
 			rt = (int)sqrt(n);
 		}
 	}
-	if(n > 1) ret <<= 1;
+	if(n > 1) 
+        ret <<= 1;
 	return ret;
 }
 
