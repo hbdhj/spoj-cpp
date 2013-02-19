@@ -15,16 +15,23 @@ inline void sieve()
 {
 	register int i, j, k;
 	for(i = 3; i < 1000; i+=2) if(!ifc(i))
-		for(j = i*i, k = i<<1; j < 1000000; j += k) isc(j);
+		for(j = i*i, k = i<<1; j < 1000000; j += k) 
+            isc(j);
 	primes[0] = 2, total = 1;
-	for(i = 3; i < 1000000; i+=2) if(!ifc(i)) primes[total++] = i;
+	for(i = 3; i < 1000000; i+=2) 
+        if(!ifc(i)) 
+            primes[total++] = i;
 }
 
 inline int nextint() 
 {
 	register int ret = 0;
-	while(*ptr < '0') ptr++;
-	do { ret = ret*10 + *ptr++ - '0'; } while(*ptr >= '0');
+	while(*ptr < '0') 
+        ptr++;
+	do 
+    {
+        ret = ret*10 + *ptr++ - '0'; 
+    } while(*ptr >= '0');
 	return ret;
 }
 
