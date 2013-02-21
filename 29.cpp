@@ -1,123 +1,75 @@
+/*
+29. Hash it!
+*/
 #include <iostream>
-#include <vector>
+#include <cstring>
+#include <string>
 #include <map>
-using namespace std; 
+using namespace std;
 
-#define TESTCASE_NUM_MAX 100
-#define OP_NUM_MAX 1000
-#define HASH_KEY 101
-//int printMapKey(vector<string> input)
-int printMapKey(map<int, string> &input)
+int key(char *s)
 {
-    cout<<"PrintMapKey"<<endl;
-    map<int, string>::iterator it;
-    for(it=input.begin(); it!=input.end(); it++)
-    {
-        //if(input[i].size())
-        cout<<(*it).first<<":"<<(*it).second<<endl;;
-    }
-    return 0;
+	int n = 0, i;
+	for(i=0;s[i];i++)
+		n += s[i]*(i+1);
+	n *= 19;
+	return n % 101;
 }
 
-//int getHashKey(vector<string>mp, string str)
-int getHashKey(string str)
+int add(int hkey, bool *flag)
 {
-    int h;
-    for(int i=0;i<str.size();i++)
-        h+=str[i]*(i+1);
-    h *= 19;
-    return h%HASH_KEY;
-    //int j=0;
-    //return (h+j*j+23*j)%HASH_KEY;
-}
-/*    
-    while(mp[hash].size()&&(j<20))
-    {
-        j++;
-        hash = (h+j*j+23*j)%HASH_KEY;
-    }
-    if(j!=20)
-        return hash;
-    else
-        return -1;
-}*/
-
-//int createMap(vector<string> &mp, vector<string> input)
-int createMap(map<int, string> &mp, vector<string> input)
-{
-    //vector<string> mp(101, "");
-    for(int i=0; i<input.size(); i++)
-    {
-        size_t pos = input[i].find(':');
-        string act = input[i].substr(0, pos);
-        string value = input[i].substr(pos+1, input[i].size()-1); 
-        cout<<"act = "<<act<<", value = "<<value<<endl;
-        if(act=="ADD")
-        {
-            //int hashValue = getHashKey(mp, value);
-            int hashValue = getHashKey(value);
-            cout<<"hashValue("<<value<<") = "<<hashValue<<endl;
-            //if(hashValue>=0)
-            map<int,string>::iterator it = mp.find(hashValue);
-            if(it != mp.end())
-                mp[hashValue] = value;
-        }
-        if(act=="DEL")
-        {
-            int hashValue = getHashKey(value);
-            cout<<hashValue<<endl;
-            //if((hashValue>=0)&&(mp[hashValue]==value))
-            //    mp[hashValue] = "";
-            map<int,string>::iterator it = mp.find(hashValue);
-            mp.erase(it);
-        }
-    }
-    return 0;
+	for(int j=0;j<=19;j++)
+		if(!flag[(hkey + j*(j+23))%101])
+			return (hkey + j*(j+23))%101;
+	return -1;
 }
 
 int main()
 {
-    int tN = 1;
-    cin>>tN;
-    if (tN&&(tN<=TESTCASE_NUM_MAX))
-    {
-        vector<int> ip;
-        vector< vector<string> > inputs;
-        for(int i= 0; i<tN; i++) 
-        {
-            int opNum = 11;
-            //cin>>opNum;
-            if (opNum&&(opNum<=OP_NUM_MAX))
-            {    
-                vector<string> input;
-                /*for(int i= 0; i<opNum; i++) 
-                {
-                    string str;
-                    cin>>str;
-                    input.push_back(str);
-                }*/
-                input.push_back("ADD:marsz");
-                input.push_back("ADD:marsz");
-                input.push_back("ADD:Dabrowski");
-                input.push_back("ADD:z");
-                input.push_back("ADD:ziemii");
-                input.push_back("ADD:wloskiej");
-                input.push_back("ADD:do");
-                input.push_back("ADD:Polski");
-                input.push_back("DEL:od");
-                input.push_back("DEL:do");
-                input.push_back("DEL:wloskiej");
-                inputs.push_back(input);
-            }
-        }
-        
-        for(int i= 0;i<tN;i++)
-        {
-            //vector<string> mp(HASH_KEY, "");
-            map<int, string> mp;
-            createMap(mp, inputs[i]);
-            printMapKey(mp);
-        }
-    }
-    return 0;
+	int t, n, i, pos, tot;
+	char op[10], str[30], input[100];
+	string s, tab[101];
+	scanf("%d",&t);
+	while(t--)
+	{
+		map <string, int> M;
+		bool flag[101] = {0};
+		tot = 0;
+		scanf("%d",&n);
+		for(i=0;i<n;i++)
+		{
+			scanf("%s",input);
+			strcpy(op,strtok(input,": "));
+			strcpy(str,strtok(0,""));
+			s = str;
+			if(!strcmp(op,"ADD"))
+			{
+				if(M.find(s)==M.end())
+				{
+					pos = add(key(str),flag);
+					if(pos != -1)
+					{
+						tot++;
+						flag[pos] = 1;
+						tab[pos] = s;
+						M.insert(pair<string, int>(s, pos));
+					}
+				}
+			}
+			else if(!strcmp(op,"DEL"))
+			{
+				if(M.find(s)!=M.end())
+				{
+					flag[M[s]] = 0;
+					M.erase(s);
+					tot--;
+				}
+			}
+		}
+		printf("%d\n",tot);
+		for(i=0;i<101;i++)
+			if(flag[i])
+				printf("%d:%s\n",i,tab[i].c_str());
+	}
+	return 0;
 }
