@@ -1,5 +1,6 @@
 /*
 705. New Distinct Substrings
+suffix array
 Input:
 2
 CCCCC
@@ -8,40 +9,57 @@ Output:
 5
 9
 */
-#include <vector>
-#include <iostream>
-#include <map>
-
+include<cstdio>
+#include<cstring>
+#include<algorithm>
 using namespace std;
-int get(string str)
+
+char str[50005];
+int s[50005];
+long long l;
+
+int cmp(const void *a,const void *b) 
 {
-    int len=str.length();
-    vector<map<string, int> > vec(len-1);
-    for(int i=1;i<len;i++)
-    {
-        for(int j=0;j<len-i+1;j++)
-        {
-            string tocheck=str.substr(j,i);
-            //cout<<"tocheck="<<tocheck<<endl;
-            if(vec[i-1].find(tocheck)==vec[i-1].end())
-                vec[i-1].insert(pair<string,int>(tocheck,1));
-        }
-    }
-    int ret=1;
-    for(int i=0;i<len-1;i++)
-    {
-        ret+=vec[i].size();
-    }
-    return ret;
+	return (strcmp((str+ *((int*)a)),(str+ *((int*)b))));
 }
-int main()
+
+void suffix_array(int n) 
 {
-    int n,i;
-    cin>>n;
-    vector<string> inputs(n);
-    for(i=0;i<n;i++)
-        cin>>inputs[i];
-    for(i=0;i<n;i++)
-        cout<<get(inputs[i])<<endl;
-    return 0;    
+	int i;
+	for(i=0;i<n;i++) 
+        s[i]=i;
+	qsort(s,n,sizeof(int),cmp);
+}
+
+long long lcp(void) {
+	int i, j, k;
+	long long count = 0;
+	char *z = str, *y = str;
+	int p[50005] = {0};
+	for(i=1,k=0;i<l;i++,k=0) 
+    {
+		z = str + s[i];
+		y = str + s[i-1];
+		while(*z==*y) 
+        {
+			p[i]++;
+			z++;
+			y++;
+		} 
+		count += p[i];
+	}
+	return count;
+}
+int main() {
+	int n, i, j, c;
+	scanf("%d",&n);
+	while(n--) 
+    {
+		scanf("%s",str);
+		l = strlen(str);
+		suffix_array(l);
+		c = lcp();
+		printf("%lld\n", (l*(l+1)/2)-c);
+	}
+	return 0;
 }
