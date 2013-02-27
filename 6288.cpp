@@ -17,27 +17,40 @@ Output:
 25
 9
 */
-#include <queue>
 #include <stdio.h>
+#include <vector>
 #include <iostream>
 
 using namespace std;
 
-/*class Node
+int bfs(vector<vector<int> > &edges, vector<int> &res, int node, int root)
 {
-public:
-	int id;
-	int number;
-};*/
+    int ret=1;
+    for(int i=0;i<edges[node].size();i++)
+    {
+        if(edges[node][i]!=root)
+        {
+            ret+=bfs(edges,res,edges[node][i],node)+1;
+        }
+    }
+    res[node]=ret;
+    return ret;
+}
 
-//class Leaf:public Node
-class Node
+int bfs(vector<vector<int> > &edges)
 {
-public:
-	int id;
-	int number;
-	vector<Node> leaves;
-};
+    vector<int> res(edges.size(),0);
+    int ret=1;
+    for(int i=0;i<edges[0].size();i++)
+    {
+        ret+=bfs(edges,res,edges[0][i],0)+1;
+    }
+    res[0]=ret;
+    int total=0;
+    for(int i=0;i<res.size();i++)
+        total+=res[i];
+    return total;
+}
 
 int main()
 {
@@ -49,89 +62,19 @@ int main()
         scanf("%d",&n);
         if(n>1)
         {
-            vector<pair<int, int> > edges;
-            vector<int> conns(n,0);
-			vector<int> done(n,0);
+            vector<vector<int> > edges(n);
             for(j=0;j<n-1;j++)
             {
                 int f,s;
                 scanf("%d %d",&f, &s);
-                edges.push_back(pair<int, int>(f,s));
-				conns[f]++;
-				conns[s]++;
+                edges[f].push_back(s);
+                edges[s].push_back(f);
 			}
-            bool all=true;
-			for(j=0;j<n;j++)
-            {
-				printf("conns[%d] = %d\n", j, conns[j]);
-				if(conns[j]==1)
-				{
-					done[j]=1;
-				}
-				else
-				{
-					all=false;
-				}
-            }
-			int count=0;
-			while(all==false)
-			{
-				all=true;
-				for(j=0;j<n;j++)
-				{
-					printf("done[%d] = %d\n", j, done[j]);
-					if(done[j]==0)
-					{
-						int total=0;
-						bool got=true;
-						for(l=0;l<n-1;l++)
-						{
-							count++;
-							if(count>100)
-								break;
-							//printf("edges[%d].first=%d, edges[%d].second=%d\n",l,edges[l].first,l,edges[l].second);	
-							if(edges[l].first==j)
-							{
-								if(done[edges[l].second])
-									total+=done[edges[l].second]+1;
-								else
-								{
-									got=false;
-									break;
-								}
-							}
-							else if(edges[l].second==j)
-							{
-								if(done[edges[l].first])
-									total+=done[edges[l].first]+1;
-								else
-								{
-									got=false;
-									break;
-								}
-							}
-							
-						}
-						if(got)
-						{
-							done[j]=total+1;
-							printf("set done[%d]=%d\n",j,total+1);
-						}	
-						else
-						{
-							all=false;
-							break;
-						}
-					}
-				}
-			}
-			int max=0;
-			for(j=0;j<n;j++)
-			{
-				max+=done[j];
-			}
-			printf("%d\n",max);
+            int ret=bfs(edges);
+            printf("%d\n",ret);            
 		}
+        else
+            printf("1\n");       
     }
 	return 0;
 }
