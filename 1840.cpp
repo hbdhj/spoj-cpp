@@ -17,56 +17,45 @@ Output:
 */
 
 #include <iostream>
-#include <algorithm>
+#include <queue>
 #include <vector>
-
 using namespace std;
+
+#define pii pair< int, int >
 
 int main()
 {
-    int i,j,n,qn,pos;
-    scanf("%d", &n);
-    vector<int> poss(n);
-    vector<vector<int> > queues;
-    for(i=0;i<n;i++)
-    {
-        scanf("%d %d", &qn, &poss[i]);
-        vector<int> queue(qn);
-        for(j=0;j<qn;j++)
-        {
-            scanf("%d",&queue[j]);
-        }
-        queues.push_back(queue);
-    }
-    for(i=0;i<n;i++)
-    {
-        //int ret = count(queues[i].begin()+poss[i]+1, queues[i].end(), queues[i][poss[i]]);
-        //ret += count(queues[i].begin(), queues[i].end(), queues[i][poss[i]]);
-        int big=0;
-        int same=0;
-        int same_pos=0;
-        for(j=0;j<poss[i];j++)
-        {
-            if(queues[i][j]>queues[i][poss[i]])
-                big++;
-            if(queues[i][j]==queues[i][poss[i]])
-            {
-                same_pos++;
-                same++;
-            }    
-        }
-        for(j=poss[i]+1;j<queues[i].size();j++)
-        {
-            if(queues[i][j]>queues[i][poss[i]])
-                big++;
-            if(queues[i][j]==queues[i][poss[i]])
-                same++;
-        }
-        printf("%d %d %d\n",big, same, same_pos);
-        if(same)
-            printf("%d\n",big);
-        else
-            printf("%d\n",big);
-    }
-    return 0;
+	int test, n, myjob, prio, i, t;
+	ios::sync_with_stdio(false);
+	cin >> test;
+	while(test--)
+	{
+		queue< pii > Q;
+		priority_queue< int > PQ;
+		cin >> n >> myjob;
+		for(i=0; i<n; i++)
+		{
+			cin >> prio;
+			PQ.push(prio);
+			Q.push(pii(i,prio));
+		}
+		t = 0;
+		while(!Q.empty())
+		{
+			i = Q.front().first;
+			prio = Q.front().second;
+			Q.pop();
+			if(prio != PQ.top()) 
+                Q.push(pii(i,prio));
+			else
+			{
+				t++;
+				PQ.pop();
+				if(i==myjob) 
+                    break;
+			}
+		}
+		cout << t << endl;
+	}
+	return 0;
 }
