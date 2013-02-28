@@ -17,48 +17,47 @@ Input:
 Output:
 970
 */
-#include <stdio.h>
-#include <vector>
-#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
 using namespace std;
-int main()
+
+const int INF = 0x3f3f3f3f;
+int dp[11][1<<11], pl[11][11];
+
+int solve(int pos, int mask) 
 {
-    int i,j,l,t;
-    scanf("%d",&t);
-    
-    while(t--)
+	if(pos == 11) {
+		if(mask != (1<<11)-1) 
+            return -INF;
+		else 
+            return 0;
+	}
+	if(dp[pos][mask] > -1) 
+        return dp[pos][mask];
+	int &ret = dp[pos][mask]; 
+    ret = -INF;
+	for(int i = 0, temp; i < 11; i++) 
     {
-        vector<vector<int> > pos(11, vector<int>(11, 0));
-        for(i=0;i<11;i++)
+		if(pl[i][pos] && !(mask&(1<<i))) 
         {
-            for(j=0;j<11;j++)
-            {
-                scanf("%d",&pos[i][j]);
-            }
-        }
-        for(i=1;i<11;i++)
-        {
-            for(j=0;j<11;j++)
-            {
-                if(pos[i][j])
-                {
-                    int max=0;
-                    for(l=0;l<11;l++)
-                        if(l!=j)
-                            if(max<pos[i-1][l])
-                                max=pos[i-1][l];
-                    //printf("pos[%d][%d](%d)+=max(%d)\n",i,j,pos[i][j],max);            
-                    pos[i][j]+=max;
-                }
-            }
-        }
-        int ret=0;
-        for(i=0;i<11;i++)
-        {
-            if(ret<pos[10][i])
-                ret=pos[10][i];
-        }
-        printf("%d\n",ret);
-    }
-    return 0;
+			temp = pl[i][pos] + solve(pos + 1, mask | (1 << i));
+			ret = max(ret, temp);
+		}
+	}
+	return ret;
+}
+
+int main() {
+	int test, i, j;
+	scanf("%d", &test);
+	while(test--) 
+    {
+		for(i = 0; i < 11; i++)
+			for(j = 0; j < 11; j++)
+				scanf("%d", &pl[i][j]);
+		memset(dp, -1, sizeof(dp));
+		printf("%d\n", solve(0, 0));
+	}
+	return 0;
 }
