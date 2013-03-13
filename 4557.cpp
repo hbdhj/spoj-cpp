@@ -27,45 +27,20 @@ Output:
 7 6 3 
 */
 
-#include <iostream>
-#include <vector>
+#include <stdio.h>
 
-using namespace std;
-
-void musicChair(int N, int D)
+int solve(int n, int d)
 {
-    int ret=1;
-    int m=N;
-    while (m>0) {
-        ret*=D;
-        m--;
-    }
-    
-    printf("%d %d %d %d\n", ret, N, D, ret%N+1);
+	register int i, a = 0;
+	for(i=2; i<=n; i++)
+		a = (a+d)%i;
+	return a;
 }
 
 int main()
 {
-    /*int i,N D;
-    scanf("%d %d", &N, &D);
-    vector<int> inputs;
-    while ((N!=0)&&(D!=0)) {
-        inputs.push_back(N);
-        inputs.push_back(D);
-        scanf("%d %d", &N, &D);
-    }
-    for(i=0;i<inputs.size()/2;i++)
-    {
-        N=inputs[i*2];
-        D=inputs[i*2+1];
-        musicChair(N,D);
-    }*/
-    musicChair(5,2);
-    musicChair(5,3);
-    musicChair(5,4);
-    musicChair(7,3);
-    musicChair(7,4);
-    musicChair(7,5);
-    musicChair(7,6);
-    return 0;
+	int n, d;
+	while(scanf("%d%d", &n, &d)==2 && n+d)
+		printf("%d %d %d\n", n, d, solve(n, d) + 1);
+	return 0;
 }
