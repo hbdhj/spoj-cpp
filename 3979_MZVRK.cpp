@@ -9,30 +9,37 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-long long whirligig(long long n)
-{
-    vector<int> digits;
-    while (n) {
-        digits.push_back(n%2);
-        n=n/2;
-    }
-    long long ret=1;
-    for(int i=0;i<digits.size();i++)
-    {
-        if (digits[i]==1) {
-            break;
-        }
-        ret*=2;
-    }
-    return ret;
+
+const int MAX = 50;
+long long sumd[MAX];
+
+void calc() {
+	sumd[0] = 1;
+	for(int i=1; i<MAX; i++) 
+        sumd[i] = (sumd[i-1]<<1) + (1LL<<i);
 }
 
-int main()
+long long getSum(long long n) 
 {
-    //cout<<"whirligig(176)="<<whirligig(176)<<endl;
-    //cout<<"whirligig(177)="<<whirligig(177)<<endl;
-    long long m,n;
-    cin>>m>>n;
-    cout<<whirligig(m)+whirligig(n)<<endl;
-    return 0;
+	int i;
+	long long v, sum = 0;
+	while(n) 
+    {
+		for(i=0; i<MAX; i++)
+			if((1LL<<i) > n)
+				break;
+		i--; 
+        v = 1LL<<i;
+		sum += sumd[i] - ((i>0)?sumd[i-1]:0);
+		n -= v;
+	}
+	return sum;
+}
+
+int main() {
+	long long a, b;
+	cin >> a >> b;
+	calc();
+	cout << getSum(b)-getSum(a-1) << endl;
+	return 0;
 }
