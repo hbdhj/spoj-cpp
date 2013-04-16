@@ -1,4 +1,5 @@
 /*
+ALGO: math
 Input:
 1 10
 100 777
@@ -6,40 +7,57 @@ Input:
 Output:
 46
 8655
-*/
-#include <iostream>
-#include <vector>
+ */
 
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 using namespace std;
 
-unsigned long long int count(unsigned long long int i)
+typedef long long i64;
+const i64 p10[] = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
+
+void countdigits(char *num, int p, i64 *cnt) 
 {
-    cout<<"Count for "<<i<<endl;
-    int ret=0;
-    int base=1;
-    while(i>0)
+	int i, now, last;
+	if(!p) 
     {
-        cout<<"i%10 = "<<i%10<<endl;
-        ret+=(i%10+1)*(i%10)/2*base;
-        cout<<"ret = "<<ret<<endl;
-        base*=46;
-        i=i/10;
-    }
-    return ret;
+		for(i = 0; i <= *num-'0'; i++) 
+            cnt[i]++;
+		return;
+	}
+	for(i = 0; i < *num-'0'; i++) 
+        cnt[i] += p10[p];
+	for(i = 0; i < 10; i++) 
+        cnt[i] += (i64)(*num-'0') * p * p10[p-1];
+	last = (*num - '0') * p10[p];
+	sscanf(num, "%d", &now);
+	cnt[*num-'0'] += now - last + 1;
+	countdigits(&num[1], p-1, cnt);
 }
-int main()
+
+int main() 
 {
-    cout<<count(9)<<endl;
-    cout<<count(10)<<endl;
-    cout<<count(19)<<endl;
-    cout<<count(20)<<endl;
-    cout<<count(90)<<endl;
-    cout<<count(99)<<endl;
-    cout<<count(100)<<endl;
-    /*for(int i=1;i<100;i++)
+	int n1, n2, i;
+	i64 cnt1[10], cnt2[10], ans;
+	char s1[11], s2[11];
+	while(scanf("%d %d", &n1, &n2)==2 && n1>-1) 
     {
-        cout<<count(i)<<", ";
-        if(i%10==0)
-            cout<<endl;
-    }*/
+		memset(cnt1, 0, sizeof cnt1); // n1-1
+		memset(cnt2, 0, sizeof cnt2); // n2
+		if(n1 > 1) 
+        {
+			sprintf(s1, "%d", n1-1);
+			countdigits(s1, strlen(s1)-1, cnt1);
+		}
+		if(n2 > 0) 
+        {
+			sprintf(s2, "%d", n2);
+			countdigits(s2, strlen(s2)-1, cnt2);
+		}
+		for(ans = 0, i = 1; i < 10; i++) 
+            ans += (cnt2[i] - cnt1[i]) * i;
+		printf("%lld\n", ans);
+	}
+	return 0;
 }
