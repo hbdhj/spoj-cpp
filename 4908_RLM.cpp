@@ -23,116 +23,56 @@
  15 / 16 = 10
  */
 #include <iostream>
-#include <vector>
-
-using namespace std;
-
-long long str2longlong(string str)
+#include <string.h>
+long long decode(char *str) 
 {
-    long long ret=0;
-    int length=str.length();
-    for(int i=0;i<length/2;i++)
+	long long ret = 0;
+	int p, q;
+	for(int i=0; str[i]; i+=2) 
     {
-        
-        int digit=str[i*2+1]-'0';
-        int digit_num=str[i*2]-'0';
-        while (digit_num--) 
-        {
-            ret*=10;
-            ret+=digit;
-        }
-    }
-    return ret;
+		p = str[i]-'0';
+		q = str[i+1]-'0';
+		while(p--) 
+            ret = ret*10 + q;
+	}
+	return ret;
 }
 
-string longlong2str(long long ll)
+void encode(long long n1, long long n2, char *op, char *res) 
 {
-    string ret="";
-    int digit=10,digit_num=0;
-    while (ll) 
+	int k = 0, cnt;
+	long long r;
+	char temp[25], v;
+	switch(op[0]) 
     {
-        if(digit==10)
-        {
-            digit=ll%10;
-            digit_num=1;
-        }
-        else if(ll%10==digit)
-        {
-            digit_num++;
-            if(digit_num==9)
-            {
-                char d_c='0'+digit;
-                ret=d_c+ret;
-                ret='9'+ret;
-                
-                digit=ll%10;
-                digit_num=0;
-            }
-
-        }
-        else
-        {
-            char d_c='0'+digit;
-            char d_n_c='0'+digit_num;
-            
-            ret=d_c+ret;
-            ret=d_n_c+ret;
-            
-            digit=ll%10;
-            digit_num=1;
-        }
-        ll=ll/10;
-    }
-    char d_n_c='0'+digit_num;
-    char d_c='0'+digit;
-    
-    ret=d_c+ret;
-    ret=d_n_c+ret;
-    return ret;
+		case '+': r = n1 + n2; break;
+		case '-': r = n1 - n2; break;
+		case '*': r = n1 * n2; break;
+		case '/': r = n1 / n2; break;
+	}
+	sprintf(temp, "%lld", r);
+	for(int i=0, j; temp[i]; i=j) 
+    {
+		v = temp[i];
+		for(j=i,cnt=0; j<i+9 && temp[j] && v==temp[j]; j++,cnt++);
+		res[k++] = cnt+'0';
+		res[k++] = v;
+	}
+	if(!k) 
+        strcpy(res,"10"), k+=2;
+	res[k] = 0;
 }
 
-string cal(string str1, string op, string str2)
+int main() 
 {
-    string ret="";
-    switch (op[0]) {
-        case '+':
-            ret=longlong2str(str2longlong(str1)+str2longlong(str2));
-            break;
-            
-        case '-':
-            ret=longlong2str(str2longlong(str1)-str2longlong(str2));
-            break;
-            
-        case '*':
-            ret=longlong2str(str2longlong(str1)*str2longlong(str2));
-            break;
-            
-        case '/':
-            ret=longlong2str(str2longlong(str1)/str2longlong(str2));
-            break;
-            
-        default:
-            break;
-    }
-    return ret;
-}
-
-int main()
-{
-    //cout<<"sizeof(long long int) = "<<sizeof(long long int)<<endl;
-    char s1[30], ch[1], s2[30];
-    while (scanf("%s %[+-*/] %s",s1,ch,s2) !=EOF) 
+	char num1[25], num2[25], op[2], res[50];
+	long long n1, n2;
+	while(scanf("%s%s%s", num1, op, num2)==3) 
     {
-        //cout<<s1<<", "<<ch<<", "<<s2<<endl;
-        string str1=s1;
-        string str2=s2;
-        string op=ch;
-        cout<<cal(str1, op, str2)<<endl;
-    }
-    /*cout<<"longlong2str(1111111111111) = "<<longlong2str(1111111111111)<<endl;
-    cout<<"11 + 11 = "<<cal("11", "+", "11")<<endl;
-    cout<<"988726 - 978625 = "<<cal("988726", "-", "978625")<<endl;
-    cout<<"12 * 41 = "<<cal("12", "*", "41")<<endl;
-    cout<<"1124 / 1112 = "<<cal("1124", "/", "1112")<<endl;*/
-    return 0;
+		n1 = decode(num1);
+		n2 = decode(num2);
+		encode(n1, n2, op, res);
+		printf("%s %s %s = %s\n", num1, op, num2, res);
+	}
+	return 0;
 }
