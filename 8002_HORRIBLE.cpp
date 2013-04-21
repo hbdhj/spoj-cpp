@@ -22,6 +22,7 @@
  508
  */
 #include <iostream>
+#include <string.h>
 const int MAX = 1 << 18;
 long long Tree[MAX][2]; // 0 sum, 1 add
 
