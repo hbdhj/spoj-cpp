@@ -37,17 +37,27 @@ vector< pii > G[7];
 int solve(int item, int money) 
 {
 	if(money < 0) 
+    {
+        //printf("solve(%d, %d) = %d\n", item, money, 0);
         return 0;
-	if(item > 6) 
-        return 0x3f3f3f3f;
+	}
+    if(item > 6) 
+    {
+        //printf("solve(%d, %d) = %d\n", item, money, 0x3f3f3f3f);
+        return 0x3f3f3f3f;    
+    }
 	if(dp[item][money]!=-1) 
+    { 
+        //printf("solve(%d, %d) = %d\n", item, money, dp[item][money]);
         return dp[item][money];
-	int& ret = dp[item][money];
+	}
+    int& ret = dp[item][money];
 	ret = 0;
 	for(unsigned i = 0; i < G[item].size(); i++)
 		if(money >= G[item][i].first)
 			ret = max(ret, min(G[item][i].second, solve(item+1, money - G[item][i].first)));
-	return ret;
+	//printf("solve(%d, %d) = %d\n", item, money, ret);
+    return ret;
 }
 
 int main() 

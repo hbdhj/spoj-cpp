@@ -31,15 +31,36 @@ int main()
 	{
 		scanf("%d", &k);
 		for(i=0; i<k; i++) 
+        {    
             scanf("%d", &c[i]);
-		for(i=1; i<k; i++) 
+		}
+        for(i=1; i<k; i++) 
+        {
             c[i] += c[i-1];
+        }
+        /*for (i=0; i<k; i++) 
+        {
+            printf("c[%d] = %d\n",i, c[i]);
+        }*/
 		memset(f, 0, sizeof(f));
 		f[0] = 1;
 		for(i=k-1; i>=0; i--)
+        {
+            //printf("i = %d, c[%d] = %d\n",i, i, c[i]);
 			for(j=c[i]; j<=m; j++)
+            {
 				f[j] |= f[j-c[i]];
-		if(f[m]) 
+                /*if(f[j])
+                    printf("f[%d]=true\n",j);
+                else
+                    printf("f[%d]=false\n",j);*/
+            }
+        }
+        /*if(f[m])
+            printf("f[%d]=true\n",m);
+        else
+            printf("f[%d]=false\n",m);*/
+        if(f[m]) 
             printf("YES\n");
 		else 
             printf("NO\n");
