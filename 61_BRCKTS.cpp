@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 /*
+ ALGO: segment tree
  Input:
  4
  ()((

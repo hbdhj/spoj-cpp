@@ -1,5 +1,6 @@
 /* 
-7299. Multiples of 3
+TASK: Multiples of 3
+ALGO: segment tree
 Sample Input :
 4 7
 1 0 3
