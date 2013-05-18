@@ -1,5 +1,6 @@
 /*
 1805. Largest Rectangle in a Histogram
+ALGO: stack
 input
 7 2 1 4 5 1 3 3
 4 1000 1000 1000 1000
@@ -8,46 +9,38 @@ output
 8
 4000
 */
-#include <stdio.h>
-#include <vector>
 #include <iostream>
-using namespace std;
-int main()
+
+template< class T > T _max(T a, T b) { return (!(a < b) ? a : b); }
+
+#define i64 long long
+
+const int MAX = 100009;
+
+i64 calc(int *ht, int n) 
 {
-    int n;
-    scanf("%d",&n);
-    while(n>0)
+	i64 ret = 0;
+	int top = 1, st[MAX], i;
+	ht[0] = st[0] = ht[++n] = 0;
+	for(i = 1; i <= n; i++) 
     {
-        vector<long> hlist(n);
-        for(int i=0;i<n;i++)
+		while(top > 1 && ht[st[top-1]] >= ht[i]) 
         {
-            scanf("%ld",&hlist[i]);
-        }
-        long long max=hlist[0];
-        for(int i=0;i<n;)
-        {
-            long min=hlist[i];
-            long long area=hlist[i];
-            long long local_max_area=hlist[i];
-            for(int j=i;j<n;)
-            {
-                if(hlist[j]<min)
-                    min=hlist[j]
-                area=min*(j-i+1);
-                if(area>local_max_area)
-                {
-                    local_max_area=area;
-                    j++;
-                }
-                else
-                {
-                    i++;
-                    break;
-                }    
-            }
-        }
-        printf("\n");
-        scanf("%d",&n);
-    }
-    return 0;
+			ret = _max(ret, (i64)ht[st[top-1]]*(i64)(i - st[top-2]-1));
+			top--;
+		}
+		st[top++] = i;
+	}
+	return ret;
+}
+
+int main() {
+	int n, i, ht[MAX];
+	while(scanf("%d", &n)==1 && n) 
+    {
+		for(i = 1; i <= n; i++) 
+            scanf("%d", &ht[i]);
+		printf("%lld\n", calc(ht, n));
+	}
+	return 0;
 }
