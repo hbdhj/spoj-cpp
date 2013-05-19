@@ -29,6 +29,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -38,12 +39,42 @@ int main()
     scanf("%d", &n);
     while (n) 
     {
-        vector<int> ai, bi;
+        vector<int> ai(n,0), bi(n,0);
         for (int i=0; i<n; i++) 
         {
             scanf("%d %d", &ai[i], &bi[i]);
         }
-        
+        map<int, int> num;
+        int cur=0;
+        while (true)
+        {
+            bool find = false;
+            for (int i=0; i<n; i++) 
+            {
+                int check = ai[i]+cur*bi[(i+1)%n];
+                //printf("checking %d in map, which size is %d\n", check, num.size());
+                if(num.find(check)!=num.end())
+                {
+                    num[check]++;
+                    if(num[check]==n)
+                    {
+                        find = true;
+                    }
+                }
+                else
+                {
+                    num.insert(pair<int, int>(check,1));
+                }
+            }
+            if (find) 
+            {
+                printf("%d\n", cur);
+                break;
+            }
+            cur++;
+        }
         scanf("%d", &n);
+        //printf("n = %d\n", n);
     }
+    return 0;
 }
