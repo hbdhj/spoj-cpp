@@ -1,6 +1,6 @@
 /*
 3934. Recaman's Sequence
-ad-hoc
+ALGO: ad-hoc
 7
 10000
 -1
