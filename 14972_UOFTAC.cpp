@@ -44,7 +44,7 @@ int main()
 		{
 			cin>>underground[i];
 		}
-		int s_w=0, s_h=0, t_n=0;
+		int s_w=0, s_h=-1, t_n=0;
 		vector<char> steps(s);
 		for(int i=0; i<s; i++)
 		{
@@ -52,29 +52,70 @@ int main()
 			switch(steps[i])
 			{
 				case D:
-					s_h++;
+					if((s_h+1)<h) //Not the bottom
+					{
+						switch(underground[s_h+1][s_w])
+						{
+							case T:
+								t_n++;
+								s_h++;
+								break;
+							case S:
+								break;
+							case D:
+								s_h++;
+								break;	
+							case E:
+								while((s_h+1)<h)
+								{
+									if(underground[s_h+1][s_w]!='E')
+										break;
+									else
+										s_h++;
+								}
+								break;	
+						}
+					}
 					break;
 				case L:
-					if(s_w)
+					if(s_h>=0processErrorFrameEvent) //Not the bottom
+					{
+						switch(underground[s_h][s_w-1])
+						{
+							case T:
+								t_n++;
+								s_w--;
+								break;
+							case S:
+								break;
+							case D:
+								s_w--;
+								break;	
+							case E:
+								s_w--;
+								while((s_h+1)<h)
+								{
+									if(underground[s_h][s_w]!='E')
+										break;
+									else
+										s_h++;
+								}
+								break;	
+						}
+					}
+					else if(s_w)
 						s_w--;
 					break;
 				case R:
-					if(s_w<w-1)
+					if(s_h>=0) //Not the bottom
+					{
+						
+					}
+					else if(s_w<w-1)
 						s_w++;
 					break;
 			}
-			switch(underground[s_h][s_w])
-			{
-				case D:
-					s_h++;
-					break;
-				case L:
-					if(s_w)
-						s_w--;
-					break;
-				case R:
 			
-			}
 		}
 	}
 	return 0;
