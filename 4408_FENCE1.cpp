@@ -1,4 +1,7 @@
-/*Deng Haijun 2012/12/13 4408. Build a Fence */
+/*
+Deng Haijun 2012/12/13 
+TASK: 4408. Build a Fence
+*/
 
 #include <iostream>
 #include <vector>

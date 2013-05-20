@@ -1,5 +1,6 @@
 /*
-4452. Simple Arithmetics II
+TASK: 4452. Simple Arithmetics II
+ALGO: ad-hoc
 Input:
 4
 1 + 1 * 2 =
