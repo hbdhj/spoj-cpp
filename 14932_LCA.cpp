@@ -35,24 +35,37 @@ int main()
 {
     int t;
     cin>>t;
-    while (t--)
+	
+    for (int ti=0;ti<t;ti++)
     {
         int n;
-        cin>>n;
-        vector<vector<int>> tree(n, vector<int>(0,0));
+        //cin>>n;
+        scanf("%d", &n);
+        //vector<vector<int>> ancestor(n, vector<int>(0,0));
+        vector<vector<int> > ancestors(n);
         for(int i=0;i<n;i++)
         {
-            
+            scanf("%d", &m);
+			for(int j=0;j<m;j++)
+        	{
+        		int nd;
+        		scanf("%d", &nd);
+				ancestor[nd-1].push_back(i);
+			}
         }
         int m;
-        cin>>m;
+        scanf("%d", &m);
         vector<pair<int, int>> queries;
         for(int i=0;i<m;i++)
         {
             int s_n,t_n;
-            cin>>s_n>>t_n;
-            
+            scanf("%d %d", &s_n, &t_n);
+			queries.push_back(pair<int, int>(s_n, t_n));
         }
-        
-    }
+		for(int i=0;i<m;i++)
+        {
+            printf("Case %d 0\n",ti+1);
+        }
+	}
+	return 0;
 }
