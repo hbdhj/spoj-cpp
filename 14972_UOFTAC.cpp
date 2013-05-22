@@ -78,7 +78,7 @@ int main()
 					}
 					break;
 				case L:
-					if(s_h>=0processErrorFrameEvent) //Not the bottom
+					if(s_h>=0) //Not the bottom
 					{
 						switch(underground[s_h][s_w-1])
 						{
