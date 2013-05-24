@@ -100,8 +100,10 @@ const int MAX = (1<<18);
 
 struct NODE { int d[3], flip; } Tree[MAX];
 
-void init(int Node, int S, int E) {
-	if(S == E) {
+void init(int Node, int S, int E) 
+{
+	if(S == E) 
+	{
 		Tree[Node].d[0] = 1;
 		return;
 	}
@@ -112,8 +114,10 @@ void init(int Node, int S, int E) {
 	Tree[Node].d[0] = Tree[L].d[0] + Tree[R].d[0];
 }
 
-void update(int Node, int S, int E, int i, int j) {
-	if(i==S && j==E) {
+void update(int Node, int S, int E, int i, int j) 
+{
+	if(i==S && j==E)
+	{
 		Tree[Node].flip++;
 		swap(Tree[Node].d[0], Tree[Node].d[1]);
 		swap(Tree[Node].d[0], Tree[Node].d[2]);
@@ -121,16 +125,20 @@ void update(int Node, int S, int E, int i, int j) {
 	}
 	int L, R, M;
 	L = Node << 1; R = L + 1; M = (S + E) >> 1;
-	if(j <= M) update(L, S, M, i, j);
-	else if(i > M) update(R, M+1, E, i, j);
-	else {
+	if(j <= M) 
+		update(L, S, M, i, j);
+	else if(i > M) 
+		update(R, M+1, E, i, j);
+	else 
+	{
 		update(L, S, M, i, M);
 		update(R, M+1, E, M+1, j);
 	}
 	Tree[Node].d[0] = Tree[L].d[0] + Tree[R].d[0];
 	Tree[Node].d[1] = Tree[L].d[1] + Tree[R].d[1];
 	Tree[Node].d[2] = Tree[L].d[2] + Tree[R].d[2];
-	switch(Tree[Node].flip % 3) {
+	switch(Tree[Node].flip % 3) 
+	{
 		case 1:
 			swap(Tree[Node].d[0], Tree[Node].d[1]);
 			swap(Tree[Node].d[0], Tree[Node].d[2]);
@@ -142,8 +150,10 @@ void update(int Node, int S, int E, int i, int j) {
 	}
 }
 
-int query(int Node, int S, int E, int i, int j, int flips) {
-	if(S==i && E==j) {
+int query(int Node, int S, int E, int i, int j, int flips) 
+{
+	if(S==i && E==j) 
+	{
 		switch(flips % 3) {
 			case 0: return Tree[Node].d[0];
 			case 1: return Tree[Node].d[2];
@@ -154,21 +164,34 @@ int query(int Node, int S, int E, int i, int j, int flips) {
 	int L, R, M;
 	L = Node << 1; R = L + 1; M = (S + E) >> 1;
 	flips += Tree[Node].flip;
-	if(j <= M) return query(L, S, M, i, j, flips);
-	else if(i > M) return query(R, M+1, E, i, j, flips);
-	else return query(L, S, M, i, M, flips) + query(R, M+1, E, M+1, j, flips);
+	if(j <= M) 
+		return query(L, S, M, i, j, flips);
+	else if(i > M) 
+		return query(R, M+1, E, i, j, flips);
+	else 
+		return query(L, S, M, i, M, flips) + query(R, M+1, E, M+1, j, flips);
 }
 
-int main() {
+int main() 
+{
 	int n, q, t, i, j;
 	FastRead r(4194304);
-	n = r.nextInt(); q = r.nextInt();
+	n = r.nextInt();
+	q = r.nextInt();
 	init(1, 0, n-1);
-	while(q--) {
-		t = r.nextInt(); i = r.nextInt(); j = r.nextInt();
-		switch(t) {
-			case 0: update(1, 0, n-1, i, j); break;
-			case 1: printf("%d\n", query(1, 0, n-1, i, j, 0)); break;
+	while(q--) 
+	{
+		t = r.nextInt(); 
+		i = r.nextInt(); 
+		j = r.nextInt();
+		switch(t) 
+		{
+			case 0: 
+				update(1, 0, n-1, i, j); 
+				break;
+			case 1: 
+				printf("%d\n", query(1, 0, n-1, i, j, 0)); 
+				break;
 		}
 	}
 	return 0;
