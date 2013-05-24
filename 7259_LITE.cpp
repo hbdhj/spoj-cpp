@@ -8,6 +8,17 @@
 
 /*
  ALGO: segment tree
+ Input:
+ 4 5
+ 0 1 2
+ 0 2 4
+ 1 2 3
+ 0 2 4
+ 1 1 4
+ 
+ Output:
+ 1
+ 2
  */
 
 #include <cstdio>
@@ -93,6 +104,9 @@ int main()
                 printf("%d\n", query(1, 0, n-1, i-1, j-1)); 
                 break;
 		}
+        /*for(int l=0; l<n; l++)
+            printf("%d %d, ",T[l].total, T[l].state);
+        printf("\n");*/
 	}
 	return 0;
 }
