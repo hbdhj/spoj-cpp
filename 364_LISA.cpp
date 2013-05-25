@@ -25,7 +25,7 @@
 
 using namespace std;
 
-int solve1(string str)
+unsigned long long solve1(string str)
 {
     //cout<<"solve1 str = "<<str<<endl;
     size_t foundStar = str.find('*');
@@ -52,7 +52,7 @@ int solve1(string str)
     }
 };
 
-int solve2(string str)
+unsigned long long solve2(string str)
 {
     //cout<<"str = "<<str<<endl;
     size_t foundStar = str.find('*');
@@ -84,11 +84,12 @@ int main()
 {
     int n;
     cin>>n;
-    while (n--) {
+    while (n--) 
+    {
         string str;
         cin>>str;
-        int ret1=solve1(str);
-        int ret2=solve2(str);
+        unsigned long long ret1=solve1(str);
+        unsigned long long ret2=solve2(str);
         if(ret1>ret2)
             cout<<ret1<<" "<<ret2<<endl;
         else
