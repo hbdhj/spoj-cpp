@@ -59,24 +59,31 @@ int dijkstra(cell start, cell dest)
 	grid[start.first][start.second] = '0';
 	memset(d, 64, sizeof(d));
 	d[start.first][start.second] = 0;
-	while(!Q.empty()) {
+	while(!Q.empty()) 
+    {
 		ui = Q.top().second.first;
 		uj = Q.top().second.second;
 		Q.pop();
-		for(int i=0; i<4; i++) {
+		for(int i=0; i<4; i++) 
+        {
 			vi = ui + dir[i].first;
 			vj = uj + dir[i].second;
-			if(isValid(cell(vi,vj)) && grid[vi][vj]!='X') {
-				if(grid[vi][vj]=='D') we = 0;
-				else we = grid[vi][vj] - '0';
-				if(d[ui][uj]+we < d[vi][vj]) {
+			if(isValid(cell(vi,vj)) && grid[vi][vj]!='X') 
+            {
+				if(grid[vi][vj]=='D') 
+                    we = 0;
+				else 
+                    we = grid[vi][vj] - '0';
+				if(d[ui][uj]+we < d[vi][vj]) 
+                {
 					d[vi][vj] = d[ui][uj] + we;
 					Q.push(edge(d[vi][vj], cell(vi,vj)));
 				}
 			}
 		}
 		grid[ui][uj] = 'X';
-		if(ui==dest.first && uj==dest.second) return d[ui][uj];
+		if(ui==dest.first && uj==dest.second) 
+            return d[ui][uj];
 	}
 	return -1;
 }
@@ -103,7 +110,8 @@ int main()
 {
 	while(scanf("%d%d", &C, &R)==2 && (R||C)) 
     {
-		for(int i=0; i<R; i++) scanf("%s", grid[i]);
+		for(int i=0; i<R; i++) 
+            scanf("%s", grid[i]);
 		printf("%d\n", dijkstra(findStart(), findDest()));
 	}
 	return 0;
