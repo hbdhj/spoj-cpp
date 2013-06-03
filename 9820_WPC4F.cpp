@@ -1,0 +1,70 @@
+//
+//  9820_WPC4F.cpp
+//  
+//
+//  Created by Haijun Deng on 13-6-3.
+//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//
+
+/*
+ TASK: Through the troops
+ ALGO: dynamic programming
+ Input
+ 2
+ 3
+ 0 1 2
+ 1 4 8
+ 9 2 5
+ 4
+ 10 10 10
+ 2 4 9
+ 12 7 10
+ 6 6 6
+ 
+ Output
+ 4
+ 25
+ */
+
+#include <cstdio>
+#include <cstring>
+#include <climits>
+#include <algorithm>
+using namespace std;
+
+int dp[20][3], cost[20][3];
+
+int solve(int pos, int state, int n) 
+{
+	if(pos == n) 
+        return 0;
+	if(dp[pos][state] != -1) 
+        return dp[pos][state];
+	int &ret = dp[pos][state]; 
+    ret = INT_MAX;
+	for(int i = 0; i < 3; i++)
+    {
+		if(i != state) 
+        {
+			ret = min(ret, solve(pos + 1, i, n) + cost[pos][state]);
+		}
+	}
+	return ret;
+}
+
+int main() 
+{
+	int test, n, i, ans;
+	scanf("%d", &test);
+	while(test--)
+    {
+		scanf("%d", &n);
+		for(i = 0; i < n; i++)
+            scanf("%d %d %d", &cost[i][0], &cost[i][1], &cost[i][2]);
+		memset(dp, -1, sizeof dp);
+		for(ans = INT_MAX, i = 0; i < 3; i++) 
+            ans = min(ans, solve(0, i, n));
+		printf("%d\n", ans);
+	}
+	return 0;
+}
