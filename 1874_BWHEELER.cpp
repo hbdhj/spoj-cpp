@@ -7,6 +7,20 @@
 //
 
 /*
+ TASK: Burrows Wheeler Precompression
+ ALGO: sorting
+ Sample Input:
+ 2
+ bacab
+ 3
+ rwlb
+ 11
+ baaabaaaabbbaba
+ 0
+ Sample Output:
+ abcba
+ rbwl
+ baaabbbbaaaaaab
 */
 #include <stdio.h>
 #include <stdlib.h> 
