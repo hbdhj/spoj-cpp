@@ -574,9 +574,12 @@ int main()
                 unsigned long long mod=10;
                 if(isPrime(start%mod)&&isPrime(start/mod))
                 {    
-                    printf("%lld\n",start);
+                    //printf("%lld %lld %lld\n",start, start%mod, start/mod);
+                    printf("%lld\n",start, start%mod, start/mod);
                     break;
-                }    
+                }
+                else
+                    mod*=10;
             }
             start++;
         }; 
