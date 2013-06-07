@@ -5,6 +5,21 @@
 //  Created by Haijun Deng on 13-6-7.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
+/*
+ TASK: Factorial vs Power
+ ALGO: math
+ DETAILS: log(2)+log(3)+...+log(n-1)+log(n)>n*log(a);
+ Input:
+ 3
+ 2
+ 3
+ 4
+ 
+ Output:
+ 4
+ 7
+ 9
+ */
 
 #include <iostream>
 #include <vector>
