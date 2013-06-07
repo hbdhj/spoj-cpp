@@ -12,35 +12,36 @@
 
 using namespace std;
 
-#define LG_SIZE 100000
+#define MAX 1000001
 
-int main()
+int a[MAX];
+
+int main() 
 {
-    int n,m,i;
-    vector<float> lg(LG_SIZE);
-    lg.push_back(0.0);
-    for (int i=2; i<LG_SIZE; i++) 
+	int i, j;
+	double left, right, v;
+	a[1] = 2;
+	left = log(2.0);
+	for(i=j=2; i<MAX; i++) 
     {
-        lg.push_back((log(float(i))+(i-1)*lg[i-2])/i);
-    }
-    /*for (int i=0; i<20; i++) 
-        printf("%.2f ", lg[i]);
-    printf("\n");
-    for (int i=0; i<20; i++) 
-        printf("%.2f ", log(float(i+1)));
-    printf("\n");*/
-    scanf("%d", &n);
-    while (n--)
-    {
-        scanf("%d", &m);
-        for (i=0; i<LG_SIZE; i++)
+		v = log((double)i);
+		for(++j; ;j++) 
         {
-            if(lg[i]>log(float(m)))
+			left += log((double)j);
+			right = v*j;
+			if(left > right) 
             {
-                break;
-            }
-        }
-        printf("%d\n", i+1);
-    }
-    return 0;
+				a[i] = j;
+				break;
+			}
+		}
+	}
+	int t, n;
+	scanf("%d", &t);
+	while(t--) 
+    {
+		scanf("%d", &n);
+		printf("%d\n", a[n]);
+	}
+	return 0;
 }
