@@ -1,97 +1,106 @@
 /*
-1029. Matrix Summation
+TASK: MATSUM
+ALGO: binary indexed tree
+ Input:
+ 1
+ 4
+ SET 0 0 1
+ SUM 0 0 3 3
+ SET 2 2 12
+ SUM 2 2 2 2
+ SUM 2 2 3 3
+ SUM 0 0 2 2
+ END
+ 
+ Output:
+ 1
+ 12
+ 12
+ 13
+ */
 
-Input:
-1
-4
-SET 0 0 1
-SUM 0 0 3 3
-SET 2 2 12
-SUM 2 2 2 2
-SUM 2 2 3 3
-SUM 0 0 2 2
-END
+#define _CRT_SECURE_NO_WARNINGS 1
 
-Output:
-1
-12
-12
-13
-*/
-
-
-#include <iostream>
-#include <map>
-#include <vector>
-
+#include <ios>
+#include <cstring>
 using namespace std;
 
-struct action
+#define MAX 1025
+
+int bit[MAX][MAX];
+
+void update(int n, int x, int y, int v)
 {
-    string act;
-    int start;  // point for set
-    int end;    // num for set
-};
+	int y1;
+	while(x <= n)
+	{
+		y1 = y;
+		while(y1 <= n)
+		{
+			bit[x][y1] += v;
+			y1 += (y1 & -y1);
+		}
+		x += (x & -x);
+	}
+}
+
+int readsum(int n, int x, int y)
+{
+	int v = 0, y1;
+	while(x > 0)
+	{
+		y1 = y;
+		while(y1 > 0)
+		{
+			v += bit[x][y1];
+			y1 -= (y1 & -y1);
+		}
+		x -= (x & -x);
+	}
+	return v;
+}
+
+void process(int n)
+{
+	int x1, x2, y1, y2;
+	int v1, v2, v3, v4, val;
+	memset(bit, 0, sizeof bit);
+	char com[5];
+	while(scanf("%s", com)==1)
+	{
+		if(!strcmp(com,"END")) 
+            break;
+		if(!strcmp(com,"SUM"))
+		{
+			scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
+			v1 = readsum(n, x1, y1);
+			v2 = readsum(n, x2+1, y2+1);
+			v3 = readsum(n, x2+1, y1);
+			v4 = readsum(n, x1, y2+1);
+			printf("%d\n", v1-v3-v4+v2);
+		}
+		else
+		{
+			scanf("%d %d %d", &x1, &y1, &val);
+			v1 = readsum(n, x1+1, y1+1);
+			v2 = readsum(n, x1, y1);
+			v3 = readsum(n, x1, y1+1);
+			v4 = readsum(n, x1+1, y1);
+			update(n, x1+1, y1+1, val-(v1-v3-v4+v2));
+		}
+	}
+}
 
 int main()
 {
-    int i, j, n;
-    vector<vector<action> > all_matrix_actions;
-    scanf("%d",&n);
-    vector<int> matrix_sizes(n);
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&matrix_sizes[i]);
-        char act_c[3];
-        scanf("%s", act_c);
-        string act_s=act_c;
-        vector<action> matrix_actions;
-        
-        while(act_s!="END")
-        {
-            action act;
-            if(act_s=="SET")
-            {
-                //printf("Now try to get set_x, set_y, set_num\n");
-                int set_x, set_y, set_num;
-                scanf("%d", &set_x);
-                scanf("%d", &set_y);
-                scanf("%d", &set_num);
-                act.act=act_c;
-                act.start=set_x*matrix_sizes[i]+set_y;
-                act.end=set_num;
-            }
-            else if(act_s=="SUM")
-            {
-                //printf("Now try to start_x, start_y, end_x, end_y\n");
-                int start_x, start_y, end_x, end_y;
-                scanf("%d", &start_x);
-                scanf("%d", &start_y);
-                scanf("%d", &end_x);
-                scanf("%d", &end_y);
-                act.act=act_c;
-                act.start=start_x*matrix_sizes[i]+start_y;
-                act.end=end_x*matrix_sizes[i]+end_y;
-            }
-            //printf("DEBUG1\n");
-            //printf("DEBUG2\n");
-            matrix_actions.push_back(act);
-            //printf("DEBUG3\n");
-            scanf("%s", act_c);
-            //printf("DEBUG4\n");
-            act_s=act_c;
-            //printf("DEBUG5\n");            
-        }
-        all_matrix_actions.push_back(matrix_actions);
-    }
-    for(i=0;i<n;i++)
-    {
-        printf("The %d cases:\n",i+1);
-        for(j=0;j<all_matrix_actions[i].size();j++)
-        {
-            printf("%s %d %d\n", all_matrix_actions[i][j].act.c_str(), all_matrix_actions[i][j].start, all_matrix_actions[i][j].end);
-        }
-        printf("\n");
-    }
-    return 0;
+	int n, t;
+	scanf("%d", &t);
+	while(t--)
+	{
+		scanf("%d", &n);
+		process(n);
+		printf("\n");
+	}
+	return 0;
 }
+
