@@ -1,5 +1,5 @@
 /*
-TASK: BOI7SEQ
+TASK: Sequence
 ALGO: stack
 Input:
 3
