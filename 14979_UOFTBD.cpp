@@ -7,7 +7,8 @@
 //
 /*
  Input:
- 7
+ 8
+ aa bb
  Somebody's Something of Whatever
  stone of jordan
  Wirt's Leg
@@ -70,12 +71,15 @@ int main()
         if((words.size()==2)&&(words[0]!="damaged"))
         {
             bRare=true;
-            bMagic=true;
+            //if(words[words.size()-2]!="of")
+                bMagic=true;
         }
         if((words.size()>2)&&(words.size()<5)&&(words[words.size()-2]=="of"))
         {
             bMagic=true;
         }
+        if(words[0]=="damaged")
+            bRare=bMagic=false;
         if(bSet)
             cout<<"Set"<<endl;
         else
