@@ -26,6 +26,7 @@ int main()
                     if ((output[i-1]!=('A'+j))&&(input[i]!=('A'+j))&&(input[i-1]!=('A'+j))) 
                     {
                         output[i]='A'+j;
+                        break;
                     }
                 }
             }
@@ -36,6 +37,7 @@ int main()
                     if ((input[0]!=('A'+j))&&(input[1]!=('A'+j))) 
                     {
                         output[0]='A'+j;
+                        break;
                     }
                 }
             }
