@@ -1,5 +1,6 @@
 /*
-368. Cobbled streets
+ TASK: Cobbled streets
+ ALGO: kruskal http://en.wikipedia.org/wiki/Kruskal's_algorithm
 */
 #include <cstdio>
 #include <vector>
