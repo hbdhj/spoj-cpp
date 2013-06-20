@@ -1,6 +1,7 @@
 /*
 TASK: Can you answer these queries IV
 ALGO: binary indexed tree
+ 
 */
 
 #include <cstdio>

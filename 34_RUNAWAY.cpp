@@ -1,6 +1,25 @@
 /*
  * 2012/11/29
  TASK: Run Away
+ Sample Input:
+ 3
+ 1000 50 1
+ 10 10
+ 100 100 4
+ 10 10
+ 10 90
+ 90 10
+ 90 90
+ 3000 3000 4
+ 1200 85
+ 63 2500
+ 2700 2650 
+ 2990 100
+ 
+ Sample output:
+ The safest point is (1000.0, 50.0).
+ The safest point is (50.0, 50.0).
+ The safest point is (1433.0, 1669.8).
  */
 #include <iostream>
 #include <math.h>

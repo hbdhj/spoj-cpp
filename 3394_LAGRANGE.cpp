@@ -1,5 +1,5 @@
 /*
-TASK: LAGRANGE
+TASK: Lagrange’s Four-Square Theorem
 ALGO: pre-calculation
  Input:
  1

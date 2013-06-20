@@ -1,5 +1,5 @@
 /*
-TASK: MDOLLS
+TASK: Nested Dolls
 ALGO: sorting, greedy
  SAMPLE INPUT
  4

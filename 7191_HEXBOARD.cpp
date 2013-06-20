@@ -1,5 +1,5 @@
 /*
-TASK: HEXBOARD
+TASK: Hexagonal Board
 ALGO: simulation
 
  Input:

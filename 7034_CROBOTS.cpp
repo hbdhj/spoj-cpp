@@ -1,7 +1,42 @@
 /*
-USER: zobayer
-TASK: CROBOTS
+TASK: Crashing Robots
 ALGO: simulation
+ Input:
+ 4
+ 5 4
+ 2 2
+ 1 1 E
+ 5 4 W
+ 1 F 7
+ 2 F 7
+ 5 4
+ 2 4
+ 1 1 E
+ 5 4 W
+ 1 F 3
+ 2 F 1
+ 1 L 1
+ 1 F 3
+ 5 4
+ 2 2
+ 1 1 E
+ 5 4 W
+ 1 L 96
+ 1 F 2
+ 5 4
+ 2 3
+ 1 1 E
+ 5 4 W
+ 1 F 4
+ 1 L 1
+ 1 F 20
+ 
+ 
+ Output:
+ Robot 1 crashes into the wall
+ Robot 1 crashes into robot 2
+ OK
+ Robot 1 crashes into robot 2
 */
 
 #include <cstdio>
