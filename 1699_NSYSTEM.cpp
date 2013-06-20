@@ -1,5 +1,30 @@
 /*
  * 2012/11/29
+ TASK: Numeral System
+ Input:
+ 10
+ xi x9i
+ i 9i
+ c2x2i 4c8x8i
+ m2ci 4m7c9x8i
+ 9c9x9i i
+ i 9m9c9x8i
+ m i
+ i m
+ m9i i
+ 9m8c7xi c2x8i
+ 
+ Output:
+ 3x
+ x
+ 6cx
+ 5m9c9x9i
+ m
+ 9m9c9x9i
+ mi
+ mi
+ mx
+ 9m9c9x9i
  */
 #include <iostream>
 #include <math.h>

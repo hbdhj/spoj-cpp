@@ -1,23 +1,7 @@
 /*
-TASK: MATSUM
+TASK: Matrix Summation
 ALGO: binary indexed tree
- Input:
- 1
- 4
- SET 0 0 1
- SUM 0 0 3 3
- SET 2 2 12
- SUM 2 2 2 2
- SUM 2 2 3 3
- SUM 0 0 2 2
- END
- 
- Output:
- 1
- 12
- 12
- 13
- */
+*/
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
@@ -68,8 +52,7 @@ void process(int n)
 	char com[5];
 	while(scanf("%s", com)==1)
 	{
-		if(!strcmp(com,"END")) 
-            break;
+		if(!strcmp(com,"END")) break;
 		if(!strcmp(com,"SUM"))
 		{
 			scanf("%d %d %d %d", &x1, &y1, &x2, &y2);

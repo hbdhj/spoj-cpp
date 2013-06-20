@@ -1,5 +1,6 @@
 /*
  * 2012/12/01
+ TASK: Factorial
  */
 #include <iostream>
 #include <vector>

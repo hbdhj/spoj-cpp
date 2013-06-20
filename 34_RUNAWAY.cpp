@@ -1,5 +1,6 @@
 /*
  * 2012/11/29
+ TASK: Run Away
  */
 #include <iostream>
 #include <math.h>

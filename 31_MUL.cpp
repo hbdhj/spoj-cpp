@@ -1,5 +1,5 @@
 /*
-TASK: MUL
+TASK: Fast Multiplication
 ALGO: karatsuba multiplication
  Input:
  5

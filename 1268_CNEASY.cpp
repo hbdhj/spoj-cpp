@@ -1,5 +1,6 @@
 /*
  * 2012/11/28
+ TASK: CN Tower (Easy)
  */
 #include  <iostream>
 #include <math.h>
