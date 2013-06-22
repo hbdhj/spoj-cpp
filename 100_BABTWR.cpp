@@ -1,5 +1,5 @@
 /*
-100. Tower of Babylon
+TASK: Tower of Babylon
 Sample input:
 5
 31 41 59

@@ -1,4 +1,8 @@
-/*Deng Haijun 2012/12/17 1025. Fashion Shows*/
+/*
+Deng Haijun 
+2012/12/17 
+TASK: Fashion Shows
+*/
 #include <iostream>
 #include <vector>
 #include <algorithm>

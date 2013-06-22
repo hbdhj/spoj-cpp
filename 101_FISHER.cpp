@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Fishmonger
  algo:dynamic programming
  Sample input:
  4 7

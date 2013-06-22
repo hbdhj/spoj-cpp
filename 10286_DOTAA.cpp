@@ -1,5 +1,5 @@
 /*
-10286. DOTA HEROES
+TASK: DOTA HEROES
 */
 #include <iostream>
 #include <algorithm>

@@ -1,5 +1,5 @@
 /*
-10069. Kompići
+TASK: Kompići
 Input:
 3
 4

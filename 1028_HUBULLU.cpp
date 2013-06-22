@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 13-1-16.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-
+/*
+TASK: Hubulullu
+*/
 #include <iostream>
 #include <vector>
 

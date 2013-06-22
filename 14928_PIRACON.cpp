@@ -1,5 +1,6 @@
 /*
  TASK: Pyramidal Constructions
+ ALGO: geometry
  Input:
  2
  1

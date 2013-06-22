@@ -1,5 +1,5 @@
 /*
-1026. Favorite Dice
+TASK: Favorite Dice
  answer = n H_n = n(1/1 + 1/2 + ... + 1/n)
 */
 

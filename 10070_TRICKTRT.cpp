@@ -1,5 +1,6 @@
 /*
  * 2012/11/29
+ TASK: Trick or Treat
  */
 #include <cstdio>
 #include <cmath>

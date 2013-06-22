@@ -1,5 +1,5 @@
 /*
-1002. Uncle Jack
+TASK: Uncle Jack
 Input:
 1 20
 3 10
