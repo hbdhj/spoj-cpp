@@ -1,5 +1,5 @@
 /*
-10366. Play with Dates
+TASK: Play with Dates
 Sample Input:
 3
 11 1 2012

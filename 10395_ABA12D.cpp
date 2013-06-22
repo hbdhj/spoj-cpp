@@ -1,5 +1,5 @@
 /*
-10395. Sum of divisors!
+TASK: Sum of divisors!
 Input:
 2
 1 5

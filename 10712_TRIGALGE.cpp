@@ -1,5 +1,5 @@
 /*
-10712. Easy Calculation
+TASK: Easy Calculation
 Input:
 1
 1 1 20

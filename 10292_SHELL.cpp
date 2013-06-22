@@ -6,7 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 // Just test github
-
+/*
+TASK: Shell game
+*/
 #include <iostream>
 #include <vector>
 

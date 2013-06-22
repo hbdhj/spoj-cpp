@@ -1,5 +1,5 @@
 /*
-10509. Cards
+TASK: Cards
 Input Example
 2
 3

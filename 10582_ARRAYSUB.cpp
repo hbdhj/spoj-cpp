@@ -1,5 +1,5 @@
 /*
-10582. subarrays
+TASK: subarrays
 Input:
 9
 1  2  3  1  4  5  2  3  6

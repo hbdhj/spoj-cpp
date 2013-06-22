@@ -1,3 +1,6 @@
+/*
+TASK: FANCY NUMBERS
+*/
 #include <stdio.h>
 #include <vector>
 #include <iostream>

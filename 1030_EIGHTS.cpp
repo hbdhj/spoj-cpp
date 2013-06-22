@@ -1,3 +1,6 @@
+/*
+TASK: Triple Fat Ladies
+*/
 #include <iostream>
 #include <sstream>
 #include <string>
