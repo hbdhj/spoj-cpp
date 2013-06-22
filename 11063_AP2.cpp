@@ -1,5 +1,5 @@
 /*
-11063. AP - Complete The Series (Easy)
+TASK: AP - Complete The Series (Easy)
 Input:
 1
 3 8 55

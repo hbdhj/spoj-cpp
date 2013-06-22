@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 13-3-2.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-
+/*
+ TASK: Amusing numbers
+*/
 #include <iostream>
 #include <vector>
 using namespace std;
