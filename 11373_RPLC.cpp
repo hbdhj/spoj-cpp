@@ -1,5 +1,5 @@
 /*
-11373. Coke madness
+TASK: Coke madness
 INPUT
 2
 5

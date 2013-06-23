@@ -1,4 +1,5 @@
 /*
+TASK: Hard Launching
 INPUT
 3
 10 10
