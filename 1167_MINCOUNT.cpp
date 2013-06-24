@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- 1167. Move To Invert
+ TASK: Move To Invert
  100 is 1683 
  10^10 is 7443294631478557525
  */

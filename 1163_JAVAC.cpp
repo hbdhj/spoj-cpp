@@ -1,4 +1,5 @@
-/*Deng Haijun 2012/12/14 1163. Java vs C ++
+/*Deng Haijun 2012/12/14 
+TASK: Java vs C ++
 
 Input:
 long_and_mnemonic_identifier

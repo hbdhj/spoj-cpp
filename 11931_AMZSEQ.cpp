@@ -1,5 +1,5 @@
 /*
-11931. AMZ Word
+TASK: AMZ Word
 lst[0] = 1
 lst[1] = 3
 lst[i] = 2 * lst[i - 1] + lst[i - 2]

@@ -1,5 +1,5 @@
 /*
-1161. Tic-Tac-Toe ( I )
+TASK: Tic-Tac-Toe ( I )
 Input:
 6
 X.O

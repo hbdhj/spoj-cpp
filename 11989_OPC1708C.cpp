@@ -1,5 +1,19 @@
 /*
-11989. Factorial large
+TASK: Factorial large
+Input:
+5
+2
+3
+1
+400
+0
+
+Output:
+2
+6
+1
+390998217
+1
 */
 
 #include <iostream>

@@ -1,5 +1,5 @@
 /*
-11746. Sum the Series
+TASK: Sum the Series
 1/3 + 2/21 + 3/91 + 4/273 + .....
 (n^2-n+1)*(n^2+n+1)
 Input:

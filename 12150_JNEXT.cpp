@@ -1,5 +1,5 @@
 /*
-12150. Just Next !!!
+TASK: Just Next !!!
 Input : 
 6
 5

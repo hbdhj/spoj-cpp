@@ -1,3 +1,13 @@
+/*
+TASK: ROMAN NUMERALS
+Input:
+LX XV +
+X V *
+
+Output:
+LXXV
+L
+*/
 #include <iostream>
 using namespace std;
 string itom(int n)

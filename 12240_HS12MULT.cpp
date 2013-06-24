@@ -1,3 +1,6 @@
+/*
+TASK: Multinomial numbers
+*/
 #include <iostream>
 
 using namespace std;

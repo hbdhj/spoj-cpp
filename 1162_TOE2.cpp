@@ -1,5 +1,5 @@
 /*
-1162. Tic-Tac-Toe ( II )
+TASK: Tic-Tac-Toe ( II )
 Input:
 XXXOO.XXX
 XOXOXOXOX
