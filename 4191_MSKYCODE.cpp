@@ -4,7 +4,7 @@ ALGO: inclusion exclusion
 */
 
 #include <cstdio>
-#include <string>
+#include <string.h>
 
 template< class T > void setmax(T &a, T b) { if(a < b) a = b; }
 
