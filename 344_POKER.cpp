@@ -23,10 +23,10 @@
  4
  AH KH QH TH JH
  AD 2D 3D 4D 5D
- 2S 2S 2S 2S 4D
+ 2S 2H 2D 2C 4D
  QH QD 2S QC 2C
  4C 9C TC AC KC
- KH AS 2C 3C 4D
+ 5H AS 2C 3D 4C
  5H 5D 5C 7H KS
  KH 5S 3C 5C 7D
  2H 2S 4C 4S 5D
@@ -46,12 +46,181 @@
  */
 #include <iostream>
 
-int process(string str)
-{
-    return 0;
-}
-
 int main()
 {
+    int t;
+    scanf("%d", &t);
+    while (t--)
+    {
+        char card[4];
+        int cards[5][16];
+        memset(cards,0,sizeof(cards));
+        int card_num=5;
+        while (card_num--) 
+        {
+            scanf("%s", card);
+            //printf("%c %c, ", card[0], card[1]);
+            int c=0,n=0;
+            switch (card[1]) {
+                case 'H':
+                    c=0;
+                    break;
+                case 'D':
+                    c=1;
+                    break;
+                case 'C':
+                    c=2;
+                    break;
+                case 'S':
+                    c=3;
+                    break;
+                default:
+                    printf("L78 ERROR!\n");
+                    exit(1);
+                    break;
+            }
+            cards[c][0]++;
+            switch (card[0]) {
+                case 'A':
+                    cards[c][1]=1;
+                    cards[c][14]=1;
+                    cards[4][1]++;
+                    break;
+                case 'T':
+                    cards[c][10]=1;
+                    cards[4][10]++;
+                    break;
+                case 'J':
+                    cards[c][11]=1;
+                    cards[4][11]++;
+                    break;
+                case 'Q':
+                    cards[c][12]=1;
+                    cards[4][12]++;
+                    break;
+                case 'K':
+                    cards[c][13]=1;
+                    cards[4][13]++;
+                    break;
+                default:
+                    n=card[0]-'0';
+                    if ((n<2)||(n>9)) {
+                        printf("L108 ERROR!\n");
+                        exit(2);
+                    }
+                    cards[c][n]=1;
+                    cards[4][n]++;
+                    break;
+            }
+            cards[4][0]++;
+        }
+        
+        //printf("\n");
+        for (int i=0; i<5; i++) 
+        {
+            int max = 0;
+            int cur = 0;
+            
+            if(cards[i][0]<2)
+                cards[i][15]=cards[i][0];
+            else
+            {
+                for (int j=1; j<15; j++) 
+                {
+                    if (cards[i][j]&&cards[i][j+1]) 
+                        cur++;
+                    else
+                        cur=0;
+                    if (cur>max)
+                        max=cur;
+                    //printf("cards[i][j] = %d, cards[i][j+1] = %d, cur=%d, max = %d\n", cards[i][j], cards[i][j+1], cur, max);
+                }
+                cards[i][15]=max+1;
+            }
+            
+        }
+        bool checked = false;
+        /*for (int i=0; i<5; i++) 
+        {
+            for (int j=0; j<16; j++) 
+            {
+                printf("%d, ",cards[i][j]);
+            }
+            printf("\n");
+        }*/
+        for (int i=0; i<4; i++) 
+        {
+            if (cards[i][1]&&cards[i][10]&&cards[i][11]&&cards[i][12]&&cards[i][13])
+            {
+                printf("royal flush\n");
+                checked = true;
+                break;
+            }
+            else if ((cards[i][0]==5)&&(cards[i][15]==5))
+            {
+                printf("straight flush\n");
+                checked = true;
+                break;
+            }
+            else if (cards[i][0]==5)
+            {
+                printf("flush\n");
+                checked = true;
+                break;
+            }
+            else if (cards[4][15]==5)
+            {
+                /*bool cont=true;
+                for (int cn=1; cn<14; cn++) 
+                {
+                    if (cards[4][cn]>1) 
+                    {
+                        cont=false;
+                        break;
+                    }
+                }*/
+                printf("straight\n");
+                checked = true;
+                break;
+            }
+        }
+        if (!checked)
+        {
+            int rands[5];
+            for (int i=1; i<14; i++)
+            {
+                if(cards[4][i])
+                    rands[cards[4][i]]++;
+            }
+            /*for (int i=1; i<5; i++)
+            {
+                printf("rands[%d] = %d\n", i, rands[i]);
+            }*/
+            if (rands[4]) 
+            {
+                printf("four of a kind\n");
+            }
+            else if(rands[3]&&rands[2])
+            {
+                printf("full house\n");
+            }
+            else if(rands[3])
+            {
+                printf("three of a kind\n");
+            }
+            else if(rands[2]==2)
+            {
+                printf("two pairs\n");
+            }
+            else if(rands[2])
+            {
+                printf("pair\n");
+            }
+            else
+            {
+                printf("high card\n");
+            }
+        }
+    }
     return 0;
 }
