@@ -20,16 +20,17 @@
  10. high card - none of the above
  
  Input:
- 4
+ 11
  AH KH QH TH JH
  AD 2D 3D 4D 5D
  2S 2H 2D 2C 4D
  QH QD 2S QC 2C
+ 4C 3C 2C AC KC
  4C 9C TC AC KC
  5H AS 2C 3D 4C
  5H 5D 5C 7H KS
- KH 5S 3C 5C 7D
  2H 2S 4C 4S 5D
+ KH 5S 3C 5C 7D
  AH 4S 9C TD 3H
  
  Output:
@@ -38,6 +39,7 @@
  four of a kind
  full house
  flush
+ flush
  straight
  three of a kind
  two pairs
@@ -45,6 +47,7 @@
  high card
  */
 #include <iostream>
+#include <string.h>
 
 int main()
 {
@@ -75,8 +78,8 @@ int main()
                     c=3;
                     break;
                 default:
-                    printf("L78 ERROR!\n");
-                    exit(1);
+                    /*printf("L78 ERROR!\n");
+                    exit(1);*/
                     break;
             }
             cards[c][0]++;
@@ -104,10 +107,10 @@ int main()
                     break;
                 default:
                     n=card[0]-'0';
-                    if ((n<2)||(n>9)) {
+                    /*if ((n<2)||(n>9)) {
                         printf("L108 ERROR!\n");
                         exit(2);
-                    }
+                    }*/
                     cards[c][n]=1;
                     cards[4][n]++;
                     break;
@@ -168,25 +171,19 @@ int main()
                 checked = true;
                 break;
             }
-            else if (cards[4][15]==5)
+        }   
+        if(!checked)
+        {
+            if (cards[4][15]==5)
             {
-                /*bool cont=true;
-                for (int cn=1; cn<14; cn++) 
-                {
-                    if (cards[4][cn]>1) 
-                    {
-                        cont=false;
-                        break;
-                    }
-                }*/
                 printf("straight\n");
                 checked = true;
-                break;
             }
         }
         if (!checked)
         {
             int rands[5];
+            memset(rands, 0, sizeof(rands));
             for (int i=1; i<14; i++)
             {
                 if(cards[4][i])
