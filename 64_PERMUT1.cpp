@@ -1,5 +1,5 @@
 /*
-TASK: PERMUT1
+TASK: Permutations
 ALGO: dynamic programming
  Sample input:
  1 
