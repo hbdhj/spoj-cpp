@@ -24,8 +24,10 @@ int main()
     while (t--) 
     {
         map<string, int> circles;
+        map<string, string> unknowns;
         map<string, int>::iterator it_f, it_s;
         circles.clear();
+        unknowns.clear();
         int n;
         scanf("%d", &n);
         for (int i=0; i<n; i++)
@@ -39,13 +41,35 @@ int main()
                 if (it_f!=circles.end()&&it_s==circles.end()) 
                 {
                     circles.insert(pair<string, int>(second, 1));
+                    map<string, string>::iterator unk_s;
+                    unk_s=unknowns.find(second);
+                    while(unk_s!=unknowns.end())
+                    {
+                        circles.insert(pair<string, int>(unk_s->second, 1));
+                        unk_s=unknowns.find(unk_s->second);
+                    }
                 }
                 if (it_f==circles.end()&&it_s!=circles.end())
                 {
                     circles.insert(pair<string, int>(first, 1));
+                    map<string, string>::iterator unk_f;
+                    unk_f=unknowns.find(first);
+                    while(unk_f!=unknowns.end())
+                    {
+                        circles.insert(pair<string, int>(unk_f->second, 1));
+                        unk_f=unknowns.find(unk_f->second);
+                    }
                 }
                 if(it_f==circles.end()&&it_s==circles.end())
                 {
+                    map<string, string>::iterator unk_f, unk_s;
+                    unk_f=unknowns.find(first);
+                    unk_s=unknowns.find(second);
+                    if(it_f==circles.end()&&it_s==circles.end())
+                    {
+                        unknowns.insert(pair<string, string>(first, second));
+                        unknowns.insert(pair<string, string>(second, first));
+                    }
                 }
             }
             else
@@ -53,7 +77,7 @@ int main()
                 circles.insert(pair<string, int>(first, 1));
                 circles.insert(pair<string, int>(second, 1));
             }
-            printf("%d\n", circles.size());
+            printf("%d %d\n", (int)(circles.size()), (int)(unknowns.size()));
         }
     }
     return 0;
