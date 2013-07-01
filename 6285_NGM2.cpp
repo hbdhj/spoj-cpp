@@ -1,5 +1,5 @@
 /*
-TASK: NGM2
+TASK: Another Game With Numbers
 ALGO: inclusion exclusion
 */
 
