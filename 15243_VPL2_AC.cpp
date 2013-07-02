@@ -23,18 +23,18 @@ Output:
 
 int main()
 {
-    int t,C,i,j,k,l,m;
-    char s[1000000];
-    int v[1000000];
-    int d[1000000];
+    int t,C,i,j,k,l,m,n;
+    char s[1000002];
+    int v[1000002];
+    //int d[100000];
     scanf("%d", &t);
     for (i=0; i<t; i++) 
     {
         memset(s,0,sizeof(s));
         memset(v,0,sizeof(v));
-        memset(d,0,sizeof(d));
+        //memset(d,0,sizeof(d));
         scanf("%d %s", &C, s);
-        printf("s=%s, C=%d,j=%d\n",s,C,j);
+        //printf("s=%s, C=%d,j=%d\n",s,C,j);
         j=0;
         while (s[j]!='\0') 
         {
@@ -60,23 +60,48 @@ int main()
             j++;
             
         }
-        printf("s=%s, C=%d,j=%d\n",s,C,j);
+        //printf("s=%s, C=%d,j=%d\n",s,C,j);
+        v[j]=v[j-1];
         l=0;
-        for (k=0,m=0; m<j-1; ) 
+        /*for (k=0; k<=j; k++) 
         {
-            l+=(v[m+1]>v[m])?v[m+1]-v[m]:v[m]-v[m+1];
+            printf("%d ",v[k]);
+        }
+        printf("\n");
+        for (k=1; k<=j; k++) 
+        {
+            d[k]=v[k]>v[k-1]?v[k]-v[k-1]:v[k-1]-v[k];
+        }
+        for (k=0; k<=j; k++) 
+        {
+            printf("%d ",d[k]);
+        }
+        printf("\n");*/
+        n=0;
+        for (k=0,m=0; m<j; ) 
+        {
+            if (n<m-k) {
+                n=m-k;
+            }
             if(l<=C)
             {
+                l+=(v[m+1]>v[m]?v[m+1]-v[m]:v[m]-v[m+1]);
                 m++;
             }
             else
             {
-                l+=(v[m+1]>v[m])?v[m+1]-v[m]:v[m]-v[m+1];
-                
+                l-=(v[k+1]>v[k]?v[k+1]-v[k]:v[k]-v[k+1]);
                 k++;
             }
+            //printf("%d ", l);
+            //printf("%d ", n);
+            if (n<m-k) {
+                n=m-k;
+            }
+            //printf("%d %d %d; ", k, m, n);
         }
-        //printf("Scenario #%d: %d\n", i+1, l);
+        //printf("\n");
+        printf("Scenario #%d: %d\n", i+1, n);
     }
     return 0;
 }
