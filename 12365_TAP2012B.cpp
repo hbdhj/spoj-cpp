@@ -20,18 +20,28 @@
  57
  */
 #include <iostream>
+#include <string.h>
 
 int main()
 {
-    int a[10001];
+    int a[10001],i,j,k,j_l,k_l;
     memset(a, 0, sizeof(a));
-    for (int i=1; i<10000; i++) 
+    for (i=0; i<10000; i++) 
     {
-        int j_l = 10000/i;
-        for (int j=2; j<j_l; j++)
+        if (i)
         {
-            int k_l =(10000-i*j)/(i+j);
-            for (int k=0; k<k_l; k++)
+            j_l = 10000/i;
+            j=i;
+        }
+        else
+        {
+            j_l = 10000;
+            j=i+1;
+        }
+        for (; j<=j_l; j++)
+        {
+            k_l =(10000-i*j)/(i+j);
+            for (int k=j; k<=k_l; k++)
             {
                 a[i*j+j*k+i*k]++;
             }
