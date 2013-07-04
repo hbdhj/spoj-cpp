@@ -6,11 +6,17 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: FRIEND CIRCLE
+ Input:
  1
  3
  Lucy Patty
  Patty Alice
  Alice Mira
+ Output:
+2
+3
+4
  */
 #include <iostream>
 #include <map>

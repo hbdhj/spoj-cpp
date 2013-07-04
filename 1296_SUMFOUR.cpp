@@ -1,6 +1,6 @@
 /*
-1296. 4 values whose sum is 0
-sorting, subset partition
+TASK: 4 values whose sum is 0
+ALGO: sorting, subset partition
 */
 #include <ios>
 #include <algorithm>

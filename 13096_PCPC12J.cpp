@@ -1,6 +1,6 @@
 /*
-13096. Amr Samir
-ad-hoc
+TASK: Amr Samir
+ALGO: ad-hoc
 Sample Input
 2
 5

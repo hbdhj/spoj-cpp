@@ -1,5 +1,5 @@
 /*
-12407. Johnny The Gambler
+TASK: Johnny The Gambler
 Sample Input
 1
 10 3 1 5 9

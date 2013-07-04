@@ -5,7 +5,20 @@
 //  Created by Haijun Deng on 12-12-24.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
+/*
+ TASK: Counting Triangles
+ Input:
+3
+1
+2
+3
 
+Output:
+1
+5
+13
+
+ */
 #include <iostream>
 #include <vector>
 using namespace std;

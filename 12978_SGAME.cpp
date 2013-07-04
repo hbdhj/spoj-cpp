@@ -1,5 +1,5 @@
 /*
-12978. SHAPE GAME
+TASK: SHAPE GAME
 t<=100
 1<=n<=300
 1<=i,j<=300

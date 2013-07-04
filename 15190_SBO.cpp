@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: MAXIMUM RARITY
  Input 1:
  7
  1 1 2 5 1 16 5

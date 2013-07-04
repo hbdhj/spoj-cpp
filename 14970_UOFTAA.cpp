@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Rock Paper Scissors Fox
  */
 #include <iostream>
 #include <string.h>

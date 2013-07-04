@@ -1,5 +1,5 @@
 /*
-130. Rent your airplane and make money
+TASK: Rent your airplane and make money
 Input:
 1
 4

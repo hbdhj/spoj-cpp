@@ -1,5 +1,5 @@
 /*
-1436. Is it a tree
+TASK: Is it a tree
 ALGO: breadth first search
 Input:
 3 2

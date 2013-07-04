@@ -6,7 +6,21 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+TASK: Frequent values
 ALGO: segment tree
+Sample Input
+
+10 3
+-1 -1 1 1 1 1 3 10 10 10
+2 3
+1 10
+5 10
+0
+Sample Output
+
+1
+4
+3
 */
 #include <cassert>
 #include <cctype>

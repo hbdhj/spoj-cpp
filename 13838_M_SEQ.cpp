@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Mosty! Find Gn
  F'(n) = n*(n+1)*(n+2)/6
  n*n*F'(n) = 4*n*(n+1)*(n+2)/3
  */

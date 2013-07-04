@@ -5,7 +5,20 @@
 //  Created by Haijun Deng on 13-3-16.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
+/*
+ TASK: Sweet and Sour Rock
+ Sample input:
+2
+15
+100110001010001
+16
+0010111101100000
 
+Sample output:
+9
+13
+
+ */
 #include <iostream>
 template< class T > void setmax(T &a, T b) { if(a < b) a = b; }
 int main() 

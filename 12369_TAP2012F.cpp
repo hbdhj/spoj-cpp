@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Fixture
  Input:
  11 + 11
  988726 - 978625

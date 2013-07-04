@@ -1,3 +1,18 @@
+/*
+ TASK: Cylinder
+ Sample Input
+
+10 10
+10 50
+10 30
+0 0
+Sample Output
+
+54.247
+785.398
+412.095
+
+ */
 #include <iostream>
 #include <cmath>
 #include <vector>

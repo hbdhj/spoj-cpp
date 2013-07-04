@@ -1,5 +1,5 @@
 /*
-12448. HOW MANY GAMES
+TASK: HOW MANY GAMES
 Sample Input:
 5
 5

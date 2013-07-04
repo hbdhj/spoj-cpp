@@ -1,3 +1,6 @@
+/*
+ TASK: Use of Function Arctan
+ */
 #include <ios>
 #include <algorithm>
 int main()

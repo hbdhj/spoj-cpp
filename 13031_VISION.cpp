@@ -1,5 +1,5 @@
 /*
-13031. Vision Field
+TASK: Vision Field
 Input:
 5
 2 3 3 3 4

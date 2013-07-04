@@ -1,5 +1,5 @@
 /*
-13367. EVEN COUNT
+TASK: EVEN COUNT
 Sample Input:
 2
 2 12

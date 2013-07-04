@@ -1,4 +1,6 @@
-/*Deng Haijun 2012/12/13 1419. A Game with Numbers */
+/*Deng Haijun 2012/12/13 
+TASK: A Game with Numbers
+ */
 
 #include <iostream>
 

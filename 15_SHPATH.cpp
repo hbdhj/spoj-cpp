@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 13-2-23.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-
+/*
+ TASK: The Shortest Path
+ */
 #include <iostream>
 #include <cstdio>
 #include <map>
