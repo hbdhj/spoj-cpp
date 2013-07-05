@@ -7,6 +7,7 @@
 //
 
 /*
+ TASK: Decoding
  ALGO: simulation
  Input:
  4

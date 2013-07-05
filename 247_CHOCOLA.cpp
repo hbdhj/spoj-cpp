@@ -1,6 +1,6 @@
 /*
-247. Chocolate
-algo: grace
+TASK: Chocolate
+ALGO: grace
 */
 #include <cstdio>
 #include <vector>

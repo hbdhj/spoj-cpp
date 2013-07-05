@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+TASK: Ordering the Soldiers
 ALGO: semgent tree
  Input:
  2

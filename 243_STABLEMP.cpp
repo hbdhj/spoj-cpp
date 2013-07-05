@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo: stable marriage
+ TASK: stable marriage
  http://en.wikipedia.org/wiki/Stable_marriage_problem
  Input:
  2

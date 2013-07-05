@@ -7,6 +7,7 @@
 //
 
 /*
+ TASK: Decoding
  ALGO: ad-hoc
  Input:
  4

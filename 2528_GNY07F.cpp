@@ -5,7 +5,20 @@
 //  Created by Haijun Deng on 13-4-21.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
+/*
+ TASK: 2528. Monkey Vines
+Input:
+3
+[]
 
+[[][[]]]
+
+Output:
+1 2
+2 1
+3 8	
+
+ */
 #include <cstdio>
 #include <stdlib.h>
 int main() 

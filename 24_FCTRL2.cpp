@@ -1,3 +1,6 @@
+/*
+ TASK: Small factorials
+ */
 #include <iostream>
 #include <vector>
 #include <sstream>
