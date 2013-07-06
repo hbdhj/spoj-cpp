@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Not a Triangle
  Input:
  3
  4 2 10

@@ -1,5 +1,5 @@
 /*
-2906. GCD2
+TASK: GCD2
 int gcd(int a, int b)
 {
 	if (b==0)

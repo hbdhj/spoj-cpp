@@ -1,5 +1,5 @@
 /*
-1841. Prime Path
+TASK: Prime Path
 Input:
 3
 1033 8179

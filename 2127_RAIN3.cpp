@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 13-1-10.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-/*s[i] = (78901 + 31*s[i-1]) mod  699037
+/*
+TASK: Rain
+s[i] = (78901 + 31*s[i-1]) mod  699037
 t[i] = (23456 + 64*t[i-1]) mod 2097151
 The output of the i-th step is the number
 

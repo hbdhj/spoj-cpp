@@ -1,4 +1,6 @@
-/* 302 */
+/* 
+ TASK: Count on Cantor
+ */
 
 #include <iostream>
 #include <vector>

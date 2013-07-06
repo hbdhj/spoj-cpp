@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Making Money
  Input:
  100.00 6.00 1
  100.00 6.00 12

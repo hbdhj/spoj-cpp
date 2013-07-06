@@ -1,5 +1,5 @@
 /*
-29. Hash it!
+TASK: Hash it!
 */
 #include <iostream>
 #include <cstring>

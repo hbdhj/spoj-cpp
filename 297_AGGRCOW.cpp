@@ -1,6 +1,6 @@
 /*
-297. Aggressive cows
-algorithm: binary search
+TASK: Aggressive cows
+ALGO: binary search
 Input:
 1
 5 3

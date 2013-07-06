@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 13-5-25.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-
+/*
+ TASK: Game of Lines
+ */
 #include <iostream>
 #include <algorithm>
 

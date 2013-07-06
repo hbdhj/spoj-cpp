@@ -1,5 +1,5 @@
 /*
-1840. Printer Queue
+TASK: Printer Queue
 
 Input:
 3

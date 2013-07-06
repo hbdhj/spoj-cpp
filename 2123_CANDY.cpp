@@ -1,4 +1,5 @@
-/*Deng Haijun 2012/12/17 2123. Candy I
+/*Deng Haijun 2012/12/17 
+TASK: Candy I
 
 Input file:
 5

@@ -1,3 +1,6 @@
+/*
+ TASK: Adding two numbers
+ */
 #include <iostream>
 using namespace std; 
 string rev(string s)
