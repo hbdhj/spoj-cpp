@@ -7,6 +7,7 @@
 //
 
 /*
+ TASK: Period
  ALGO: knuth morris patt - KMP
  Input:
  2

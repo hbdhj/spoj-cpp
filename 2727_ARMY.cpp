@@ -1,5 +1,5 @@
 /* Deng Haijun 2012/12/13
-2727. Army Strength
+TASK: Army Strength
 input:
 2
 

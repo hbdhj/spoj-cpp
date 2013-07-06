@@ -1,3 +1,6 @@
+/*
+ TASK:  Anti-Blot System
+ */
 #include <iostream>
 #include <vector>
 #include <sstream>

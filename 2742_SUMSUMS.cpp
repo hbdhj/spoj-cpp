@@ -1,5 +1,5 @@
 /*
-2742. Summing Sums
+TASK: Summing Sums
 Input:
 3 4
 1

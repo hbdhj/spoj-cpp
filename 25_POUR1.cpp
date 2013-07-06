@@ -1,5 +1,5 @@
 /*
-25. Pouring water
+TASK: Pouring water
 */
 
 #include <cstdio>

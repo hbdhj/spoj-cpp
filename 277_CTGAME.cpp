@@ -5,6 +5,28 @@
 //  Created by Haijun Deng on 13-4-13.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
+/*
+ TASK: City Game
+Input:
+2
+5 6
+R F F F F F
+F F F F F F
+R R R F F F
+F F F F F F
+F F F F F F
+
+5 5
+R R R R R
+R R R R R
+R R R R R
+R R R R R
+R R R R R
+
+Output:
+45
+0
+*/
 
 #include <iostream>
 

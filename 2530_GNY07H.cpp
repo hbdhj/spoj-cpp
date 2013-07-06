@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Tiling a Grid With Dominoes
  a(n) = a(n-1)+5*a(n-2)+a(n-3)-a(n-4)
  Input:
  3

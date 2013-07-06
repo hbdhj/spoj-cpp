@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Pibonacci
  Input file:
  0
  4
