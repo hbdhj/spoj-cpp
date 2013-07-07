@@ -7,6 +7,7 @@
 //
 
 /*
+ TASK: Bullshit Bingo
  ALGO: ad-hoc
  
  Sample Input

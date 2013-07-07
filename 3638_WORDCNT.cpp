@@ -1,5 +1,5 @@
 /* 
-3638. Word Counting
+ TASK: Word Counting
  ad-hoc
  Sample Input
  2

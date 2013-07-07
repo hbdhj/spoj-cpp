@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- 
+ TASK: The Benefactor
  
  Input:
  1

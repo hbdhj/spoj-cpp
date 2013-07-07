@@ -1,5 +1,5 @@
 /*
-370. Ones and zeros
+TASK: Ones and zeros
 breadth first search
 Input:
 3

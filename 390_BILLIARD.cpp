@@ -5,7 +5,8 @@
 //  Created by Haijun Deng on 13-1-15.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-/*390. Billiard
+/*
+ TASK: Billiard
  Input:
  
  100 100 1 1 1

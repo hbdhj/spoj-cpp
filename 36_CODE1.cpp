@@ -1,3 +1,6 @@
+/*
+ TASK: Secret Code
+ */
 #include <iostream>
 #include <vector>
 #include <math.h>

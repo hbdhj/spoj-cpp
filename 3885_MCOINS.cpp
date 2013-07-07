@@ -5,8 +5,9 @@
 //  Created by Haijun Deng on 13-3-16.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-
-
+/*
+ TASK: Coins Game
+ */
 #include <stdio.h>
 
 #define MAX 1000032

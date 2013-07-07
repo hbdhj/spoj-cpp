@@ -1,5 +1,5 @@
 /*
-346. Bytelandian gold coins
+TASK: Bytelandian gold coins
 Input:
 12
 2
