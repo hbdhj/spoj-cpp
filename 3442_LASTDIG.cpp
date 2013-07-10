@@ -1,3 +1,6 @@
+/*
+ TASK: The last digit
+ */
 #include <iostream>
 #include <vector>
 using namespace std;

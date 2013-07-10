@@ -1,5 +1,5 @@
 /*
-394. Alphacode
+TASK: Alphacode
 Input:
 25114
 1111111111

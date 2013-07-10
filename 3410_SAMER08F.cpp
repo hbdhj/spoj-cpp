@@ -1,4 +1,6 @@
-/*Deng Haijun 2012/12/11 400. To and Fro*/
+/*
+ TASK: Feynman
+ */
 #include <iostream>
 #include <vector>
 using namespace std;

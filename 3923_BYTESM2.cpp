@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Philosophers Stone
  Input:
  1
  6 5

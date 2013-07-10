@@ -1,5 +1,5 @@
 /*
-3409. Electricity
+TASK: Electricity
 Input:
 5
 9 9 1979 440

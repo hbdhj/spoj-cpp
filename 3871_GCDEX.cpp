@@ -1,5 +1,5 @@
 /*
-TASK: GCDEX
+TASK: GCD Extreme
 ALGO: math, euler phi
 */
 

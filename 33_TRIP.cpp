@@ -6,7 +6,8 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo: dynamic programming like edit distance
+ TASK: Trip
+ ALGO: dynamic programming like edit distance
  Input
  1
  abcabcaa

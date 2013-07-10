@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 13-3-15.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
-
+/*
+ TASK: ???
+ */
 #include <iostream>
 using namespace std;
 

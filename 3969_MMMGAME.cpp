@@ -1,6 +1,6 @@
 /*
-3969. M&M Game
-algorithm nim game Bouton's Theorem
+TASK: M&M Game
+ALGO: nim game Bouton's Theorem
 Sample input: 
 2 
 3 

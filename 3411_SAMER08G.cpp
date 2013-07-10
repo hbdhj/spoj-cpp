@@ -7,6 +7,7 @@
 //
 
 /*
+ TASK: Pole Position
  ALGO: ad-hoc
  Input:
  4

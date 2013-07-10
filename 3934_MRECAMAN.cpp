@@ -1,5 +1,5 @@
 /*
-3934. Recaman's Sequence
+TASK: Recaman's Sequence
 ALGO: ad-hoc
 7
 10000

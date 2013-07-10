@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Bee Walk
   (108*n+72+36*n^2)*a(n)+(24*n^2+96*n+96)*a(n+1)+(n^2+5*n+6)*a(n+2)+(-6*n-9-n^2)*a(n+3)=0
  */
 #include <iostream>
