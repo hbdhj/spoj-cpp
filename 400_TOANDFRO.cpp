@@ -1,4 +1,8 @@
-/*Deng Haijun 2012/12/11 400. To and Fro*/
+/*
+ Deng Haijun 
+ 2012/12/11 
+ TASK: To and Fro
+ */
 #include <iostream>
 #include <vector>
 using namespace std;

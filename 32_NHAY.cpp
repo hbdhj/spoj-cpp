@@ -1,5 +1,5 @@
 /*
-32. A Needle in the Haystack
+TASK: A Needle in the Haystack
 knuth morris patt
 Sample input:
 2

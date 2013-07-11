@@ -1,5 +1,5 @@
 /*
-4141. Euler Totient Function
+TASK: Euler Totient Function
 seive with ETF as following
 ETF(n)=n*(1-1/p1)*(1-1/p2)
 Input:

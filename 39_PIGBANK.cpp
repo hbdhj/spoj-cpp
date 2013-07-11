@@ -1,6 +1,6 @@
 /*
-39. Piggy-Bank
-dynamic programming
+TASK: Piggy-Bank
+ALGO: dynamic programming
 Sample Input:
 3
 10 110

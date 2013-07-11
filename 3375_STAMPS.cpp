@@ -1,5 +1,7 @@
-/* Deng Haijun 2012/12/13
-3375. Stamps
+/* 
+Deng Haijun 
+2012/12/13
+TASK: Stamps
 Input:
 3
 100 6

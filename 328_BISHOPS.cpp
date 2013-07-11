@@ -1,6 +1,7 @@
 /* 
-Deng Haijun 2012/12/13
-328. Bishops
+Deng Haijun 
+2012/12/13
+TASK: Bishops
 C++ 4.0.0
 Input:
 2

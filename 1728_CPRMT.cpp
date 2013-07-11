@@ -1,5 +1,5 @@
 /*
-1728. Common Permutation
+TASK: Common Permutation
 Sample input:
 pretty
 women
