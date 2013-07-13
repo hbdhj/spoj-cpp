@@ -55,6 +55,7 @@
  -----13*
  */
 #include <iostream>
+#include <string.h>
 
 char mines[6144][6144];
 //char mines[10][10];
