@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
-4557. Musical Chairs
+TASK: Musical Chairs
 Input:
 5 3
 7 1

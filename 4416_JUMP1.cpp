@@ -1,3 +1,15 @@
+/*
+ TASK: Jumping Hands
+ Input:
+1 2 3 1 2 3 00:00:00 00:00:01
+3 4 5 1 1 1 09:00:00 18:00:00
+-1
+
+Output:
+0.08
+2826.27
+
+ */
 #include <iostream>
 #include <complex>
 #include <vector>

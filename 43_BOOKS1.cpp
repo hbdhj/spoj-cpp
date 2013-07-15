@@ -5,7 +5,9 @@
 //  Created by Haijun Deng on 12-12-23.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
-
+/*
+ TASK: Copying Books
+ */
 #include <iostream>
 
 #define M 500

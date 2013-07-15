@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 /*
- 4415. Power of Integer
+ TASK: Power of Integer
  Input:
  2 10
  248832 248832

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
+ TASK: Adding Sevens
  ALGO: ad-hoc
  010079010+010079=010106106
  106010+010=106093

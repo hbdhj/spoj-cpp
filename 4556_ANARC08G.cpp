@@ -5,7 +5,19 @@
 //  Created by Haijun Deng on 13-4-14.
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
+/*
+ TASK: Think I will Buy Me a Football Team
+ Input:
+4
+  0  50 100   0
+150   0  20   0
+  0   0   0  30
+ 30   0   0   0
+0
 
+Output:
+1. 380 120
+ */
 #include <iostream>
 
 int mat[1000][1000];
