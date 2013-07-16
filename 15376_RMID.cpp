@@ -34,38 +34,48 @@
  */
 #include <iostream>
 #include <list>
+#include <fstream>
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-    list<int> l;
-    list<int>::iterator median=l.begin();
-    list<int>::iterator todelete;
-    int n;
-    while (scanf("%d", &n)==1)
+    if (argc==2) 
     {
-        while (n!=0) 
+        ifstream myReadFile;
+        myReadFile.open(argv[1]);
+        if (myReadFile.is_open()) 
         {
-            if (n>0) 
+            list<int> l;
+            list<int>::iterator median=l.begin();
+            list<int>::iterator todelete;
+            int n;
+            while (!myReadFile.eof()) 
             {
-                l.push_back(n);
-                if(l.size()%2)
-                    median++;
-            }
-            else if(n==-1)
-            {
-                printf("%d\n", *median);
-                todelete = median;
-                if(l.size()%2)
-                    median--;
+                myReadFile>>n;
+                if (n!=0) 
+                {
+                    if (n>0) 
+                    {
+                        l.push_back(n);
+                        if(l.size()%2)
+                            median++;
+                    }
+                    else if(n==-1)
+                    {
+                        printf("%d\n", *median);
+                        todelete = median;
+                        if(l.size()%2)
+                            median--;
+                        else
+                            median++;
+                        l.erase(todelete);
+                    }
+                }
                 else
-                    median++;
-                l.erase(todelete);
+                    printf("\n");
             }
-            scanf("%d", &n);
         }
-        printf("\n");
     }
     return 0;
 }
