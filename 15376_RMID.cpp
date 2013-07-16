@@ -73,7 +73,11 @@ int main(int argc, char* argv[])
                     }
                 }
                 else
+                {
                     printf("\n");
+                    l.clear();
+                    median=l.begin();
+                }
             }
         }
     }
