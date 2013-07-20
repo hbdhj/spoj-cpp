@@ -1,7 +1,23 @@
 /*
-USER: zobayer
-TASK: STONE
+TASK: Lifting the Stone
 ALGO: geometry
+ Sample Input:
+ 2
+ 4
+ 5 0
+ 0 5
+ -5 0
+ 0 -5
+ 4
+ 1 1
+ 11 1
+ 11 11
+ 1 11
+ 
+ Sample output:
+ 
+ 0.00 0.00
+ 6.00 6.00
 */
 
 #include <cstdio>
