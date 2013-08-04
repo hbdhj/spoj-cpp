@@ -19,7 +19,7 @@ inline bool fits(i64 a, i64 b, i64 c, i64 d)
 	if( c*c+d*d < b*b ) 
         return true;
 	if( c*c+d*d > a*a+b*b ) 
-        return false;
+		return false;
 	L = ( b - sqrt(c*c + d*d - a*a) ) / 2.0;
 	K = ( a - sqrt(c*c + d*d - b*b) ) / 2.0;
 	D = d;
