@@ -28,6 +28,14 @@ int main()
     scanf("%d", &t);
     for (int i=0; i<t; i++) {
         scanf("%d %d", &n, &m);
+        int l=(m-(2<<(n-2)));
+        //printf("l = %d\n", l);
+        r+=(l+1);
+        while (l/2) {
+            r+=l/2;
+            l=l/2;
+            //printf("l = %d\n", l);
+        }
         printf("Data set %d: %d %d %d\n", i+1, n, m, r);
     }
     return 0;
