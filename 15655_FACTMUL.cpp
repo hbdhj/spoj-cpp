@@ -17,8 +17,8 @@
 #include <string.h>
 using namespace std;
 
-#define SIZE 10000000
-#define MOL 109546051211
+#define SIZE 10000003
+#define MOL 109546051211ULL
 
 unsigned long long factorial[SIZE];
 
