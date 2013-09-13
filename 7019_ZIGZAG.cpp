@@ -45,7 +45,7 @@ int main()
 			case 'D': 
                 total += getval(++r, c, n); 
                 break;
-			case 'L': 
+		case 'L': 
                 total += getval(r, --c, n); 
                 break;
 			case 'R': 
