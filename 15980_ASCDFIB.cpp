@@ -9,6 +9,7 @@
  
  */
 #include <iostream>
+#include <string.h>
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
     int ret[100001];
     list[0]=0;
     list[1]=1;
-    for (int i=2; i<110001; i++) 
+    for (int i=2; i<1100001; i++) 
     {
         list[i]=(list[i-2]+list[i-1])%100000;
     }
@@ -26,20 +27,27 @@ int main()
     {
     
         scanf("%d %d", &a, &b);
+        //printf("%d %d\n",a, b);
         memset(ret, 0, sizeof(ret));
         for (j = a-1; j<a+b; j++)
         {
             ret[list[j]]++;
         }
         printf("Case %d:", i+1);
-        
-        for (j = 0, n = 0; j<100000&&n<=(100<b?100:b); j++)
+        int num=100<b?100:b;
+        //printf("num = %d\n", num);
+        for (j = 0, n = 0; j<100000&&n<=num; j++)
         {
             while (ret[j]--) 
             {
                 printf(" %d", j);
                 n++;
+                if(n==num)
+                    break;
+                //printf(" n=%d\n", n);
             }
+            if(n>=num)
+                break;
         }
         printf("\n");
     }
