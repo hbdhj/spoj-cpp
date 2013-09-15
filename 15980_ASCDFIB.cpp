@@ -6,8 +6,19 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- 
- */
+ TASK: Ascending Fibonacci Numbers 
+ Input:
+3
+1 3
+3 3
+100 1
+
+Output:
+
+Case 1: 0 1 1 2
+Case 2: 1 2 3 5
+Case 3: 15075 69026 
+*/
 #include <iostream>
 #include <string.h>
 
