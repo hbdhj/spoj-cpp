@@ -1,5 +1,5 @@
 /* Deng Haijun 2012/12/18
-94. Numeral System of the Maya
+TASK: Numeral System of the Maya
 Sample input:
 1
 ..

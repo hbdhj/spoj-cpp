@@ -1,4 +1,5 @@
 /*
+TASK: Kids Love Candies
 Input:
 2
 3 2

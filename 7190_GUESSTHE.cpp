@@ -1,3 +1,6 @@
+/*
+ TASK: Guess the Number
+ */
 #include <iostream>
 #include <vector>
 
