@@ -9,9 +9,9 @@ Output:
 5
 9
 */
-include<cstdio>
-#include<cstring>
-#include<algorithm>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
 using namespace std;
 
 char str[50005];

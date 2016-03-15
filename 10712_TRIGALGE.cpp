@@ -7,9 +7,9 @@ Output:
 19.441787
  A*x+B*sin(x)=C
 */
-#include<iostream>
-#include<cmath>
-#include<cstdio>
+#include <iostream>
+#include <cmath>
+#include <cstdio>
 using namespace std;
 
 double orexp(double a, double b, double c, double x) {

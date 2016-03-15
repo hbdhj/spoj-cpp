@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo : sieve
+ ALGO : sieve
  Input:
  8
  1

@@ -11,8 +11,8 @@ Output:
 3
 13399. Rachu
 */
-#include<stdio.h>
-#include<iostream>
+#include <stdio.h>
+#include <iostream>
 #define M 10000007
 
 using namespace std;

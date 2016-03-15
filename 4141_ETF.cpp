@@ -17,7 +17,7 @@ Output:
 4
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 #define MAX 1000001
 

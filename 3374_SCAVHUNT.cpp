@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo: ad-hoc
+ ALGO: ad-hoc
  Input:
  2
  4

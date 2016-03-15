@@ -21,7 +21,7 @@
  0
  1000000000
  */
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()

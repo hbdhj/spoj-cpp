@@ -7,7 +7,7 @@
 //
 /*
  TASK: Fishmonger
- algo:dynamic programming
+ ALGO: dynamic programming
  Sample input:
  4 7
  0 5 2 3

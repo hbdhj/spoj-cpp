@@ -17,7 +17,7 @@
  5
  9
 
- #include<ios>
+ #include <ios>
  int a[105][105],i,j,t,n;
  main()
  {

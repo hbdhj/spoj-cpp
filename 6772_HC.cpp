@@ -6,7 +6,8 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo nim game   http://baike.baidu.com/view/1101962.htm
+ ALGO : nim game
+ REFER:  http://baike.baidu.com/view/1101962.htm
  Sample Input 
  1
  2

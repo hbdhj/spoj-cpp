@@ -8,8 +8,8 @@
 /*
 TASK: Smaller Count
 */
-#include<iostream>
-#include<stdio.h>
+#include <iostream>
+#include <stdio.h>
 using namespace std;
 
 struct numsmall{

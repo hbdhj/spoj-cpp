@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo: match, gcd/lcm
+ ALGO: match, gcd/lcm
  Input:
  2 3
  1 2

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
-algo: depth first search
+ ALGO: depth first search
  Input:
  9
  110011000

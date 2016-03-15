@@ -11,7 +11,7 @@ Scenario #1: 7
 Scenario #2: 1
 */
 
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
 	int t, i = 1;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo: bruce-force compare
+ ALGO: bruce-force compare
  Input:
  
  006F B3B

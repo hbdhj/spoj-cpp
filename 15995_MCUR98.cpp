@@ -9,9 +9,9 @@
  TASK: Self Numbers
  */
 
-#include<stdio.h>
-#include<string.h>
-#include<iostream>
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
 using namespace std;
 #define SIZE 1000000
 int a[SIZE];

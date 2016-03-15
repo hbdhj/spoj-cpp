@@ -11,10 +11,12 @@ for i <- 2 to N
 2 1 3 1 2
 */
 
-#include<stdio.h>
-//#include<conio.h>
+#include <stdio.h>
+
 static long long int cntr=0;
+
 void merge(long long int [],int,int,int);
+
 void mergeSort(long long int arr[],int low, int high){
      if(low>=high)return;
      int mid=(low+high)/2;
@@ -22,6 +24,7 @@ void mergeSort(long long int arr[],int low, int high){
 	 mergeSort(arr,mid+1,high);		
 	 merge(arr,low,mid,high);
 }
+
 void merge(long long int arr[], int low, int mid, int high){
     long long int a[high-low+1];
     int i = low;
@@ -52,6 +55,7 @@ void merge(long long int arr[], int low, int mid, int high){
 		arr[m]=a[p];
 	}
 }
+
 int main(){
     int t;
     scanf("%d",&t);

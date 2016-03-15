@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
 //
 /*
- algo: simulation
+ ALGO: simulation
  Input:
  5
  3 1 2 3
