@@ -1,6 +1,6 @@
 /*
 6256. Inversion Count
-divide and conquer - merge sort
+ALGO: divide and conquer - merge sort
 Input:
 2
 3

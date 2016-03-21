@@ -4,6 +4,7 @@ for i <- 2 to N
     while j > 1 and a[j] < a[j - 1]
        swap a[j] and a[j - 1]
        j <- j - 1
+ALGO: merge sort
 2
 5
 1 1 1 2 2
