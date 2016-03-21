@@ -2,7 +2,6 @@
 TASK: CRZYSMKR - Crazy Smoker
 ALGO: math
 Input:
-Input:
 2
 1
 2
@@ -13,8 +12,6 @@ Output:
 */
 
 #include <stdio.h>
-
-using namespace std;
 
 int main()
 {
