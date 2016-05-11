@@ -1,9 +1,9 @@
 //
 //  2127.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-10.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
 TASK: Rain
@@ -15,7 +15,7 @@ a[i]=(s[i] mod 100 + 1) * (t[i] mod 100 + 1)
  Input file:
  1
  123456 123456 10 10000
- 
+
  Output file:
  2
 */
@@ -104,13 +104,13 @@ int main( int argc, char* argv[] ) {
 		fr(i,1,n){
 			s[i] = (78901 + 31LL*s[i-1]) % 699037;
 			t[i] = (23456 + 64LL*t[i-1]) % 2097151;
-			a[i] = (s[i] % 100 + 1) * (t[i] % 100 + 1);			
+			a[i] = (s[i] % 100 + 1) * (t[i] % 100 + 1);
 			sum+=a[i];
 			while(sum>m){
 				sum-=a[L];
 				L++;
 				checkmin(res,i-L+1);
-			}			
+			}
 		}
 		checkmin(res,n-L+1);
 		printf("%d\n", res);
@@ -118,4 +118,3 @@ int main( int argc, char* argv[] ) {
 
 	return 0;
 }
-

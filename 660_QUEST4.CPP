@@ -1,9 +1,9 @@
 //
 //  660_QUEST4.CPP
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-25.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 #include <iostream>
 #include <vector>
@@ -20,25 +20,25 @@ vector < int > edges[MAX];
 bool visited[MAX];
 int Left[MAX], Right[MAX];
 
-bool dfs(int u) 
+bool dfs(int u)
 {
-	if(visited[u]) 
+	if(visited[u])
         return false;
 	visited[u] = true;
 	int len = edges[u].size(), i, v;
-	for(i=0; i<len; i++) 
+	for(i=0; i<len; i++)
     {
 		v = edges[u][i];
-		if(Right[v]==-1) 
+		if(Right[v]==-1)
         {
 			Right[v] = u, Left[u] = v;
 			return true;
 		}
 	}
-	for(i=0; i<len; i++) 
+	for(i=0; i<len; i++)
     {
 		v = edges[u][i];
-		if(dfs(Right[v])) 
+		if(dfs(Right[v]))
         {
 			Right[v] = u, Left[u] = v;
 			return true;
@@ -52,19 +52,19 @@ int match() {
 	SET(Right);
 	int i, ret = 0;
 	bool done;
-	do 
+	do
     {
 		done = true;
 		CLR(visited);
-		for(i=0; i<MAX; i++) 
+		for(i=0; i<MAX; i++)
         {
-			if(Left[i]==-1 && dfs(i)) 
+			if(Left[i]==-1 && dfs(i))
             {
 				done = false;
 			}
 		}
 	} while(!done);
-	for(i=0; i<MAX; i++) 
+	for(i=0; i<MAX; i++)
         ret += (Left[i]!=-1);
 	return ret;
 }
@@ -72,12 +72,12 @@ int match() {
 int main() {
 	int t, n, i, x, y;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%d", &n);
-		for(i=0; i<MAX; i++) 
+		for(i=0; i<MAX; i++)
             edges[i].clear();
-		for(i=0; i<n; i++) 
+		for(i=0; i<n; i++)
         {
 			scanf("%d%d", &x, &y);
 			edges[x].push_back(y);

@@ -1,9 +1,9 @@
 //
 //  138_POSTERS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-26.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Election Posters
@@ -16,7 +16,7 @@
  8 10
  3 4
  7 10
- 
+
  Sample output:
  4
  */
@@ -36,61 +36,61 @@ using namespace std;
 
 bool flag[MAX];
 
-class comp 
+class comp
 {
 public:
-	inline bool operator() (const piii &a, const piii &b) const 
+	inline bool operator() (const piii &a, const piii &b) const
     {
 		return a.ff < b.ff && a.ss < b.ss;
 	}
 };
 
-inline bool inside(const piii &a, int x) 
+inline bool inside(const piii &a, int x)
 {
 	return a.ff <= x && x <= a.ss;
 }
 
-int main() 
+int main()
 {
 	set< piii, comp > S;
 	set< piii, comp > :: iterator st, en;
 	piii stp, enp;
 	int test, n, i, lt, rt, ans;
 	scanf("%d", &test);
-	while(test--) 
+	while(test--)
     {
 		S.clear();
 		S.insert(piii(pii(0,0), 0)), S.insert(piii(pii(INF,INF),0));
 		memset(flag, 0, sizeof flag);
 		scanf("%d", &n);
-		for(i = 1; i <= n; i++) 
+		for(i = 1; i <= n; i++)
         {
 			scanf("%d%d", &lt, &rt);
 			stp = *(st = S.lower_bound(piii(pii(lt, lt), i)));
 			enp = *(en = S.lower_bound(piii(pii(rt, rt), i)));
 			S.erase(st, ++en);
-			if(inside(stp, lt)) 
+			if(inside(stp, lt))
             {
-				if(lt - stp.ff > 0) 
+				if(lt - stp.ff > 0)
                     S.insert(piii(pii(stp.ff, lt-1), stp.second));
 			}
-			else 
+			else
             {
-				if(stp.ff > rt) 
+				if(stp.ff > rt)
                     S.insert(stp);
 			}
-			if(inside(enp, rt)) 
+			if(inside(enp, rt))
             {
-				if(rt + 1 <= enp.ss) 
+				if(rt + 1 <= enp.ss)
                     S.insert(piii(pii(rt+1, enp.ss), enp.second));
 			}
-			else 
+			else
                 S.insert(enp);
 			S.insert(piii(pii(lt, rt), i));
 		}
-		for(st=S.begin(), ans = 0; st != S.end(); st++) 
+		for(st=S.begin(), ans = 0; st != S.end(); st++)
         {
-			if(st->second) 
+			if(st->second)
             {
 				ans += !flag[st->second];
 				flag[st->second] = true;

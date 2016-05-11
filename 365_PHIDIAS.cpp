@@ -1,9 +1,9 @@
 //
 //  365_PHIDIAS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-9.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -18,25 +18,25 @@ const int MAXS = 601, MAXN = 200;
 
 int dp[MAXS][MAXS], h[MAXN], w[MAXN];
 
-int solve(int w, int h) 
+int solve(int w, int h)
 {
-	if(dp[w][h] > -1) 
+	if(dp[w][h] > -1)
         return dp[w][h];
 	int &res = dp[w][h] = w * h, tmp;
-	for(int i = 1; i <= (w >> 1); i++) 
+	for(int i = 1; i <= (w >> 1); i++)
     {
 		tmp = solve(i, h);
-		if(tmp < res) 
+		if(tmp < res)
             tmp += solve(w - i, h);
-		if(tmp < res) 
+		if(tmp < res)
             res = tmp;
 	}
 	for(int i = 1; i <= (h >> 1); i++)
     {
 		tmp = solve(w, i);
-		if(tmp < res) 
+		if(tmp < res)
             tmp += solve(w, h - i);
-		if(tmp < res) 
+		if(tmp < res)
             res = tmp;
 	}
 	return res;
@@ -45,7 +45,7 @@ int solve(int w, int h)
 int main() {
 	int test, i, H, W, n;
 	scanf("%d", &test);
-	while(test--) 
+	while(test--)
     {
 		scanf("%d %d %d", &W, &H, &n);
 		memset(dp, -1, sizeof dp);

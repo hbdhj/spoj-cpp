@@ -1,9 +1,9 @@
 //
 //  899_WSCIPHER.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-3.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -27,7 +27,7 @@ int main()
 {
     int k1, k2, k3;
     scanf("%d %d %d", &k1, &k2, &k3);
-    while (k1!=0&&k2!=0&&k3!=0) 
+    while (k1!=0&&k2!=0&&k3!=0)
     {
         char input[81];
         scanf("%s", input);
@@ -38,12 +38,12 @@ int main()
         int i=0;
         while (input[i])
         {
-            if (input[i]>='a'&&input[i]<='i') 
+            if (input[i]>='a'&&input[i]<='i')
             {
                 queue1.push_back(pair<char, int>(input[i], i));
                 size1++;
             }
-            else if (input[i]>='j'&&input[i]<='r') 
+            else if (input[i]>='j'&&input[i]<='r')
             {
                 queue2.push_back(pair<char, int>(input[i], i));
                 size2++;
@@ -94,7 +94,7 @@ int main()
         // handle k3
         if(k3&&size3)
         {
-            
+
             for(int i=0;i<k3%size3;i++)
             {
                 queue3.push_back(pair<char, int>(queue3[i].first, queue3[i].second));

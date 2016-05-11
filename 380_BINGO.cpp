@@ -1,15 +1,15 @@
 //
 //  380_BINGO.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-12.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
  TASK: Bullshit Bingo
  ALGO: ad-hoc
- 
+
  Sample Input
  Programming languages can be classified BULLSHIT into following types:
  - imperative and BULLSHIT procedural languages
@@ -33,18 +33,18 @@ void getlower(string &s)
 	int i, len = s.size();
 	for(i=0; i<len; i++)
 	{
-		if(isalpha(s.at(i))) 
+		if(isalpha(s.at(i)))
             s.at(i) = islower(s.at(i))? s.at(i)-32 : s.at(i);
-		else 
+		else
             s.at(i) = ' ';
 	}
 }
 
 int gcd(int a, int b)
 {
-	if(!b) 
+	if(!b)
         return a;
-	else 
+	else
         return gcd(b,a%b);
 }
 
@@ -66,7 +66,7 @@ int main()
 				game++;
 				S.clear();
 			}
-			else 
+			else
                 S.insert(str);
 		}
 	}

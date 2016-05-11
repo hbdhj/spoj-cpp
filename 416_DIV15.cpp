@@ -1,9 +1,9 @@
 //
 //  416.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-15.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
 416. Divisibility by 15
@@ -16,7 +16,7 @@ Input:
 51
 155
 200
-8885 
+8885
 88850
 0
 00
@@ -29,7 +29,7 @@ impossible
 30
 15
 15
-885 
+885
 8880
 0
 0

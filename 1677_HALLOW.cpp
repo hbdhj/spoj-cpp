@@ -1,9 +1,9 @@
 //
 //  1677_HALLOW.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-30.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -15,8 +15,8 @@
  3 6
  7 11 2 5 13 17
  0 0
- 
- 
+
+
  Output:
  3 5
  2 3 4
@@ -27,7 +27,7 @@
 
 int arr[120000], flag[120000], u[120000];
 
-int main() 
+int main()
 {
 	int n, m, i, x, total, g, mn, a, b;
 	while(scanf("%d %d",&n,&m) == 2 && (n | m))
@@ -35,14 +35,14 @@ int main()
 		memset(arr, 0, sizeof arr);
 		memset(flag, 0, sizeof flag);
 		mn = 120000, total = 0, arr[0] = 0, flag[0] = 1;
-		for(i = 1; i < m + 1; i++) 
+		for(i = 1; i < m + 1; i++)
             scanf("%d", &u[i]);
-		for(i = 1; i < m + 1; i++) 
+		for(i = 1; i < m + 1; i++)
         {
 			g = i, x = u[i], total += x, total %= n;
-			if(flag[total]) 
+			if(flag[total])
             {
-				if(i - arr[total] < mn) 
+				if(i - arr[total] < mn)
                 {
 					mn = arr[total];
 					a = arr[total] + 1, b = i;
@@ -50,8 +50,8 @@ int main()
 			}
 			arr[total] = i, flag[total] = 1;
 		}
-		for(i = a; i < b; i++) 
+		for(i = a; i < b; i++)
             printf("%d ", i); printf("%d\n", i);
 	}
 	return 0;
-}  
+}

@@ -1,9 +1,9 @@
 //
 //  1716_GSS3.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Can you answer these queries III
@@ -16,7 +16,7 @@
  0 3 -3
  1 2 4
  1 3 3
- 
+
  Output:
  6
  4
@@ -36,14 +36,14 @@ inline int max2(int a, int b)
 	return ((a > b)? a : b);
 }
 
-inline int max3(int a, int b, int c) 
+inline int max3(int a, int b, int c)
 {
 	return max2(a, max2(b, c));
 }
 
-void init(int Node, int i, int j) 
+void init(int Node, int i, int j)
 {
-	if(i==j) 
+	if(i==j)
     {
 		T[Node].maxv = T[Node].sum = T[Node].rval = T[Node].lval = a[i];
 		return;
@@ -57,17 +57,17 @@ void init(int Node, int i, int j)
 	T[Node].rval = max2(T[2*Node].rval + T[2*Node+1].sum, T[2*Node+1].rval);
 }
 
-void update(int Node, int i, int j, int idx, int val) 
+void update(int Node, int i, int j, int idx, int val)
 {
-	if(i==j && j==idx) 
+	if(i==j && j==idx)
     {
 		T[Node].maxv = T[Node].sum = T[Node].rval = T[Node].lval = a[idx] = val;
 		return;
 	}
 	int m = (i+j)/2;
-	if(idx<=m) 
+	if(idx<=m)
         update(2*Node, i, m, idx, val);
-	else 
+	else
         update(2*Node+1, m+1, j, idx, val);
 	T[Node].sum = T[Node*2].sum + T[Node*2+1].sum;
 	T[Node].maxv = max3(T[2*Node].maxv, T[2*Node].rval + T[2*Node+1].lval, T[2*Node+1].maxv);
@@ -75,19 +75,19 @@ void update(int Node, int i, int j, int idx, int val)
 	T[Node].rval = max2(T[2*Node].rval + T[2*Node+1].sum, T[2*Node+1].rval);
 }
 
-void find(Tree &res, int Node, int L, int R, int i, int j) 
+void find(Tree &res, int Node, int L, int R, int i, int j)
 {
-	if(L==i && R==j) 
+	if(L==i && R==j)
     {
 		res = T[Node];
 		return;
 	}
 	int m = (L + R)/2;
-	if(j<=m) 
+	if(j<=m)
         find(res, 2*Node, L, m, i, j);
-	else if(i>m) 
+	else if(i>m)
         find(res, 2*Node+1, m+1, R, i, j);
-	else 
+	else
     {
 		Tree Left, Right;
 		find(Left, 2*Node, L, m, i, m);
@@ -99,24 +99,24 @@ void find(Tree &res, int Node, int L, int R, int i, int j)
 	}
 }
 
-int main() 
+int main()
 {
 	int n, i, j, m, t;
 	Tree res;
 	scanf("%d", &n);
-	for(i=0; i<n; i++) 
+	for(i=0; i<n; i++)
         scanf("%d", &a[i]);
 	init(1, 0, n-1);
 	scanf("%d", &m);
-	while(m--) 
+	while(m--)
     {
 		scanf("%d%d%d", &t, &i, &j);
-		if(t) 
+		if(t)
         {
 			find(res, 1, 0, n-1, --i, --j);
 			printf("%d\n", res.maxv);
 		}
-		else 
+		else
             update(1, 0, n-1, --i, j);
 	}
 	return 0;

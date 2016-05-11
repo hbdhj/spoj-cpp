@@ -1,9 +1,9 @@
 //
 //  2138.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 12-12-26.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Pibonacci
@@ -12,7 +12,7 @@
  4
  11
  -1
- 
+
  Output file:
  1
  2
@@ -53,6 +53,6 @@ int main()
         if(i%50==0)
             cout<<endl;
     }*/
-    
+
     return 0;
 }

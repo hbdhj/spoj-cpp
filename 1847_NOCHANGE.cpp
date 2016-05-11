@@ -1,9 +1,9 @@
 //
 //  1847_NOCHANGE.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-15.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -30,15 +30,15 @@ int main()
 	while(scanf("%d", &m)==1)
 	{
 		scanf("%d", &k);
-		for(i=0; i<k; i++) 
-        {    
+		for(i=0; i<k; i++)
+        {
             scanf("%d", &c[i]);
 		}
-        for(i=1; i<k; i++) 
+        for(i=1; i<k; i++)
         {
             c[i] += c[i-1];
         }
-        /*for (i=0; i<k; i++) 
+        /*for (i=0; i<k; i++)
         {
             printf("c[%d] = %d\n",i, c[i]);
         }*/
@@ -60,10 +60,10 @@ int main()
             printf("f[%d]=true\n",m);
         else
             printf("f[%d]=false\n",m);*/
-        if(f[m]) 
+        if(f[m])
             printf("YES\n");
-		else 
+		else
             printf("NO\n");
-	}	
+	}
 	return 0;
 }

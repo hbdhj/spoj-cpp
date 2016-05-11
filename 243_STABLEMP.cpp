@@ -1,9 +1,9 @@
 //
 //  243_STABLEMP.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-9.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: stable marriage
@@ -34,9 +34,9 @@
  5 1 7 6 4 3 5 2
  6 6 3 7 5 2 4 1
  7 1 7 4 2 6 5 3
- 
- 
- 
+
+
+
  Output:
  1 3
  2 2
@@ -57,7 +57,7 @@ using namespace std;
 const int MAX = 555;
 int n, L[MAX][MAX], R[MAX][MAX], L2R[MAX], R2L[MAX], p[MAX];
 
-void stable() 
+void stable()
 {
 	memset(R2L, -1, sizeof R2L);
 	memset(p, 0, sizeof p);
@@ -67,10 +67,10 @@ void stable()
 		while(girl >= 0)
         {
 			int boy;
-			while(true) 
+			while(true)
             {
 				boy = L[girl][p[girl]++];
-				if(R2L[boy] < 0 || R[boy][girl] > R[boy][R2L[boy]]) 
+				if(R2L[boy] < 0 || R[boy][girl] > R[boy][R2L[boy]])
                     break;
 			}
 			int match = R2L[boy];
@@ -80,38 +80,38 @@ void stable()
 	}
 }
 
-int main() 
+int main()
 {
 	int t, part, wom, man;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%d", &n);
-		for(int i = 0; i < n; i++) 
+		for(int i = 0; i < n; i++)
         {
 			scanf("%d", &man);
 			man--;
-			for(int j = 0; j < n; j++) 
+			for(int j = 0; j < n; j++)
             {
 				scanf("%d", &part);
 				part--;
 				R[man][part] = n - j;
 			}
 		}
-		for(int i = 0; i < n; i++) 
+		for(int i = 0; i < n; i++)
         {
 			scanf("%d", &wom);
 			wom--;
-			for(int j = 0; j < n; j++) 
+			for(int j = 0; j < n; j++)
             {
 				scanf("%d", &part);
 				part--;
 				L[wom][j] = part;
 			}
 		}
-        
+
 		stable();
-		for(int i = 0; i < n; i++) 
+		for(int i = 0; i < n; i++)
             printf("%d %d\n", i + 1, L2R[i] + 1);
 	}
 	return 0;

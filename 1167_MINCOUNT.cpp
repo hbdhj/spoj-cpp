@@ -1,13 +1,13 @@
 //
 //  1167.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-12.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Move To Invert
- 100 is 1683 
+ 100 is 1683
  10^10 is 7443294631478557525
  */
 #include <iostream>

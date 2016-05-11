@@ -1,9 +1,9 @@
 //
 //  38_ LABYR1.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Labyrinth
@@ -23,7 +23,7 @@ pair <int, int> next;
 
 void dfs(int i, int j, int d)
 {
-	if(i<0 || i>=R || j<0 || j>=C || grid[i][j]!='.') 
+	if(i<0 || i>=R || j<0 || j>=C || grid[i][j]!='.')
         return;
 	grid[i][j] = 'v';
 	dfs(i+1, j, d+1);
@@ -42,15 +42,15 @@ void dfs(int i, int j, int d)
 int find()
 {
 	int maxlen = 0;
-	if(grid[next.I][next.J]!='.') 
+	if(grid[next.I][next.J]!='.')
         return 0;
 	while(true)
 	{
 		best = 0;
 		dfs(next.I, next.J, 0);
-		if(best <= maxlen) 
+		if(best <= maxlen)
             break;
-		else 
+		else
             maxlen = best;
 	}
 	return maxlen;

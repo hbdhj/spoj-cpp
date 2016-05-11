@@ -1,9 +1,9 @@
 //
 //  1391_CZ_PROB1.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -37,9 +37,9 @@ void generate()
 
 int solve(int n, int k)
 {
-	if(n==0) 
+	if(n==0)
         return (dp[n][k] = 1);
-	if(dp[n][k]) 
+	if(dp[n][k])
         return dp[n][k];
 	int i, temp = 0;
 	for(i=k; i>0; i--)

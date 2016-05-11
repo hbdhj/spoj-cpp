@@ -1,9 +1,9 @@
 //
 //  96_SHOP.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-18.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -14,16 +14,16 @@
  X1S3
  42X4
  X1D2
- 
+
  5 5
  S5213
  2X2X5
  51248
  4X4X2
  1445D
- 
+
  0 0
- 
+
  Sample output:
  4
  23
@@ -44,13 +44,13 @@ char grid[MAX][MAX];
 cell dir[4] = {cell(0,1), cell(1,0), cell(0,-1), cell(-1,0)};
 int d[MAX][MAX], R, C;
 
-bool isValid(cell u) 
+bool isValid(cell u)
 {
 	int i = u.first, j = u.second;
 	return (i>=0 && j>=0 && i<R && j<C);
 }
 
-int dijkstra(cell start, cell dest) 
+int dijkstra(cell start, cell dest)
 {
 	if(!isValid(start) || !isValid(dest)) return -1;
 	priority_queue< edge, vector< edge >, greater< edge > > Q;
@@ -59,22 +59,22 @@ int dijkstra(cell start, cell dest)
 	grid[start.first][start.second] = '0';
 	memset(d, 64, sizeof(d));
 	d[start.first][start.second] = 0;
-	while(!Q.empty()) 
+	while(!Q.empty())
     {
 		ui = Q.top().second.first;
 		uj = Q.top().second.second;
 		Q.pop();
-		for(int i=0; i<4; i++) 
+		for(int i=0; i<4; i++)
         {
 			vi = ui + dir[i].first;
 			vj = uj + dir[i].second;
-			if(isValid(cell(vi,vj)) && grid[vi][vj]!='X') 
+			if(isValid(cell(vi,vj)) && grid[vi][vj]!='X')
             {
-				if(grid[vi][vj]=='D') 
+				if(grid[vi][vj]=='D')
                     we = 0;
-				else 
+				else
                     we = grid[vi][vj] - '0';
-				if(d[ui][uj]+we < d[vi][vj]) 
+				if(d[ui][uj]+we < d[vi][vj])
                 {
 					d[vi][vj] = d[ui][uj] + we;
 					Q.push(edge(d[vi][vj], cell(vi,vj)));
@@ -82,13 +82,13 @@ int dijkstra(cell start, cell dest)
 			}
 		}
 		grid[ui][uj] = 'X';
-		if(ui==dest.first && uj==dest.second) 
+		if(ui==dest.first && uj==dest.second)
             return d[ui][uj];
 	}
 	return -1;
 }
 
-cell findStart() 
+cell findStart()
 {
 	for(int i=0; i<R; i++)
 		for(int j=0; j<C; j++)
@@ -97,7 +97,7 @@ cell findStart()
 	return cell(-1,-1);
 }
 
-cell findDest() 
+cell findDest()
 {
 	for(int i=R-1; i>=0; i--)
 		for(int j=0; j<C; j++)
@@ -106,11 +106,11 @@ cell findDest()
 	return cell(-1,-1);
 }
 
-int main() 
+int main()
 {
-	while(scanf("%d%d", &C, &R)==2 && (R||C)) 
+	while(scanf("%d%d", &C, &R)==2 && (R||C))
     {
-		for(int i=0; i<R; i++) 
+		for(int i=0; i<R; i++)
             scanf("%s", grid[i]);
 		printf("%d\n", dijkstra(findStart(), findDest()));
 	}

@@ -3,7 +3,7 @@
 //  
 //
 //  Created by Haijun Deng on 13-5-2.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*

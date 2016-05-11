@@ -1,5 +1,5 @@
 /*
-TASK: Kompići
+TASK: Kompici
 Input:
 3
 4

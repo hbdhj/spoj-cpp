@@ -1,9 +1,9 @@
 //
 //  2525_GNY07C.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-21.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -15,7 +15,7 @@
  5 2 HI
  2 6 HI
  5 5 HI HO
- 
+
  Output:
  1 0000110100101100
  2 0110000010

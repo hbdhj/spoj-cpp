@@ -1,9 +1,9 @@
 //
 //  22_TRICENTER.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-25.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -13,7 +13,7 @@ ALGO: geometry
  2
  3.0 0.8660254038 0.8660254038 0.8660254038
  657.8256599140 151.6154399062 213.5392629932 139.4878846649
- 
+
  Output:
  3.897 0.000
  149604.790 150.275

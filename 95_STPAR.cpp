@@ -6,9 +6,9 @@ Sample input:
 5
 1 2 3 4 5
 5
-5 1 2 4 3 
+5 1 2 4 3
 5
-5 1 2 3 4 
+5 1 2 3 4
 5
 5 3 2 1 4
 10
@@ -42,18 +42,18 @@ int getParades(vector<int> Parade)
                         revert.pop_back();
                         expected++;
                     }
-                    else 
+                    else
                         break;
                 }
             }
-            revert.push_back(Parade[i]);            
-        }    
+            revert.push_back(Parade[i]);
+        }
     }
     if(revert.size()==0)
         cout<<"yes"<<endl;
     else
     {
-        bool get_expected = true;        
+        bool get_expected = true;
         for(int i=revert.size()-1; i>=0;i--)
         {
             if(revert[i]!=expected)
@@ -67,8 +67,8 @@ int getParades(vector<int> Parade)
         if (get_expected)
             cout<<"yes"<<endl;
         else
-            cout<<"no"<<endl;    
-    }       
+            cout<<"no"<<endl;
+    }
     return 0;
 }
 int main()

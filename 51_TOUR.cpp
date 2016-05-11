@@ -1,9 +1,9 @@
 //
 //  51_TOUR.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-21.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -41,28 +41,28 @@ int idx, components;
 vector< int > G[MAX];
 vector< pii > edges;
 
-void tarjan(int u) 
+void tarjan(int u)
 {
 	int v, i;
 	Index[u] = Lowlink[u] = idx++;
 	Stack[top++] = u;
 	Onstack[u] = 1;
-	for(i = 0; i < SZ(G[u]); i++) 
+	for(i = 0; i < SZ(G[u]); i++)
     {
 		v = G[u][i];
-		if(Index[v]==-1) 
+		if(Index[v]==-1)
         {
 			tarjan(v);
 			Lowlink[u] = min(Lowlink[u], Lowlink[v]);
 		}
-		else if(Onstack[v]) 
+		else if(Onstack[v])
             Lowlink[u] = min(Lowlink[u], Index[v]);
 	}
-    
-	if(Lowlink[u] == Index[u]) 
+
+	if(Lowlink[u] == Index[u])
     {
 		components++;
-		do 
+		do
         {
 			v = Stack[--top];
 			Onstack[v] = 0;
@@ -74,25 +74,25 @@ void tarjan(int u)
 void findSCC(int n) {
 	components = top = idx = 0;
 	SET(Index);
-    CLR(Onstack); 
+    CLR(Onstack);
     MEM(Lowlink, 0x7f);
-	for(int i = 1; i <= n; i++) 
-        if(Index[i]==-1) 
+	for(int i = 1; i <= n; i++)
+        if(Index[i]==-1)
             tarjan(i);
 }
 
-int findWinners(int n) 
+int findWinners(int n)
 {
 	int i, lead, cid;
 	CLR(Indeg);
 	for(i = 0; i < SZ(edges); i++)
 		if(Component[edges[i].ff] != Component[edges[i].ss])
 			Indeg[Component[edges[i].ss]]++;
-	for(i = 1, lead = cid = 0; i <= components; i++) 
+	for(i = 1, lead = cid = 0; i <= components; i++)
     {
 		if(!Indeg[i]) {
 			lead++;
-			if(lead > 1) 
+			if(lead > 1)
                 return 0;
 			cid = i;
 		}
@@ -102,19 +102,19 @@ int findWinners(int n)
 	return lead;
 }
 
-int main() 
+int main()
 {
 	int t, n, e, i, j;
 	scanf("%d", &t);
 	while(t--) {
 		scanf("%d", &n);
-		for(i = 1; i <= n; i++) 
+		for(i = 1; i <= n; i++)
             G[i].clear();
 		edges.clear();
-		for(i = 1; i <= n; i++) 
+		for(i = 1; i <= n; i++)
         {
 			scanf("%d", &e);
-			while(e--) 
+			while(e--)
             {
 				scanf("%d", &j);
 				G[j].PB(i);

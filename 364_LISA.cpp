@@ -1,23 +1,23 @@
 //
 //  364_LISA.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-25.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Pocket Money
  Input:
  2
  1+2*3+4*5
- 2+1*0*1+1 
- 
+ 2+1*0*1+1
+
  Output:
  105 27
  3 0
- 
+
  Two possible expressions for the first testcase:
- 
+
  105 = (1+2)*(3+4)*5
  27  = 1+2*3+4*5
 
@@ -85,7 +85,7 @@ int main()
 {
     int n;
     cin>>n;
-    while (n--) 
+    while (n--)
     {
         string str;
         cin>>str;

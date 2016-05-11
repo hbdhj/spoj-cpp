@@ -1,9 +1,9 @@
 //
 //  2526_GNY07D.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-15.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -15,7 +15,7 @@
  5 2 0110000010
  2 6 010000001001
  5 5 0100001000011010110000010
- 
+
  Output:
  1 ACM
  2 HI
@@ -33,31 +33,31 @@ int R, C;
 
 #define idx(r,c) (r*C+c)
 
-int main() 
+int main()
 {
 	int t, i, x = 1, sr, sc, tot, dir;
 	char ch;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%d%d%s", &R, &C, en);
 		printf("%d ", x++);
 		sr = sc = dir = 0;
 		tot = R * C;
-		for(ch = 0, i = 1; i <= tot; i++) 
+		for(ch = 0, i = 1; i <= tot; i++)
         {
 			ch = (ch << 1)|(en[idx(sr,sc)]=='1');
 			en[idx(sr,sc)] = 'X';
-			if(i % 5 == 0) 
+			if(i % 5 == 0)
             {
 				ch = (!ch? ' ' : ch + 'A' - 1);
 				putchar(ch);
 				ch = 0;
 			}
 			sr += dr[dir], sc += dc[dir];
-			if(sr<0 || sr>=R || sc<0 || sc>=C || en[idx(sr,sc)]=='X') 
+			if(sr<0 || sr>=R || sc<0 || sc>=C || en[idx(sr,sc)]=='X')
             {
-				if(i < tot) 
+				if(i < tot)
                 {
 					sr -= dr[dir], sc -= dc[dir];
 					dir = (dir + 1) & 3;

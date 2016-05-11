@@ -1,37 +1,37 @@
 //
 //  66_CRSCNTRY.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  dynamic programming
  Sample input:
- 
- 3 
- 1 2 3 4 5 6 7 8 9 0 
- 1 3 8 2 0 
- 2 5 7 8 9 0 
- 1 1 1 1 1 1 2 3 0 
- 1 3 1 3 5 7 8 9 3 4 0 
- 1 2 35 0 
- 0 
- 1 3 5 7 0 
- 3 7 5 1 0 
- 0 
- 1 2 1 1 0 
- 1 1 1 0 
- 0 
- 
+
+ 3
+ 1 2 3 4 5 6 7 8 9 0
+ 1 3 8 2 0
+ 2 5 7 8 9 0
+ 1 1 1 1 1 1 2 3 0
+ 1 3 1 3 5 7 8 9 3 4 0
+ 1 2 35 0
+ 0
+ 1 3 5 7 0
+ 3 7 5 1 0
+ 0
+ 1 2 1 1 0
+ 1 1 1 0
+ 0
+
  Sample output:
- 
- 6 
- 2 
- 3 
+
+ 6
+ 2
+ 3
  */
 #include <iostream>
-#include <algorithm> 
+#include <algorithm>
 using namespace std;
 
 #define MAX 2002

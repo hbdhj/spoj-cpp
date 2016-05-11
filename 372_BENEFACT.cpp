@@ -1,24 +1,24 @@
 //
 //  372_BENEFACT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: The Benefactor
- 
+
  Input:
  1
  6
  1 2 3
- 2 3 4 
+ 2 3 4
  2 6 2
  6 4 6
  6 5 5
- 
+
  Output:
- 
+
  12
  */
 #include <iostream>
@@ -35,7 +35,7 @@ int main()
         int n;
         scanf("%d",&n);
         vector<int> nodes;
-        
+
     }
     return 0;
 }

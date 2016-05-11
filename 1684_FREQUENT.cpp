@@ -1,9 +1,9 @@
 //
 //  1684_ FREQUENT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-18.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
 TASK: Frequent values
@@ -86,9 +86,9 @@ struct NODE { int mfreq, lfreq, rfreq; };
 int a[MAX];
 struct NODE Tree[MAX<<1];
 
-void init(int Node, int i, int j) 
+void init(int Node, int i, int j)
 {
-	if(i==j) 
+	if(i==j)
 	{
 		Tree[Node].lfreq = Tree[Node].rfreq = Tree[Node].mfreq = 1;
 		return;
@@ -96,14 +96,14 @@ void init(int Node, int i, int j)
 	int m = (i + j)>>1;
 	init(Node<<1, i, m);
 	init((Node<<1)+1, m+1, j);
-	if(a[m]==a[m+1]) 
+	if(a[m]==a[m+1])
 	{
 		Tree[Node].lfreq = Tree[Node<<1].lfreq + Tree[(Node<<1)+1].lfreq * (a[i]==a[m]);
 		Tree[Node].rfreq = Tree[(Node<<1)+1].rfreq + Tree[Node<<1].rfreq * (a[j]==a[m+1]);
 		int temp = Tree[Node<<1].rfreq + Tree[(Node<<1)+1].lfreq;
 		Tree[Node].mfreq = max(temp, max(Tree[Node<<1].mfreq, Tree[(Node<<1)+1].mfreq));
 	}
-	else 
+	else
 	{
 		Tree[Node].lfreq = Tree[Node<<1].lfreq;
 		Tree[Node].rfreq = Tree[(Node<<1)+1].rfreq;
@@ -111,41 +111,41 @@ void init(int Node, int i, int j)
 	}
 }
 
-int query(int Node, int i, int j, int u, int v) 
+int query(int Node, int i, int j, int u, int v)
 {
-	if(u==i && v==j) 
+	if(u==i && v==j)
 		return Tree[Node].mfreq;
 	int m = (i+j)>>1;
-	if(v <= m) 
+	if(v <= m)
 		return query(Node<<1, i, m, u, v);
-	if(u > m) 
+	if(u > m)
 		return query((Node<<1)+1, m+1, j, u, v);
 	int leftv = query(Node<<1, i, m, u, m);
 	int rightv = query((Node<<1)+1, m+1, j, m+1, v);
-	if(a[m]==a[m+1]) 
+	if(a[m]==a[m+1])
 	{
 		int temp = min(Tree[Node<<1].rfreq, m-u+1) + min(Tree[(Node<<1)+1].lfreq, v-m);
 		return max(temp, max(rightv, leftv));
 	}
-	else 
+	else
 		return max(leftv, rightv);
 }
 
-int main() 
+int main()
 {
 	int n, q, i, u, v;
-	while(scanf("%d", &n)==1 && n) 
+	while(scanf("%d", &n)==1 && n)
 	{
 		scanf("%d", &q);
-		for(i = 0; i < n; i++) 
+		for(i = 0; i < n; i++)
 			scanf("%d", &a[i]);
 		init(1, 0, n-1);
-		for(i = 0; i < q; i++) 
+		for(i = 0; i < q; i++)
 		{
 			scanf("%d%d", &u, &v);
-			if(u==v) 
+			if(u==v)
 				printf("1\n");
-			else 
+			else
 				printf("%d\n", query(1, 0, n-1, --u, --v));
 		}
 	}

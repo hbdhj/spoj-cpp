@@ -1,19 +1,19 @@
 //
 //  23_PIR.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-31.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Pyramids
  ALGO: geometry
- 
+
  Input:
  2
  1 1 1 1 1 1
  1000 1000 1000 3 4 5
- 
+
  Output:
  0.1179
  1999.9937

@@ -1,9 +1,9 @@
 //
 //  402_HIKE.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-23.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -17,7 +17,7 @@
  y g
  g y
  0
- 
+
  Output:
  2
  impossible

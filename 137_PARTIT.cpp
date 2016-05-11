@@ -1,9 +1,9 @@
 //
 //  137_PARTIT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-29.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -14,7 +14,7 @@
  9
  4
  3
- 
+
  Sample output:
  1 1 3 4
  */
@@ -24,12 +24,12 @@ using namespace std;
 
 int dp[222][222][11];
 
-int solve(int start, int total, int len) 
+int solve(int start, int total, int len)
 {
 	int ret = 0, i;
-	if(dp[start][total][len]) 
+	if(dp[start][total][len])
         return dp[start][total][len]-1;
-	if(len==1) 
+	if(len==1)
         ret = (start==total);
 	else
 		for(i=start; i*(len-1)+start<=total; i++)
@@ -41,19 +41,19 @@ int solve(int start, int total, int len)
 int main() {
 	int t, m, n, k, d, v;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%d%d%d", &m, &n, &k);
 		d = 1;
-		do 
+		do
         {
-			while((v=solve(d, m, n))<k) 
+			while((v=solve(d, m, n))<k)
             {
 				d++;
 				k -= v;
 			}
 			printf("%d", d);
-			if(n > 1) 
+			if(n > 1)
                 printf(" ");
 			m -= d;
 		} while(--n);

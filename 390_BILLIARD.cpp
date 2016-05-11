@@ -1,21 +1,21 @@
 //
 //  390.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-15.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Billiard
  Input:
- 
+
  100 100 1 1 1
  200 100 5 3 4
  201 132 48 1900 156
  0 0 0 0 0
- 
+
  Output:
- 
+
  45.00 141.42
  33.69 144.22
  3.09 7967.81
@@ -49,7 +49,7 @@ int main()
         inputs.push_back(s);
         inputs.push_back(m);
         inputs.push_back(n);
-        
+
         scanf("%d %d %d %d %d", &a, &b, &s, &m, &n);
     }
     for(int i=0;i<inputs.size()/5;i++)

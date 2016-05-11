@@ -1,9 +1,9 @@
 //
 //  2905_ NOTATRI.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Not a Triangle
@@ -15,12 +15,12 @@
  4
  5 2 9 6
  0
- 
+
  Output:
  1
  0
  2
-binary search 
+binary search
 */
 
 #define _CRT_SECURE_NO_WARNINGS 1
@@ -38,14 +38,14 @@ int bSearch(int start, int end, int val)
 	int mid, i;
 	while(start <= end)
 	{
-		if(A[start] > val) 
+		if(A[start] > val)
             return start;
-		if(A[end] <= val) 
+		if(A[end] <= val)
             return end+1;
 		mid = (start + end) / 2;
-		if(A[mid] > val) 
+		if(A[mid] > val)
             end = mid - 1;
-		else if(A[mid] < val) 
+		else if(A[mid] < val)
             start = mid + 1;
 		else if(A[mid] == val)
 		{

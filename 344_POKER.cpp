@@ -1,13 +1,13 @@
 //
 //  344_POKER.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: poker
- LOGIC: 
+ LOGIC:
  1. royal flush - ace, king, queen, jack and ten, all in the same suit
  2. straight flush - five cards of the same suit in sequence, such as 10,9,8,7,6 of clubs; ace can be counted both as the highest card or as the lowest card - A,2,3,4,5 of hearts is a straight flush. But 4,3,2,A,K of hearts is not a straight flush - it's just a flush.
  3. four of a kind - four cards of the same rank, such as four kings.
@@ -18,7 +18,7 @@
  8. two pairs - two cards of one rank, two cards of another rank, and one more card
  9. pair - two cards of the same rank
  10. high card - none of the above
- 
+
  Input:
  11
  AH KH QH TH JH
@@ -32,7 +32,7 @@
  2H 2S 4C 4S 5D
  KH 5S 3C 5C 7D
  AH 4S 9C TD 3H
- 
+
  Output:
  royal flush
  straight flush
@@ -59,7 +59,7 @@ int main()
         int cards[5][16];
         memset(cards,0,sizeof(cards));
         int card_num=5;
-        while (card_num--) 
+        while (card_num--)
         {
             scanf("%s", card);
             //printf("%c %c, ", card[0], card[1]);
@@ -117,20 +117,20 @@ int main()
             }
             cards[4][0]++;
         }
-        
+
         //printf("\n");
-        for (int i=0; i<5; i++) 
+        for (int i=0; i<5; i++)
         {
             int max = 0;
             int cur = 0;
-            
+
             if(cards[i][0]<2)
                 cards[i][15]=cards[i][0];
             else
             {
-                for (int j=1; j<15; j++) 
+                for (int j=1; j<15; j++)
                 {
-                    if (cards[i][j]&&cards[i][j+1]) 
+                    if (cards[i][j]&&cards[i][j+1])
                         cur++;
                     else
                         cur=0;
@@ -140,18 +140,18 @@ int main()
                 }
                 cards[i][15]=max+1;
             }
-            
+
         }
         bool checked = false;
-        /*for (int i=0; i<5; i++) 
+        /*for (int i=0; i<5; i++)
         {
-            for (int j=0; j<16; j++) 
+            for (int j=0; j<16; j++)
             {
                 printf("%d, ",cards[i][j]);
             }
             printf("\n");
         }*/
-        for (int i=0; i<4; i++) 
+        for (int i=0; i<4; i++)
         {
             if (cards[i][1]&&cards[i][10]&&cards[i][11]&&cards[i][12]&&cards[i][13])
             {
@@ -171,7 +171,7 @@ int main()
                 checked = true;
                 break;
             }
-        }   
+        }
         if(!checked)
         {
             if (cards[4][15]==5)
@@ -193,7 +193,7 @@ int main()
             {
                 printf("rands[%d] = %d\n", i, rands[i]);
             }*/
-            if (rands[4]) 
+            if (rands[4])
             {
                 printf("four of a kind\n");
             }

@@ -1,9 +1,9 @@
 //
 //  1870_ MKLABELS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Making Labels
@@ -13,7 +13,7 @@
  4
  5
  0
- 
+
  Output:
  Case 1, N = 2, # of different labelings = 1
  Case 2, N = 3, # of different labelings = 3

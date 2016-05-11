@@ -1,9 +1,9 @@
 //
 //  33_TRIP.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-31.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Trip
@@ -12,7 +12,7 @@
  1
  abcabcaa
  acbacba
- 
+
  Output
  ababa
  abaca
@@ -31,41 +31,41 @@ const int MAX = 100;
 int dp[MAX][MAX], lcslen, len1, len2;
 char s1[MAX], s2[MAX], s3[MAX];
 
-int lcs(int i, int j) 
+int lcs(int i, int j)
 {
 	int &ret = dp[i][j];
-	if(i==len1 || j==len2) 
+	if(i==len1 || j==len2)
         return ret = 0;
-	if(ret != -1) 
+	if(ret != -1)
         return ret;
 	ret = 0;
-	if(s1[i]==s2[j]) 
+	if(s1[i]==s2[j])
         ret = 1 + lcs(i+1, j+1);
-	else 
+	else
         ret = max(lcs(i+1, j), lcs(i, j+1));
 	return ret;
 }
 
-void printAll(int na, int nb, int d) 
+void printAll(int na, int nb, int d)
 {
-	if(d==lcslen) 
+	if(d==lcslen)
     {
 		s3[d] = 0;
 		puts(s3);
 		return;
 	}
-	if(na==len1 || nb==len2) 
+	if(na==len1 || nb==len2)
         return;
-	for(char ch='a'; ch<='z'; ch++) 
+	for(char ch='a'; ch<='z'; ch++)
     {
 		bool done = false;
-		for(int i=na; i<len1; i++) 
+		for(int i=na; i<len1; i++)
         {
-			if(ch==s1[i]) 
+			if(ch==s1[i])
             {
-				for(int j=nb; j<len2; j++) 
+				for(int j=nb; j<len2; j++)
                 {
-					if(ch==s2[j] && lcs(i, j)==lcslen-d) 
+					if(ch==s2[j] && lcs(i, j)==lcslen-d)
                     {
 						s3[d] = ch;
 						printAll(i+1, j+1, d+1);
@@ -74,17 +74,17 @@ void printAll(int na, int nb, int d)
 					}
 				}
 			}
-			if(done) 
+			if(done)
                 break;
 		}
 	}
 }
 
-int main() 
+int main()
 {
 	int t, i, j;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%s%s", s1, s2);
 		len1 = strlen(s1);
@@ -94,7 +94,7 @@ int main()
 				dp[i][j] = -1;
 		lcslen = lcs(0, 0);
 		printAll(0, 0, 0);
-		if(t) 
+		if(t)
             puts("");
 	}
 	return 0;

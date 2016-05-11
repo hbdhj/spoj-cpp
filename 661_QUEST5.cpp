@@ -1,24 +1,24 @@
 //
 //  661_QUEST5.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-12.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO: sorting
- Input: 
- 2 
- 3 
- 1 5 
- 3 5 
- 2 4 
- 2 
- 1 4 
+ Input:
+ 2
+ 3
+ 1 5
+ 3 5
+ 2 4
+ 2
+ 1 4
  4 5
- 
- Output: 
- 1 
+
+ Output:
+ 1
  1
  */
 #include <iostream>
@@ -28,33 +28,33 @@ using namespace std;
 
 const int MAX = 10101;
 
-struct bar 
+struct bar
 {
 	int x, y;
 } b[MAX];
 
-bool comp(const bar &a, const bar &b) 
+bool comp(const bar &a, const bar &b)
 {
 	return (a.y < b.y);
 }
 
-int main() 
+int main()
 {
 	int t, i, n, nail, last;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%d", &n);
-		for(i=0; i<n; i++) 
+		for(i=0; i<n; i++)
         {
 			scanf("%d%d", &b[i].x, &b[i].y);
 		}
 		sort(b, b+n, comp);
 		nail = 0;
 		last = -1;
-		for(i=0; i<n; i++) 
+		for(i=0; i<n; i++)
         {
-			if(b[i].x > last) 
+			if(b[i].x > last)
             {
 				nail++;
 				last = b[i].y;

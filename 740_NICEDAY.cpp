@@ -1,9 +1,9 @@
 //
 //  740_NICEDAY.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-8.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -28,12 +28,12 @@ int main()
 {
 	int t, n, a, b, c, ans;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		coastline.clear();
 		scanf("%d", &n);
 		scores.resize(n);
-		for(int i=0; i<n; i++) 
+		for(int i=0; i<n; i++)
         {
 			scanf("%d%d%d", &a, &b, &c);
 			scores[i] = pip(a, pii(b, c));
@@ -41,24 +41,24 @@ int main()
 		sort(scores.begin(), scores.end());
 		coastline.insert(scores[0].second);
 		ans = 1;
-		for(int i=1; i<n; i++) 
+		for(int i=1; i<n; i++)
         {
 			b = scores[i].second.first, c = scores[i].second.second;
 			iter = coastline.lower_bound(scores[i].second);
-			if(iter==coastline.begin() || c < (--iter)->second) 
+			if(iter==coastline.begin() || c < (--iter)->second)
             {
 				ans++;
 				coastline.insert(scores[i].second);
 				iter = coastline.upper_bound(scores[i].second);
-				for(; iter!=coastline.end(); ) 
+				for(; iter!=coastline.end(); )
                 {
-					if(iter->first > b && iter->second > c) 
+					if(iter->first > b && iter->second > c)
                     {
 						last = ++iter;
 						coastline.erase(--iter);
 						iter = last;
 					}
-					else 
+					else
                         break;
 				}
 			}
