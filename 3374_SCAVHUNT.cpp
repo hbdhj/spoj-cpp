@@ -1,9 +1,9 @@
 //
 //  3374_SCAVHUNT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-30.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO: ad-hoc
@@ -16,15 +16,15 @@
  3
  Toilet Hospital
  VideoGame Toilet
- 
- 
+
+
  Output:
  Scenario #1:
  BirdsNest
  Garage
  SwimmingPool
  OldTree
- 
+
  Scenario #2:
  VideoGame
  Toilet

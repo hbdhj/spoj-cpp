@@ -1,9 +1,9 @@
 //
 //  3885_MCOINS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-16.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Coins Game
@@ -23,13 +23,13 @@ void calc()
 	int i;
 	for(i=last+1; i<=n; i++)
 	{
-		if(ch(i)) 
+		if(ch(i))
             continue;
-		if(i+1 < MAX) 
+		if(i+1 < MAX)
             st((i+1));
-		if(i+l < MAX) 
+		if(i+l < MAX)
             st((i+l));
-		if(i+k < MAX) 
+		if(i+k < MAX)
             st((i+k));
 	}
 	last = n;
@@ -43,7 +43,7 @@ int main()
 	for(i=0; i<m; i++)
 	{
 		scanf("%d", &n);
-		if(n > last) 
+		if(n > last)
             calc();
 		res[i] = (ch(n))? 'A' : 'B';
 	}

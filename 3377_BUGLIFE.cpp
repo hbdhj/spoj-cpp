@@ -1,9 +1,9 @@
 //
 //  3377.cpp A Bug’s Life
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-9.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  Input:
@@ -15,8 +15,8 @@
  4 2
  1 2
  3 4
- 
- 
+
+
  Output:
  Scenario #1:
  Suspicious bugs found!
@@ -78,7 +78,7 @@ int main()
     for(i=0;i<tN;i++)
     {
         printf("Scenario #%d:\n",i+1);
-        
+
         if(Outputs[i])
             printf("No suspicious bugs found!\n");
         else

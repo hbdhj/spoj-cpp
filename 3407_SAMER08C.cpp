@@ -1,16 +1,16 @@
 //
 //  3407_SAMER08C.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
  TASK: Candy
  ALGO: dynamic programming
  Input:
- 
+
  5 5
  1 8 2 1 9
  1 7 3 5 2
@@ -26,7 +26,7 @@
  9 10 2 7
  5 1 1 5
  0 0
- 
+
  Output:
  54
  40
@@ -45,9 +45,9 @@ int dp[MAX], col[MAX], row[MAX], r, c;
 
 int solve(int i, int n, int *a)
 {
-	if(i >= n) 
+	if(i >= n)
         return 0;
-	if(dp[i]) 
+	if(dp[i])
         return dp[i];
 	return dp[i] = max(a[i]+solve(i+2,n,a), solve(i+1,n,a));
 }
@@ -59,7 +59,7 @@ int main()
 	{
 		for(i=0; i<r; i++)
 		{
-			for(j=0; j<c; j++) 
+			for(j=0; j<c; j++)
                 scanf("%d", &row[j]);
 			fill(dp, dp+c, 0);
 			col[i] = solve(0, c, row);
