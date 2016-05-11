@@ -1,9 +1,9 @@
 //
 //  14890_GOODD.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-22.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Good Code
@@ -22,10 +22,10 @@ goto 18;
 c++;
 c++;
  Output:
- 11 
+ 11
  Explanation of Sample:
  The program will run through the following lines, and corresponding values of c:
- 
+
  Line 1 ("c++;"), c=1
  Line 2 ("goto 6;"), c=1
  Line 8 ("6:"), c=1
@@ -60,7 +60,7 @@ int main()
     }
     map<int, vector<int> > program;
     int s_sectionId=0;
-    
+
     for (int i=0;i<lineN;i++)
     {
         printf("%d - %s\n", i+1, lines[i].c_str());
@@ -85,7 +85,7 @@ int main()
             {
                 if(program[s_sectionId][program[s_sectionId].size()-1]>0)
                     program[s_sectionId].push_back(0-t_sectionId);
-            }    
+            }
             else
                 program[s_sectionId].push_back(0-t_sectionId);
         }
@@ -104,8 +104,8 @@ int main()
                 printf("%d ", it->second[i]);
             else
                 printf(" will go to section %d", 0-(it->second[i]));
-        } 
+        }
         printf("\n");
-    }    
+    }
     return 0;
 }

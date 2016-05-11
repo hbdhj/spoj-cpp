@@ -1,9 +1,9 @@
 //
 //  15429_UCV2013A.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK:Counting Ids
@@ -13,7 +13,7 @@
  2 3
  128 32
  0 0
- 
+
  Output:
  14
  792805767
@@ -26,7 +26,7 @@ int main()
 {
     int n,l;
     scanf("%d %d", &n, &l);
-    while (n!=0&&l!=0) 
+    while (n!=0&&l!=0)
     {
         if(n==1)
             printf("%d\n", l);
@@ -46,4 +46,3 @@ int main()
     }
     return 0;
 }
-

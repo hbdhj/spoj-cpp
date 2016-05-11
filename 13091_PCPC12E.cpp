@@ -1,6 +1,6 @@
 /*
 TASK: Snakes and Ladders
-ALGO: bfs
+ALGO: breadth first search
 */
 #include <cstdio>
 #include <cstring>

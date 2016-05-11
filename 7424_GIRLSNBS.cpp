@@ -1,18 +1,18 @@
 //
 //  7424.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-16.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
- Input: 
+ Input:
  10 10
  5 1
  0 1000
  -1 -1
- 
- Output: 
+
+ Output:
  1
  3
  1000

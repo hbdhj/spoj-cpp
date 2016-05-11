@@ -1,6 +1,6 @@
 /*
 TASK: Cubist Artwork
-ALGO: sort and merge
+ALGO: sort, merge
 */
 
 #include <stdio.h>

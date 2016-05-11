@@ -1,9 +1,9 @@
 //
 //  14971_UOFTAB.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-21.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -21,7 +21,7 @@
  2
  2 1 2
  2 2 2
- 
+
  Output:
  6
  Foxen are too powerful
@@ -35,9 +35,9 @@ using namespace std;
 
 int gcd(int a, int b)
 {
-    if(!b) 
+    if(!b)
         return a;
-    else 
+    else
         return gcd(b,a%b);
 }
 
@@ -63,7 +63,7 @@ int main()
         for (int i=1; i<n; i++)
         {
             ret=lcd(ret, Ai[i]+Si[i]);
-        }    
+        }
         //printf("ret = %d\n", ret);
         vector<int> status(ret, 0);
         for (int i=0; i<n; i++)
@@ -93,7 +93,7 @@ int main()
         {
             printf("Foxen are too powerful\n");
         }
-        
+
     }
     return 0;
 }

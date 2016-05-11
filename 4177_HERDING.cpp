@@ -1,9 +1,9 @@
 //
 //  4177_HERDING.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-5.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -13,7 +13,7 @@
  SWWW
  SEWN
  EEEN
- 
+
  Output:
  2
  */
@@ -36,13 +36,13 @@ void floodfill(int i, int j)
 			return;
 		}
 		trap[i][j] = count;
-		if(grid[i][j]=='W') 
+		if(grid[i][j]=='W')
             floodfill(i, j-1);
-		else if(grid[i][j]=='E') 
+		else if(grid[i][j]=='E')
             floodfill(i, j+1);
-		else if(grid[i][j]=='N') 
+		else if(grid[i][j]=='N')
             floodfill(i-1, j);
-		else if(grid[i][j]=='S') 
+		else if(grid[i][j]=='S')
             floodfill(i+1, j);
 		trap[i][j] = count;
 	}
@@ -58,7 +58,7 @@ int main()
             {
                 count = last + 1;
                 floodfill(i, j);
-                if(count > last) 
+                if(count > last)
                     last++;
             }
 	printf("%d\n", last);

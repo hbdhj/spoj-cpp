@@ -1,27 +1,27 @@
 //
 //  15310_VPL2_BC.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-11.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Peter Quest
  INPUT
- 
+
  OUTPUT
- 
+
  3
- 
+
  3 2 2
  0 0
  1 1
- 
+
  3 3 3
  0 0
  1 1
  2 2
- 
+
  8 8 10
  0 1
  5 0
@@ -33,17 +33,17 @@
  5 7
  6 7
  7 7
- 
+
  Scenario #1:
  *2
  2*
  11
- 
+
  Scenario #2:
  *21
  2*2
  12*
- 
+
  Scenario #3:
  1*1-----
  111-1221
@@ -77,11 +77,11 @@ int main()
             y_s = y-1>0?y-1:0;
             y_e = y+1<m-1?y+1:m-1;
             //printf("x_s = %d, x_e = %d, y_s = %d, y_e = %d\n", x_s, x_e, y_s, y_e);
-            for (i=x_s; i<=x_e; i++) 
+            for (i=x_s; i<=x_e; i++)
             {
-                for (j=y_s; j<=y_e; j++) 
+                for (j=y_s; j<=y_e; j++)
                 {
-                    if (mines[i][j]!='*') 
+                    if (mines[i][j]!='*')
                     {
                         mines[i][j]++;
                     }
@@ -89,11 +89,11 @@ int main()
             }
         }
         printf("Scenario #%d:\n", l+1);
-        for (i=0; i<n; i++) 
+        for (i=0; i<n; i++)
         {
-            for (j=0; j<m; j++) 
+            for (j=0; j<m; j++)
             {
-                if (mines[i][j]=='0') 
+                if (mines[i][j]=='0')
                     printf("-");
                 else
                     printf("%c", mines[i][j]);

@@ -1,9 +1,9 @@
 //
 //  5971_LCMSUM.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-23.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -14,7 +14,7 @@
  1
  2
  5
- 
+
  Sample Output :
  1
  4
@@ -32,10 +32,10 @@ using namespace std;
 int pfactor[MAX+10];
 long long int mcount[MAX+10], mval[MAX+10];
 
-int main() 
+int main()
 {
 	mval[1] = mcount[1] = 1;
-	for(int i=1; i<=MAX; i++) 
+	for(int i=1; i<=MAX; i++)
         pfactor[i] = i;
 	for(int i=2; i<=LMT; i++)
 		if(pfactor[i]==i)
@@ -46,7 +46,7 @@ int main()
     for(int i=0; i<LMT+10; i++)
     {
         printf(" %d", pfactor[i]);
-    }    
+    }
 	printf("\n");*/
     for(int i=2, k; i<=MAX; i++)
 	{
@@ -62,7 +62,7 @@ int main()
     for(int i=0; i<LMT+10; i++)
     {
         printf(" %lld", mcount[i]);
-    }    
+    }
 	printf("\n");*/
     for(int i=2; i<=MAX; i++)
 		mval[i] = mval[i/pfactor[i]]+mcount[i]*(mcount[i]-mcount[i]/pfactor[i])*mval[i/mcount[i]];
@@ -70,7 +70,7 @@ int main()
     for(int i=0; i<LMT+10; i++)
     {
         printf(" %lld", mval[i]);
-    }    
+    }
 	printf("\n");*/
     int t, n;
 	long long res;
@@ -79,9 +79,9 @@ int main()
 	{
 		scanf("%d", &n);
 		res = mval[n]-1;
-		if(res&1) 
+		if(res&1)
             res *= (n>>1);
-		else 
+		else
             res>>=1, res*=n;
 		res += n;
 		printf("%lld\n", res);

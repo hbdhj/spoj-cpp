@@ -1,9 +1,9 @@
 //
 //  4560.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  4560. The Double HeLiX
@@ -11,8 +11,8 @@
  11 1 4 7 11 14 25 44 47 55 57 100
  4 -5 100 1000 1005
  3 -12 1000 1001
- 4 1 2 3 4 
- 4 5 6 7 8 
+ 4 1 2 3 4
+ 4 5 6 7 8
  0
  450
  2100

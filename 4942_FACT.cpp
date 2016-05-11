@@ -1,9 +1,9 @@
 //
 //  4942_FACT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO: math, prime
@@ -12,7 +12,7 @@
  13091989
  77145199750673
  0
- 
+
  Output:
  317^1 9817^1
  17^2 89^1 509^1

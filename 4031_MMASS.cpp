@@ -1,9 +1,9 @@
 //
 //  4031_MMASS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-16.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  MASS.IN

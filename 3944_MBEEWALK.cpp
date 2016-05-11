@@ -3,7 +3,7 @@
 //  SPOJ
 //
 //  Created by Haijun Deng on 12-12-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Bee Walk
@@ -21,27 +21,27 @@ unsigned long long int beeMove(int n)
         case 0:
             ret = 1;
             break;
-            
+
         case 1:
             ret = 0;
             break;
-            
+
         case 2:
             ret = 6;
             break;
-            
+
         case 3:
             ret = 12;
             break;
-            
+
         case 4:
             ret = 90;
             break;
-            
+
         case 5:
             ret = 360;
             break;
-            
+
         default:
             int m = n-3;
             ret = ((108*m+72+36*m*m)*beeMove(m)+(24*m*m+96*m+96)*beeMove(m+1)+(m*m+5*m+6)*beeMove(m+2))/(6*m+9+m*m);

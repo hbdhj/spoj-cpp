@@ -1,20 +1,20 @@
 //
 //  15634_GNYR04C.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-8-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Lennys Lucky Lotto Lists
  input
- 
+
  1
  4 10
  output
- 
+
  Data set 1: 4 10 4
- 
+
  1 2 4 8
  1 2 4 9
  1 2 4 10

@@ -1,9 +1,9 @@
 //
 //  15243_VPL2_AC.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-1.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Primos Quest
@@ -13,7 +13,7 @@ Input:
  0 OORRBYYYGG
  1 RRORGRRRBOY
  3 RRRORORRRR
-Output: 
+Output:
  Scenario #1: 3
  Scenario #2: 4
  Scenario #3: 5
@@ -28,7 +28,7 @@ int main()
     int v[1000002];
     //int d[100000];
     scanf("%d", &t);
-    for (i=0; i<t; i++) 
+    for (i=0; i<t; i++)
     {
         memset(s,0,sizeof(s));
         memset(v,0,sizeof(v));
@@ -36,7 +36,7 @@ int main()
         scanf("%d %s", &C, s);
         //printf("s=%s, C=%d,j=%d\n",s,C,j);
         j=0;
-        while (s[j]!='\0') 
+        while (s[j]!='\0')
         {
             switch (s[j]) {
                 case 'G':
@@ -58,27 +58,27 @@ int main()
                     break;
             }
             j++;
-            
+
         }
         //printf("s=%s, C=%d,j=%d\n",s,C,j);
         v[j]=v[j-1];
         l=0;
-        /*for (k=0; k<=j; k++) 
+        /*for (k=0; k<=j; k++)
         {
             printf("%d ",v[k]);
         }
         printf("\n");
-        for (k=1; k<=j; k++) 
+        for (k=1; k<=j; k++)
         {
             d[k]=v[k]>v[k-1]?v[k]-v[k-1]:v[k-1]-v[k];
         }
-        for (k=0; k<=j; k++) 
+        for (k=0; k<=j; k++)
         {
             printf("%d ",d[k]);
         }
         printf("\n");*/
         n=0;
-        for (k=0,m=0; m<j; ) 
+        for (k=0,m=0; m<j; )
         {
             if (n<m-k) {
                 n=m-k;

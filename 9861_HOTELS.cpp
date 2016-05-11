@@ -3,7 +3,7 @@
 //  SPOJ
 //
 //  Created by Haijun Deng on 12-12-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 /*
  Input
@@ -68,13 +68,8 @@ int main()
                     max=tobuy;
             //printf("i=%d, j=%d, hotelList[%d]=%d, hotelList[%d]=%d, max=%llu, tobuy=%llu\n", i, j, i, hotelList[i], j, hotelList[j], max, tobuy);
         }
-        
+
         printf("%llu\n", max);
     }
     return 0;
 }
-
-
-
-
-

@@ -1,9 +1,9 @@
 //
 //  15267_FRNDCIRC.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-26.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: FRIEND CIRCLE
@@ -27,7 +27,7 @@ int main()
 {
     int t;
     scanf("%d", &t);
-    while (t--) 
+    while (t--)
     {
         map<string, int> circles;
         map<string, string> unknowns;
@@ -42,9 +42,9 @@ int main()
             scanf("%s %s", first, second);
             it_f=circles.find(first);
             it_s=circles.find(second);
-            if (i) 
+            if (i)
             {
-                if (it_f!=circles.end()&&it_s==circles.end()) 
+                if (it_f!=circles.end()&&it_s==circles.end())
                 {
                     circles.insert(pair<string, int>(second, 1));
                     map<string, string>::iterator unk_s;

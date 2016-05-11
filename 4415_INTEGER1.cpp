@@ -3,7 +3,7 @@
 //  SPOJ
 //
 //  Created by Haijun Deng on 12-12-30.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Power of Integer

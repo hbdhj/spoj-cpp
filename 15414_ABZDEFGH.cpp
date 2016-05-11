@@ -1,9 +1,9 @@
 //
 //  15414_ABZDEFGH.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-20.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -28,7 +28,7 @@ int main()
     }
     for (int i=0; i<26; i++) {
         //printf("dict[%d] = %d\n", i, dict[i]);
-        if (dict[i]) 
+        if (dict[i])
             printf("%c", 'a'+i);
     }
     printf("\n");

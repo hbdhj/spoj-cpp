@@ -1,9 +1,9 @@
 //
 //  11573_TEAMS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-10.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
 
@@ -11,7 +11,7 @@ ALGO: ad-hoc
  Input:
  2 2 2 2
  2 2 2 1
- 
+
  Output:
  Case 1: 4
  Case 2: 4
@@ -23,10 +23,10 @@ using namespace std;
 
 #define sol(a,b,c,d) max(max(a,c)+max(b,d),max(a,b)+max(c,d))
 
-int main() 
+int main()
 {
 	int a, b, c, d, r1, r2, r3, cs = 1;
-	while(scanf("%d %d %d %d", &a, &b, &c, &d) == 4) 
+	while(scanf("%d %d %d %d", &a, &b, &c, &d) == 4)
     {
 		r1 = sol(a, b, c, d);
 		r2 = sol(a, c, b, d);

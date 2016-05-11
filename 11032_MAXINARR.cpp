@@ -1,9 +1,9 @@
 //
 //  11032_MAXINARR.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Maximum element of an array
@@ -15,7 +15,7 @@
  3
  -1000000000 0 1000000000
  0
- 
+
  Output:
  4
  0

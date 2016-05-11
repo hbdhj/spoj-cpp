@@ -1,9 +1,9 @@
 //
 //  4942_FACT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-24.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: primes triangle (I)
@@ -46,7 +46,7 @@ void sieve()
 	for(i=3; i<LMT; i+=2)
     {
 		if(!chk(i))
-        {    
+        {
 			for(j=i*i,k=i<<1; j<MAX; j+=k)
             {
 				set(j);
@@ -56,12 +56,12 @@ void sieve()
     primes[(j=0)++] = 2;
     primemap[2]=1;
 	for(i=3; i<MAX; i+=2)
-    {    
+    {
 		if(!chk(i))
-        {    
+        {
 			primes[j++] = i;
             primemap[i]=j;
-        }    
+        }
 	}
     primelen = j;
 }

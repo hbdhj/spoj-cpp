@@ -1,9 +1,9 @@
 //
 //  15074_Tourney.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-15.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Tourney
@@ -43,7 +43,7 @@ int main()
     vector<int> skill(t_n,0);
     vector<int> result(t_n,0);
     vector<int> round(t_n,0);
-    for (int i=0;i<t_n;i++) 
+    for (int i=0;i<t_n;i++)
     {
         scanf("%d",&skill[i]);
     }
@@ -52,9 +52,9 @@ int main()
     for (int i=0;i<n;i++) // the round
     {
         int remain=1<<(n-i);
-        for (int j=0;j<remain/2;j++) 
+        for (int j=0;j<remain/2;j++)
         {
-            if (start) 
+            if (start)
             {
                 //printf("L58 skill[%d] = %d, skill[%d]= %d\n",result[start-remain+2*j], skill[result[start-remain+2*j]], result[start-remain+2*j+1], skill[result[start-remain+2*j+1]]);
                 if(skill[result[start-remain+2*j]]>skill[result[start-remain+2*j+1]])
@@ -85,7 +85,7 @@ int main()
         char a;
         int ii,s;
         scanf("%c",&a);
-        switch (a) 
+        switch (a)
         {
             case 'R':
                 scanf("%d %d",&ii,&s);
@@ -100,6 +100,6 @@ int main()
                 //printf("%c\n",a);
                 break;
         }
-    }  
+    }
     return 0;
 }

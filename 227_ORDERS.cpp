@@ -7,7 +7,7 @@
 //
 /*
 TASK: Ordering the Soldiers
-ALGO: semgent tree
+ALGO: segment tree
  Input:
  2
  3

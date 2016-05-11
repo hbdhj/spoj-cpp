@@ -1,9 +1,9 @@
 //
 //  15728_ULM02.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-8-28.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -24,7 +24,7 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    while (n) 
+    while (n)
     {
         print(n, 0 ,0);
         scanf("%d", &n);

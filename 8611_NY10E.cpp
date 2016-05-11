@@ -1,6 +1,6 @@
 /*
 8611. Non-Decreasing Digits
-bottom-up DP
+ALGO: bottom-up dynamic programming
 Input:
 3
 1 2

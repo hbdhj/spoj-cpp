@@ -3,7 +3,7 @@
 //  CPPEditor
 //
 //  Created by Haijun Deng on 12-12-26.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -26,7 +26,7 @@ int main()
     //sort(high_school_score.begin(),high_school_score.end());
     //sort(open_comp_score_list.begin(),open_comp_score_list.end());
     for(int i=0;i<student_num; i++)
-    {        
+    {
         /*int high_school_ranking, open_comp_ranking;
         high_school_ranking = 0;
         open_comp_ranking = 0;*/

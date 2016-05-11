@@ -1,9 +1,9 @@
 //
 //  7975.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  Input:

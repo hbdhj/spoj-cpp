@@ -1,9 +1,9 @@
 //
 //  4110_FASTFLOW.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-3.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <stdio.h>
@@ -33,7 +33,7 @@ inline void init(int _src, int _snk, int _n)
 	SET(fin);
 }
 
-inline void add(int u, int v, int c) 
+inline void add(int u, int v, int c)
 {
 	to[nEdge] = v, cap[nEdge] = c, flow[nEdge] = 0, next[nEdge] = fin[u], fin[u] = nEdge++;
 	to[nEdge] = u, cap[nEdge] = c, flow[nEdge] = 0, next[nEdge] = fin[v], fin[v] = nEdge++;
@@ -44,13 +44,13 @@ bool bfs() {
 	SET(dist);
 	dist[src] = st = en = 0;
 	Q[en++] = src;
-	while(st < en) 
+	while(st < en)
     {
 		u = Q[st++];
-		for(i=fin[u]; i>=0; i=next[i]) 
+		for(i=fin[u]; i>=0; i=next[i])
         {
 			v = to[i];
-			if(flow[i] < cap[i] && dist[v]==-1) 
+			if(flow[i] < cap[i] && dist[v]==-1)
             {
 				dist[v] = dist[u]+1;
 				Q[en++] = v;
@@ -60,16 +60,16 @@ bool bfs() {
 	return dist[snk]!=-1;
 }
 
-int dfs(int u, int fl) 
+int dfs(int u, int fl)
 {
 	if(u==snk) return fl;
 	for(int &e=pro[u], v, df; e>=0; e=next[e])
     {
 		v = to[e];
-		if(flow[e] < cap[e] && dist[v]==dist[u]+1) 
+		if(flow[e] < cap[e] && dist[v]==dist[u]+1)
         {
 			df = dfs(v, min(cap[e]-flow[e], fl));
-			if(df>0) 
+			if(df>0)
             {
 				flow[e] += df;
 				flow[e^1] -= df;
@@ -94,18 +94,17 @@ i64 dinitz() {
 	return ret;
 }
 
-int main() 
+int main()
 {
 	int n, e, u, v, c, i;
 	scanf("%d%d", &n, &e);
 	init(1, n, n);
-	for(i=0; i<e; i++) 
+	for(i=0; i<e; i++)
     {
 		scanf("%d%d%d", &u, &v, &c);
-		if(u!=v) 
+		if(u!=v)
             add(u, v, c);
 	}
 	printf("%lld\n", dinitz());
 	return 0;
 }
-

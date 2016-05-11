@@ -3,17 +3,17 @@
 //  SPOJ
 //
 //  Created by Haijun Deng on 12-12-28.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 /*
- 
+
     1	2	3	4	5
  1	A	B	C	D	E
  2	F	G	H	I/J	K
  3	L	M	N	O	P
  4	Q	R	S	T	U
  5	V	W	X	Y	Z
- 
+
  Input:
  4
  SHORTENING IS FUNNY
@@ -63,15 +63,6 @@ int main()
         }
          printf("%d\n", polybius(inputs[i][p]));
     }
-    
+
     return 0;
 }
-
-
-
-
-
-
-
-
-

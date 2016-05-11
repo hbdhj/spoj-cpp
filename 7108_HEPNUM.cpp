@@ -1,20 +1,20 @@
 //
 //  7108_HEPNUM.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-7.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO: bruce-force compare
  Input:
- 
+
  006F B3B
  0000 0
  * *
- 
+
  Output:
- 
+
  <
  =
  */
@@ -25,7 +25,7 @@ using namespace std;
 const int MAX = 100032;
 char num1[MAX], num2[MAX];
 
-int main() 
+int main()
 {
 	int i, j, len1, len2, d;
 	char a, b;
@@ -47,7 +47,7 @@ int main()
 				b = '0';
 				i++;
 			}
-			else 
+			else
             {
 				a = num1[i];
 				b = num2[j];
@@ -55,11 +55,11 @@ int main()
 			}
 			d = a - b;
 		}
-		if(d < 0) 
+		if(d < 0)
             printf("<\n");
-		else if(d > 0) 
+		else if(d > 0)
             printf(">\n");
-		else 
+		else
             printf("=\n");
 	}
 	return 0;

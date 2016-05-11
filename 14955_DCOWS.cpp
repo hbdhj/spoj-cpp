@@ -1,9 +1,9 @@
 //
 //  14955_DCOWS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-30.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Dancing Cows
@@ -22,7 +22,7 @@
  9
  6
  11
- 
+
  Output:
  4
  */
@@ -42,14 +42,14 @@ int main()
         long b_h,b_h_t=0;
         for(int i=0;i<n;i++)
         {
-            
+
             scanf("%ld", &b_h);
             b_h_t+=b_h;
         }
         long c_h,c_h_t=0;
         for(int i=0;i<n;i++)
         {
-            
+
             scanf("%ld", &c_h);
             c_h_t+=c_h;
         }
@@ -85,7 +85,7 @@ int main()
         {
             if(ret>abs(c_h_t_l[i]-b_h_t))
                 ret=abs(c_h_t_l[i]-b_h_t);
-        }    
+        }
         printf("%ld\n", ret);
     }
     else
@@ -118,7 +118,7 @@ int main()
         {
             if(ret>abs(b_h_t_l[i]-c_h_t))
                 ret=abs(b_h_t_l[i]-c_h_t);
-        }    
+        }
         printf("%ld\n", ret);
     }
     return 0;

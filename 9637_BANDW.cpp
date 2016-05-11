@@ -1,9 +1,9 @@
 //
 //  9637.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 12-12-24.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -26,7 +26,7 @@ int move(string s, string e)
         if((s[i]==e[i])&&diff)
         {
             diff=false;
-        }    
+        }
     }
     return ret;
 }

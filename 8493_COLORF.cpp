@@ -1,9 +1,9 @@
 //
 //  8493_COLORF.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -32,7 +32,7 @@ int main()
             p*=sum;
             sum--;
         }
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
             while(color_num[i]>1)
             {

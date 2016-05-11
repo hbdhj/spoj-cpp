@@ -1,18 +1,18 @@
 //
 //  8374.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
- input 
- 8 1  
- output 
+ input
+ 8 1
+ output
  3 3
- input 
- 10 2 
- output 
+ input
+ 10 2
+ output
  4 3
  */
 #include <iostream>

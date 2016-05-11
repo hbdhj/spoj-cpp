@@ -1,6 +1,6 @@
 /*
 TASK: Chocolate
-ALGO: grace
+ALGO: greedy
 */
 #include <cstdio>
 #include <vector>

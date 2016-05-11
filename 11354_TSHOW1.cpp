@@ -1,9 +1,9 @@
 //
 //  11354.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-2.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Amusing numbers
@@ -15,13 +15,13 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    while (n--) 
+    while (n--)
     {
         unsigned long long k;
         scanf("%llu",&k);
         k++;
         vector<int> output;
-        while (k>1) 
+        while (k>1)
         {
             if(k%2)
                 output.push_back(6);

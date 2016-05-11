@@ -1,6 +1,7 @@
 /*
 Task: Tower Of Hanoi - Revisited
-ALGO: OEIS http://oeis.org/A000244
+ALGO: OEIS 
+REFER: http://oeis.org/A000244
 Input:
 4
 1

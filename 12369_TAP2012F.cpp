@@ -1,9 +1,9 @@
 //
 //  12369.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 12-12-24.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Fixture
@@ -14,7 +14,7 @@
  1124 / 1112
  13 * 33
  15 / 16
- 
+
  Output:
  11 + 11 = 12
  988726 - 978625 = 919111

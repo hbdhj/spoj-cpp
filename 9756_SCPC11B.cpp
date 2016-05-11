@@ -1,9 +1,9 @@
 //
 //  9756.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  Input:
@@ -20,7 +20,7 @@
  200
  0
  0
- 
+
  Output:
  IMPOSSIBLE
  POSSIBLE
@@ -36,13 +36,13 @@ int main()
     while(n)
     {
         vector<int> cities(n);
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
             scanf("%d",&cities[i]);
         }
         sort(cities.begin(),cities.end());
         bool success=true;
-        for (int i=0; i<n-1; i++) 
+        for (int i=0; i<n-1; i++)
         {
             if((cities[i+1]-cities[i])>200)
             {

@@ -1,9 +1,9 @@
 //
 //  15631_PLUS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-8-15.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: On the Plus Side
@@ -13,14 +13,14 @@
  Input:
  1
  U,S
- 
+
  Output:
  26
- 
+
  Input:
  1
  S
- 
+
  Output:
  15
  */
@@ -65,26 +65,26 @@ int main()
                 case 'D':
                     y--;
                     break;
-                    
+
                 default:
                     break;
             }
-            if (map[x-1][y]==0) 
+            if (map[x-1][y]==0)
             {
                 map[x-1][y]=4;
                 ret+=4;
             }
-            if (map[x][y+1]==0) 
+            if (map[x][y+1]==0)
             {
                 map[x][y+1]=2;
                 ret+=2;
             }
-            if (map[x+1][y]==0) 
+            if (map[x+1][y]==0)
             {
                 map[x+1][y]=5;
                 ret+=5;
             }
-            if (map[x][y-1]==0) 
+            if (map[x][y-1]==0)
             {
                 map[x][y-1]=2;
                 ret+=3;

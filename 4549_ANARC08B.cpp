@@ -1,9 +1,9 @@
 //
 //  4549.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Adding Sevens
@@ -23,7 +23,7 @@ int chartoint(char a, char b, char c)
 
 int strtoint(string str)
 {
-    //printf("%s\n", str.c_str()); 
+    //printf("%s\n", str.c_str());
     int ret=0;
     int base=1;
     int len=str.length();

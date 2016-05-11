@@ -1,9 +1,9 @@
 //
 //  11578_CITY2.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-19.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -14,7 +14,7 @@
  1 2 3
  3
  1 2 1
- 
+
  Output:
  Case 1: 3
  Case 2: 2
@@ -87,7 +87,7 @@ void insert(int idx,int st,int ed,int s,int val)
     int mid=(st+ed)/2;
     if(s<=mid)
         insert(cllft,s,val);
-    else 
+    else
         insert(clrgt,s,val);
     nd[idx]=_min(nd[lft],nd[rgt]);
 }
@@ -101,11 +101,11 @@ int query(int idx,int st,int ed,int s,int e)
         return query(cllft,s,e);
     else if(s>mid)
         return query(clrgt,s,e);
-    else 
+    else
         return _min(query(cllft,s,mid),query(clrgt,mid+1,e));
 }
 
-int main() 
+int main()
 {
 	int n,i,res,x,t=1;
 	while(cin>>n)

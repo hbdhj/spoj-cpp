@@ -1,9 +1,9 @@
 //
 //  14979_UOFTBD.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-22.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Diablo Bot
@@ -17,7 +17,7 @@
  Damaged Goods
  Sword
  Fish shaped volatile organic compounds
- 
+
  Output:
  Set
  Magic
@@ -25,7 +25,7 @@
  Not sure, take anyways
  Normal
  Normal
- Normal 
+ Normal
  Explanation of Sample:
  The first and third items begin with possessives, so they must be Set items. The second item is three words long, and ends in "of [something]" so it must be Magic. The fourth item could be either Rare or Magic. The fifth item begins with "Damaged" so it's Normal. The last two items don't fit the descriptions of Set, Rare, or Magic, so they must be Normal also.
  1. Set items always belong to some famous dead person, so they always begin with a word that ends in "'s" (e.g. Andrew's). No other items are special enough to begin this way.
@@ -60,7 +60,7 @@ int main()
         //printf("input = %s", str.c_str());
         vector<string> words;
         stringstream ss(str);
-		while(ss >> word) 
+		while(ss >> word)
         {
             words.push_back(word);
         }
@@ -88,19 +88,19 @@ int main()
             if(bMagic&&!bRare)
             {
                 cout<<"Magic"<<endl;
-            } 
+            }
             else if(!bMagic&&bRare)
             {
                 cout<<"Rare"<<endl;
-            } 
+            }
             else if(bMagic&&bRare)
             {
                 cout<<"Not sure, take anyways"<<endl;
-            } 
+            }
             else
             {
                 cout<<"Normal"<<endl;
-            }    
+            }
         }
     }
     return 0;

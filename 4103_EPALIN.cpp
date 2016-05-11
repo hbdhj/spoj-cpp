@@ -1,9 +1,9 @@
 //
 //  4103_EPALIN.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-28.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -14,7 +14,7 @@
  abba
  amanaplanacanal
  xyz
- 
+
  Output:
  aaaa
  abba
@@ -32,7 +32,7 @@ const int MAX = 100001;
 char buff[MAX << 1];
 int lengths[MAX << 1];
 
-int main() 
+int main()
 {
 	int len, i, s, e, pallen, found, j, d, total, k;
 	while(gets(buff))
@@ -40,19 +40,19 @@ int main()
 		len = strlen(buff);
 		k = 0;
 		pallen = 0;
-		for(i = 0; i < len; ) 
+		for(i = 0; i < len; )
         {
-			if(i > pallen && buff[i-pallen-1] == buff[i]) 
+			if(i > pallen && buff[i-pallen-1] == buff[i])
             {
 				pallen += 2, i++;
 				continue;
 			}
 			lengths[k++] = pallen;
 			s = k - 2, e = s - pallen, found = 0;
-			for(j = s; j > e; j--) 
+			for(j = s; j > e; j--)
             {
 				d = j - e - 1;
-				if(lengths[j] == d) 
+				if(lengths[j] == d)
                 {
 					pallen = d;
 					found = 1;
@@ -60,15 +60,15 @@ int main()
 				}
 				lengths[k++] = (d < lengths[j]? d : lengths[j]);
 			}
-			if(!found) 
+			if(!found)
             {
-                pallen = 1; 
+                pallen = 1;
                 i++;
             }
 		}
 		lengths[k++] = pallen;
 		total = (len << 1) - lengths[k-1];
-		strncpy(buff + len, buff, total - len); 
+		strncpy(buff + len, buff, total - len);
         buff[total] = 0;
 		reverse(buff + len, buff + total);
 		puts(buff);

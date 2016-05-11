@@ -1,9 +1,9 @@
 //
 //  File.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-19.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Chinese game
@@ -17,7 +17,7 @@
  1 2
  1 3
  0
- 
+
  Output:
  3
  0
@@ -37,10 +37,10 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    while (n) 
+    while (n)
     {
         vector<int> ai(n,0), bi(n,0);
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
             scanf("%d %d", &ai[i], &bi[i]);
         }
@@ -49,7 +49,7 @@ int main()
         while (true)
         {
             bool find = false;
-            for (int i=0; i<n; i++) 
+            for (int i=0; i<n; i++)
             {
                 int check = ai[i]+cur*bi[(i+1)%n];
                 //printf("checking %d in map, which size is %d\n", check, num.size());
@@ -66,7 +66,7 @@ int main()
                     num.insert(pair<int, int>(check,1));
                 }
             }
-            if (find) 
+            if (find)
             {
                 printf("%d\n", cur);
                 break;

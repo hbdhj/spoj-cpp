@@ -1,9 +1,9 @@
 //
 //  15849_DIGOKEYS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-9-5.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  Sample Input
@@ -15,7 +15,7 @@
  2 2 3
  1 1
  2 2 4
- 
+
  Sample Output
  2
  1 2
@@ -42,6 +42,6 @@ int main()
             }
             keys.push_back(box);
         }
-    } 
+    }
     return 0;
 }

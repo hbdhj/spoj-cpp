@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
- ALGO: sorting
+ ALGO: sort
  Input:
  2
  3

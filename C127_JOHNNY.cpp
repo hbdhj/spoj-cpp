@@ -1,9 +1,9 @@
 //
 //  C127_ JOHNNY.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-27.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -22,7 +22,7 @@ int main()
     int n;
     scanf("%d", &n);
     vector<pair<int, int> > nums;
-    for (int i=0; i<n; i++) 
+    for (int i=0; i<n; i++)
     {
         int num;
         scanf("%d", &num);

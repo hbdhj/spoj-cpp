@@ -1,6 +1,7 @@
 /*
 TASK: D-query
-ALGO: binary indexed tree http://zh.wikipedia.org/wiki/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84
+ALGO: binary indexed tree 
+REFER: http://zh.wikipedia.org/wiki/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84
  Input
  5
  1 1 2 1 3

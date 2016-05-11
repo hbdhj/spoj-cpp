@@ -1,9 +1,9 @@
 //
 //  15259_LKS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-29.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Large Knapsack
@@ -23,7 +23,7 @@ int main()
     memset(Vi, 0, sizeof(Vi));
     memset(Wi, 0, sizeof(Wi));
     memset(pack, 0, sizeof(pack));
-    
+
     for (int i=0; i<N; i++)
     {
         scanf("%d %d",&Vi[i], &Wi[i]);
@@ -32,7 +32,7 @@ int main()
     {
         for (int j=1; j<=K; j++)
         {
-            if (Wi[i-1]>j) 
+            if (Wi[i-1]>j)
             {
                 pack[i][j]=pack[i-1][j];
             }

@@ -1,9 +1,9 @@
 //
 //  3973_M00PAIR.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-10.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 
@@ -16,13 +16,13 @@
 #include <algorithm>
 using namespace std;
 
-struct Big 
+struct Big
 {
 	int len, rev;
 	char num[1000];
 } ans[1000];
 
-void shl(Big &a, Big &r) 
+void shl(Big &a, Big &r)
 {
 	int v, k, i;
 	for(i = v = k = 0; i < a.len || v; i++, k++)
@@ -33,10 +33,10 @@ void shl(Big &a, Big &r)
 	r.num[k] = 0, r.rev = 1, r.len = k;
 }
 
-void add(Big &a, Big &b, Big &r) 
+void add(Big &a, Big &b, Big &r)
 {
 	int i, j, k, v;
-	for(i = j = k = v = 0; i < a.len || j < b.len || v; i++, j++, k++) 
+	for(i = j = k = v = 0; i < a.len || j < b.len || v; i++, j++, k++)
     {
 		v += (i < a.len? a.num[i]-'0' : 0) + (j < b.len? b.num[j]-'0' : 0);
 		r.num[k] = v % 10 + '0'; v /= 10;
@@ -44,7 +44,7 @@ void add(Big &a, Big &b, Big &r)
 	r.num[k] = 0, r.rev = 1, r.len = k;
 }
 
-int main() 
+int main()
 {
 	int i, n;
 	Big temp;

@@ -1,9 +1,9 @@
 //
 //  4556_ANARC08G.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-14.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Think I will Buy Me a Football Team
@@ -23,12 +23,12 @@ Output:
 int mat[1000][1000];
 int rsum[1000], csum[1000];
 
-int main() 
+int main()
 {
 	int n, i, j, sum, diff, cs = 1;
-	while(scanf("%d", &n)==1 && n) 
+	while(scanf("%d", &n)==1 && n)
     {
-		for(i = sum = 0; i < n; i++) 
+		for(i = sum = 0; i < n; i++)
         {
 			for(j = 0; j < n; j++) {
 				scanf("%d", &mat[i][j]);

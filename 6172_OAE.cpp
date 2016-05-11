@@ -1,9 +1,9 @@
 //
 //  6172_OAE.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-20.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -15,10 +15,10 @@ int main()
     scanf("%d",&tn);
     vector<int> inputs(tn,0);
     int max=2;
-    for (int i=0;i<tn;i++) 
+    for (int i=0;i<tn;i++)
     {
         scanf("%d", &inputs[i]);
-        if (max<inputs[i]) 
+        if (max<inputs[i])
         {
             max=inputs[i];
         }

@@ -1,9 +1,9 @@
 //
 //  15433_UCV2013E.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-26.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Greedy Walking
@@ -21,7 +21,7 @@
  0 0 0 0 0
  100 100 100 100 100
  0
- 
+
  Output:
  35
  12600
@@ -42,16 +42,16 @@ int main()
     int n;
     scanf("%d", &n);
     while (n!=0) {
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
             scanf("%d", &a[i]);
         }
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
             scanf("%d", &b[i]);
         }
         int sum=0;
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
             c[i]=b[i]-a[i];
             sum+=c[i];
@@ -59,11 +59,11 @@ int main()
         //printf("sum = %d\n", sum);
         //unsigned long long ret=factorial[sum];
         //printf("ret = %lld\n", ret);
-        
+
         //for (int i=0; i<n; i++) {
         //    ret/=factorial[c[i]];
         //}
-        for (int i=0; i<=sum; i++) 
+        for (int i=0; i<=sum; i++)
         {
             factorial[i]=i;
         }
@@ -72,15 +72,15 @@ int main()
             printf("%lld ", factorial[i]);
         }
         printf("\n\n");*/
-        for (int i=0; i<n; i++) 
+        for (int i=0; i<n; i++)
         {
-            for (int j=2; j<=c[i]; j++) 
+            for (int j=2; j<=c[i]; j++)
             {
                 //printf("c[%d]=%d, j=%d\n", i, c[i], j);
                 int d=j;
-                for (int l=2; l<=sum; l++) 
+                for (int l=2; l<=sum; l++)
                 {
-                    if (factorial[l]%d==0) 
+                    if (factorial[l]%d==0)
                     {
                         factorial[l]/=d;
                         break;
@@ -94,7 +94,7 @@ int main()
                         break;
                     //printf("factorial[%d]=%lld, j=%d\n", l, factorial[l], j);
                 }
-                /*for (int l=1; l<=sum; l++) 
+                /*for (int l=1; l<=sum; l++)
                 {
                     printf("%lld ", factorial[l]);
                 }
@@ -104,7 +104,7 @@ int main()
         }
         //printf("\n");
         unsigned long long ret = 1;
-        for (int i=1; i<=sum; i++) 
+        for (int i=1; i<=sum; i++)
         {
             //printf("%lld ", factorial[i]);
             ret*=factorial[i];

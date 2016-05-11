@@ -1,18 +1,18 @@
 //
 //  15635_EASTERD.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-8-14.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Easter festival date
  Input:
  2012
- 
+
  Output:
  2012: 8 April
- 
+
  http://baike.baidu.com/view/1462.htm
  */
 #include <iostream>
@@ -36,7 +36,7 @@ int main()
         int m = (11*a+4-b)%29;
         int w = (n+q+31-m)%7;
         int d = 25-m-w;
-        if (d>0) 
+        if (d>0)
         {
             m=4;
         }
@@ -47,5 +47,5 @@ int main()
         }
         printf("%d: %d %s\n",y, d, month[m-1]);
     }
-    return 0;   
+    return 0;
 }

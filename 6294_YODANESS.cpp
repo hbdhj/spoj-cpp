@@ -1,9 +1,9 @@
 //
 //  6294_YODANESS.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-14.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -22,13 +22,13 @@ void Merge(int *a, int p, int q, int r)
 {
 	int i, j, k, n1 = q-p+1, n2 = r-q;
 	int L[n1], R[n2];
-	for(i=0;i<n1;i++) 
+	for(i=0;i<n1;i++)
         L[i] = a[p+i];
-	for(j=0;j<n2;j++) 
+	for(j=0;j<n2;j++)
         R[j] = a[q+j+1];
 	for(k=p,i=j=0;k<=r;k++)
 	{
-		if(j>=n2 || (i<n1 && L[i]<=R[j])) 
+		if(j>=n2 || (i<n1 && L[i]<=R[j]))
             a[k] = L[i++];
 		else
 		{
@@ -54,23 +54,23 @@ map< string, int > :: iterator mit;
 char word[MAX][LEN];
 int a[MAX];
 
-int main() 
+int main()
 {
 	int t, n, i;
 	char temp[LEN];
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		M.clear();
 		scanf("%d", &n);
-		for(i = 0; i < n; i++) 
+		for(i = 0; i < n; i++)
             scanf("%s", word[i]);
-		for(i = 0; i < n; i++) 
+		for(i = 0; i < n; i++)
         {
 			scanf("%s", temp);
 			M.insert(pair< string, int >(temp, i));
 		}
-		for(i = 0; i < n; i++) 
+		for(i = 0; i < n; i++)
             a[i] = M[word[i]];
 		total = 0;
 		Merge_Sort(a, 0, n-1);

@@ -1,9 +1,9 @@
 //
 //  6470_TDKPRIME.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-1.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO : sieve
@@ -16,7 +16,7 @@
  10000
  100000
  1000000
- 
+
  Output:
  2
  29

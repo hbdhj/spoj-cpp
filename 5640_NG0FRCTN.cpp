@@ -1,9 +1,9 @@
 //
 //  5640_ NG0FRCTN.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-22.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #define u64 unsigned long long
@@ -48,4 +48,3 @@ int main()
 	}
 	return 0;
 }
-

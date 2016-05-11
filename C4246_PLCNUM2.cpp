@@ -1,9 +1,9 @@
 //
 //  C4246.CPP
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-27.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -17,7 +17,7 @@ int main()
         cout<<"1"<<endl;
     else if(n==2)
         cout<<"1 2"<<endl<<"4 3"<<endl;
-    else 
+    else
     {
         vector<vector<int> > outputs(n, vector<int>(n, 0));
         int num=1;

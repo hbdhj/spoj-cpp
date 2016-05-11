@@ -1,9 +1,9 @@
 //
 //  12365_TAP2012B.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-3.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Ball of Reconciliation
@@ -13,7 +13,7 @@
  1
  9747
  -1
- 
+
  Output:
  5
  1
@@ -26,7 +26,7 @@ int main()
 {
     int a[10001],i,j,k,j_l,k_l;
     memset(a, 0, sizeof(a));
-    for (i=0; i<10000; i++) 
+    for (i=0; i<10000; i++)
     {
         if (i)
         {

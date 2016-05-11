@@ -1,9 +1,9 @@
 //
 //  C8102.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-19.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 #define F(i,n) for(int i=0;i<n;i++)
 #define P printf
@@ -26,7 +26,7 @@ P("_____*o____o___o____o*_______\n");
 P("____*o__o_o_____o_o__o*______\n");
 F(i,7){L(8-i)P("*o");L(i*2+7)P("o*");L(10-i)PN}
 P("_*o");F(i,11)P("_o");P("*___\n");
-F(i,5){L(12)P("o_o");L(14)P("\n");}  
+F(i,5){L(12)P("o_o");L(14)P("\n");}
 L(12)P("ooo");L(14)P("\n");
 return 0;
 }

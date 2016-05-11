@@ -1,18 +1,18 @@
 //
 //  15490_AHP.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-28.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: After Hard Party
- Input: 
+ Input:
  3
  ||||||000|||||\0/0000|0|0000/0/||0|0|0|0
  ||||/0|||||
  /0//0|0|\0\\
-  
+
  Output:
  5
  That Bad Party xD
@@ -29,14 +29,14 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    while (n--) 
+    while (n--)
     {
         memset(friends, 0, sizeof(friends));
         scanf("%s", friends);
         //printf("friends=%s\n", friends);
         int cur=0;
         int count=0;
-        while (friends[cur]) 
+        while (friends[cur])
         {
             //printf("%c ", friends[cur]);
             if(cur>1)

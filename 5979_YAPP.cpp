@@ -1,9 +1,9 @@
 //
 //  5979.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 12-12-31.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -45,5 +45,5 @@ int main()
     for(i=0;i<tN;i++)
     {
         printf("%llu\n", Permu(inputs[i]));
-    }    
+    }
 }

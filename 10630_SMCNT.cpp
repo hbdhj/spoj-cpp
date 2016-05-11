@@ -1,9 +1,9 @@
 //
 //  10630_SMCNT.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
 TASK: Smaller Count
@@ -61,13 +61,13 @@ void findsmallmerge(ns A[],int p, int m, int q)
             A[p+k].s=B[k].s;
         }
     }
-}    
+}
 int main()
 {
         ns A[1000001];
         int N=0;
         while(scanf("%d",&A[N++].n)!=EOF);
-        for(int i=0;i<N-1;i++) 
+        for(int i=0;i<N-1;i++)
             A[i].s=0;
         //for(int i=0; i<N-1;i++) cout<<A[i].n<<" "; cout<<endl;
         findsmallsort(A,0,N-2);

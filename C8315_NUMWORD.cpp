@@ -1,9 +1,9 @@
 //
 //  C8315_NUMWORD.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-10.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Number to Word
@@ -11,7 +11,7 @@
  Input:
  123
  34108
- 
+
  Output:
  one hundred twenty three
  thirty four thousand one hundred eight

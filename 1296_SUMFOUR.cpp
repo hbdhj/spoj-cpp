@@ -1,6 +1,6 @@
 /*
 TASK: 4 values whose sum is 0
-ALGO: sorting, subset partition
+ALGO: sort, subset partition
 */
 #include <ios>
 #include <algorithm>
@@ -14,7 +14,7 @@ using namespace std;
 
 int a[MAX][4];
 
-int main() 
+int main()
 {
 	int n, i, j, val, cnt = 0;
 	vector <int> V;
@@ -25,9 +25,9 @@ int main()
 		for(j=0; j<n; j++)
 			V.pb(a[i][0]+a[j][1]);
 	sort(V.begin(), V.end());
-	for(i=0; i<n; i++) 
+	for(i=0; i<n; i++)
     {
-		for(j=0; j<n; j++) 
+		for(j=0; j<n; j++)
         {
 			val = -(a[i][2]+a[j][3]);
 			cnt += ub(V,val) - lb(V,val);

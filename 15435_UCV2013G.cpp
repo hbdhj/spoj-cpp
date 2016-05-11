@@ -1,9 +1,9 @@
 //
 //  15435_UCV2013G.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-25.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Schedules
@@ -33,10 +33,10 @@ int main()
         sort(lb.begin(), lb.end());
         int match = 0;
         int total = 0;
-        for (int i=0; i<nb; i++) 
+        for (int i=0; i<nb; i++)
         {
             int min = ts+1;
-            for (int j=0; j<na; j++) 
+            for (int j=0; j<na; j++)
             {
                 if(la[j]>lb[i]+ts)
                     break;
@@ -59,6 +59,6 @@ int main()
             printf("No matches\n");
         scanf("%d %d %d", &na, &nb, &ts);
     }
-    
+
     return 0;
 }

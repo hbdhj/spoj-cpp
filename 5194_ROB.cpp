@@ -1,9 +1,9 @@
 //
 //  5194.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-4.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>
@@ -66,4 +66,3 @@ int main()
     }
     return 0;
 }
-

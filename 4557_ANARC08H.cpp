@@ -1,9 +1,9 @@
 //
 //  4557.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-14.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
 TASK: Musical Chairs
@@ -11,7 +11,7 @@ Input:
 5 3
 7 1
 7 2
-7 3 
+7 3
 7 4
 7 5
 7 6
@@ -24,7 +24,7 @@ Output:
 7 3 4
 7 4 2
 7 5 6
-7 6 3 
+7 6 3
 */
 
 #include <stdio.h>

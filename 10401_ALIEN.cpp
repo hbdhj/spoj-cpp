@@ -1,9 +1,9 @@
 //
 //  10401_ALIEN.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-8.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Aliens at the train
@@ -11,19 +11,19 @@
  4
  5 100
  20 15 30 80 100
- 1 50 
- 100 
- 4 20 
- 16 8 16 8 
- 4 10 
- 2 2 2 4 
+ 1 50
+ 100
+ 4 20
+ 16 8 16 8
+ 4 10
+ 2 2 2 4
 
- 
+
  OUTPUT
  65 3
  0 0
  8 1
- 10 4 
+ 10 4
  */
 #include <iostream>
 #include <queue>
@@ -53,14 +53,14 @@ int main()
                 {
                     max_length=length;
                     max_total=total;
-                }    
+                }
             }
             else
             {
                 aiq.push(ai);
                 total+=ai;
                 length++;
-                while (total>B) 
+                while (total>B)
                 {
                     total-=aiq.front();
                     aiq.pop();

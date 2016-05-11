@@ -1,6 +1,6 @@
 /*
  TASK: Bitmap
- ALGO: bfs
+ ALGO: breadth first search
  Sample input:
  1
  3 4

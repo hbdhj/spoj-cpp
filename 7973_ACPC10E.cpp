@@ -1,9 +1,9 @@
 //
 //  7973_ACPC10E.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-27.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -14,7 +14,7 @@
 #include <cstdio>
 using namespace std;
 
-int main() 
+int main()
 {
 	int g, a, t, d, i;
 	long long p, k;

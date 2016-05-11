@@ -1,9 +1,9 @@
 //
 //  7870_ ADV04J.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-23.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 #include <iostream>

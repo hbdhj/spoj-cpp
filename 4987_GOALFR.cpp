@@ -1,15 +1,15 @@
 /*
-TASK: Goal for Raúl
+TASK: Goal for Raul
 ALGO: geometry
  Input:
  2
- 
+
  15.0 -20.0
  42.5 2.0 5.0
- 
+
  20.0 11.0
  34.0 6.0 5.0
- 
+
  Output:
  Goal!
  No goal...
@@ -24,12 +24,12 @@ using namespace std;
 #define eps 10e-10
 #define sq(x) ((x)*(x))
 
-struct POINT 
+struct POINT
 {
 	double x, y;
 };
 
-struct CIRCLE 
+struct CIRCLE
 {
 	POINT c;
 	double r;
@@ -51,23 +51,23 @@ bool cross(POINT p1, POINT p2, CIRCLE p)
 	c -= sq(p.r);
 	d = b * b - 4 * a * c;
 
-	if(fabs(a) < eps || d < -eps) 
+	if(fabs(a) < eps || d < -eps)
         return false;
 	return true;
 }
 
-int main() 
+int main()
 {
 	CIRCLE golee;
 	POINT raul, gbarU = {52.0, 3.66}, gbarD = {52.0, -3.66};
 	int t;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%lf%lf%lf%lf%lf", &raul.x, &raul.y, &golee.c.x, &golee.c.y, &golee.r);
 		if(cross(raul, gbarU, golee) && cross(raul, gbarD, golee))
             printf("No goal...\n");
-		else 
+		else
             printf("Goal!\n");
 	}
 	return 0;

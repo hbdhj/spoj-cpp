@@ -1,9 +1,9 @@
 //
 //  7169.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-12.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  Input:
@@ -21,7 +21,7 @@
  1/2
  1/4
  1/4
- 
+
  Output:
  4
 */
@@ -64,7 +64,7 @@ int main()
             half-=ceil(float(quater)/2);
             pies+=ceil(float(half)/2);
         }*/
-        
+
     }
     else
     {

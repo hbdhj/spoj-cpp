@@ -1,9 +1,9 @@
 //
 //  5161_FACVSPOW.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-7.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Factorial vs Power
@@ -14,7 +14,7 @@
  2
  3
  4
- 
+
  Output:
  4
  7
@@ -31,20 +31,20 @@ using namespace std;
 
 int a[MAX];
 
-int main() 
+int main()
 {
 	int i, j;
 	double left, right, v;
 	a[1] = 2;
 	left = log(2.0);
-	for(i=j=2; i<MAX; i++) 
+	for(i=j=2; i<MAX; i++)
     {
 		v = log((double)i);
-		for(++j; ;j++) 
+		for(++j; ;j++)
         {
 			left += log((double)j);
 			right = v*j;
-			if(left > right) 
+			if(left > right)
             {
 				a[i] = j;
 				break;
@@ -53,7 +53,7 @@ int main()
 	}
 	int t, n;
 	scanf("%d", &t);
-	while(t--) 
+	while(t--)
     {
 		scanf("%d", &n);
 		printf("%d\n", a[n]);

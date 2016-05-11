@@ -64,12 +64,12 @@ const int INF = 0x3f3f3f3f;*/
 #include <cmath>
 #include <cstdio>
 
-struct point 
+struct point
 {
 	double x, y;
 };
 
-inline double dist(point a, point b) 
+inline double dist(point a, point b)
 {
 	return sqrt((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
 }
@@ -78,7 +78,7 @@ int main() {
 	point p, q;
 	double res = 0.0;
 	scanf("%*[^(](%lf, %lf).", &p.x, &p.y);
-	while(scanf("%*[^(](%lf, %lf).", &q.x, &q.y)==2) 
+	while(scanf("%*[^(](%lf, %lf).", &q.x, &q.y)==2)
     {
 		res += dist(p, q);
 		printf("The salesman has traveled a total of %.3lf kilometers.\n", res);

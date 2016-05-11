@@ -1,9 +1,9 @@
 //
 //  13838_M_SEQ.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-8.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Mosty! Find Gn
@@ -17,13 +17,13 @@ using namespace std;
 
 int main()
 {
-    /*for (int n=1; n<=10; n++) 
+    /*for (int n=1; n<=10; n++)
     {
         printf("F'(%d)=%d\n", n, n*(n+1)*(n+2)/6);
     }*/
     int t;
     scanf("%d", &t);
-    
+
     while (t--)
     {
         long n;

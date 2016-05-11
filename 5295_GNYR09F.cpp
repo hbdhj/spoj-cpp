@@ -1,9 +1,9 @@
 //
 //  5295_GNYR09F.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-3-25.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO: dynamic programming
@@ -48,7 +48,7 @@ i64 cal( int pos, int total, int prev )
 	if( total < 0 ) return 0;
 	if( pos < 0 )
     {
-		if( total == 0 ) 
+		if( total == 0 )
             return 1;
 		return 0;
 	}
@@ -74,7 +74,7 @@ int main()
 	cin >> tc;
 	while( tc -- )
 	{
-        
+
 		int cs;
 		cin >> cs >> N >> K;
 		cout << cs<<" ";

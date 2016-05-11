@@ -7,7 +7,7 @@
 //
 /*
  TASK: Trip
- ALGO: dynamic programming like edit distance
+ ALGO: dynamic programming
  Input
  1
  abcabcaa

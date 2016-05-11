@@ -1,9 +1,9 @@
 //
 //  15285_ROHAAN.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-28.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Defend The Rohan
@@ -47,7 +47,7 @@ void Floyd(int n)
         {
             for (int i=0; i<n; i++)
             {
-                if (i!=k) 
+                if (i!=k)
                 {
                     for (int j=0; j<n; j++)
                     {
@@ -86,7 +86,7 @@ int main()
         //printPath(n);
         scanf("%d",&r);
         d=0;
-        while (r--) 
+        while (r--)
         {
             scanf("%d %d", &s, &t);
             d+=path[s-1][t-1];

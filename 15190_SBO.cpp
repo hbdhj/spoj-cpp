@@ -1,9 +1,9 @@
 //
 //  15190_SBO.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-11.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: MAXIMUM RARITY
@@ -12,13 +12,13 @@
  1 1 2 5 1 16 5
  Output 1:
  4
- 
+
  Input 2:
  3
  1 2 3
  Output 2:
  3
- 
+
  Input 3:
  10
  2 1 4 1 5 6 7 1 8 2
@@ -56,7 +56,7 @@ int main()
                 else
                 {
                     rare.push_back(input[l]);
-                    if (max<(l-i+1)) 
+                    if (max<(l-i+1))
                     {
                         max=l-i+1;
                     }

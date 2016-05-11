@@ -8,7 +8,7 @@
 
 /*
  TASK: Burrows Wheeler Precompression
- ALGO: sorting
+ ALGO: sort
  Sample Input:
  2
  bacab

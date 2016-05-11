@@ -1,9 +1,9 @@
 //
 //  4033.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-2-23.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 /*
  ALGO: Trie Tree
  Input:
@@ -30,7 +30,7 @@ YES
 struct trie {
     trie *next[10];
     bool end;
-    trie() 
+    trie()
     {
         for(int i=0; i<10; i++) next[i] = NULL;
         end = 0;
@@ -43,21 +43,21 @@ int main() {
     bool flag;
     //IOR("in.txt");
     scanf("%d", &t);
-    while(t--) 
+    while(t--)
     {
         scanf("%d", &n);
         trie *head, *tail;
         head = new trie;
         flag = 1;
-        while(n--) 
+        while(n--)
         {
             scanf("%s", str);
-            if(flag) 
+            if(flag)
             {
                 tail = head;
-                for(i=0; str[i]; i++) 
+                for(i=0; str[i]; i++)
                 {
-                    if(tail->end) 
+                    if(tail->end)
                     {
                         flag = 0;
                         break;
@@ -67,9 +67,9 @@ int main() {
                     tail = tail->next[p];
                 }
                 tail->end = 1;
-                for(i=0; i<10; i++) 
+                for(i=0; i<10; i++)
                 {
-                    if(tail->next[i]) 
+                    if(tail->next[i])
                     {
                         flag = 0;
                         break;
@@ -77,9 +77,9 @@ int main() {
                 }
             }
         }
-        if(flag) 
+        if(flag)
             printf("YES\n");
-        else 
+        else
             printf("NO\n");
     }
     return 0;

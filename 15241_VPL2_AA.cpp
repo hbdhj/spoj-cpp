@@ -1,9 +1,9 @@
 //
 //  15241_VPL2_AA.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-3.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Luis Quest
@@ -14,7 +14,7 @@
  10 15 3 20
  5 12 2 50
  5 12 2 7
- 
+
  OUTPUT
  Scenario #1: 3.00
  Scenario #2: 5.13

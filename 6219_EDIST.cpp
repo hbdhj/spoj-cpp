@@ -1,10 +1,10 @@
 /*
 6219. Edit distance
-dynamic programming
+ ALGO: dynamic programming
 Input:
 1
 FOOD
-MONEY 
+MONEY
 Output:
 4
 */
@@ -34,9 +34,9 @@ int main()
 		len1 = strlen(str1);
 		len2 = strlen(str2);
 		edit_value[0][0] = 0;
-        	for(i=0 ; i<len1 ; i++) 
+        	for(i=0 ; i<len1 ; i++)
 				edit_value[i][0] = i;
-        	for(j=0 ; j<len2 ; j++) 
+        	for(j=0 ; j<len2 ; j++)
 				edit_value[0][j] = j;
 
         	for(i=1 ; i<=len1 ; i++)
@@ -50,7 +50,7 @@ int main()
 					{
 						for(m=0 ; m<=len2 ; m++)
 							printf("%d ",edit_value[l][m]);
-						printf("\n");	
+						printf("\n");
 					}*/
             	}
             	printf("%d\n", edit_value[len1][len2]);

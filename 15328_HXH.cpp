@@ -1,9 +1,9 @@
 //
 //  15328_HXH.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-7-17.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Hunter x Hunter
@@ -15,7 +15,7 @@
  #...*
  ..*..
  .....
- 
+
  Output test:
  3
  */

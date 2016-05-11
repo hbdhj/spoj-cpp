@@ -1,9 +1,9 @@
 //
 //  15994_BOXSCHOC.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-9-18.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Boxes of Chocolate
@@ -20,7 +20,7 @@
  1 5 2
  3 5 3
  2 5 2
- Output: 
+ Output:
  Case 1:
  5
  2
@@ -50,14 +50,14 @@ int main()
         {
             scanf("%d %d %d", &a, &b, &k);
             c=0;
-            for (j=a-1; j<b; j++) 
+            for (j=a-1; j<b; j++)
             {
                 if (A[j]%k==0) {
                     c++;
                 }
             }
             printf("%d\n", c);
-        }    
+        }
     }
     return 0;
 }

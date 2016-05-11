@@ -8,7 +8,8 @@
 
 /*
  TASK: Halloween treats
- ALGO: pegionhole principle http://zh.wikipedia.org/zh-cn/%E9%B4%BF%E5%B7%A2%E5%8E%9F%E7%90%86
+ ALGO: pegionhole principle 
+ REFER: http://zh.wikipedia.org/zh-cn/%E9%B4%BF%E5%B7%A2%E5%8E%9F%E7%90%86
  Input:
  4 5
  1 2 3 7 5

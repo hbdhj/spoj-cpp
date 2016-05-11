@@ -1,9 +1,9 @@
 //
 //  14970_UOFTAA.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-19.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Rock Paper Scissors Fox
@@ -25,7 +25,7 @@ int main()
             break;
         else if(inputs=="Foxen")
         {
-            
+
         }
         else if(inputs=="Fox")
         {
@@ -42,7 +42,7 @@ int main()
         else if(inputs=="Rock")
         {
             cout<<"Paper"<<endl;
-        } 
+        }
         else if(inputs=="Paper")
         {
             cout<<"Scissors"<<endl;

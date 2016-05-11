@@ -1,13 +1,13 @@
 //
 //  9032_CUBEFR.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-6.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  ALGO: sieve
- Sample Input: 
+ Sample Input:
  10
  1
  2
@@ -19,9 +19,9 @@
  8
  9
  10
- 
+
  Sample Output:
- 
+
  Case 1: 1
  Case 2: 2
  Case 3: 3
@@ -42,25 +42,25 @@ const int N = 1100000;
 int cube[N];
 int id[N], num = 0;
 
-int main() 
+int main()
 {
     // precalc.
     for (int i = 2; i*i*i < N; ++i)
         for (int j = i*i*i; j < N; j+=i*i*i)
             cube[j] = 1;
     for (int i = 1; i < N; ++i)
-        if (!cube[i]) 
+        if (!cube[i])
             id[i] = ++num;
-    
-    int T; 
+
+    int T;
     scanf("%d", &T);
-    for (int t = 1; t <= T; ++t) 
+    for (int t = 1; t <= T; ++t)
     {
         int n; scanf("%d", &n);
         printf("Case %d: ", t);
-        if (!cube[n]) 
+        if (!cube[n])
             printf("%d\n", id[n]);
-        else 
+        else
             printf("Not Cube Free\n");
     }
 }

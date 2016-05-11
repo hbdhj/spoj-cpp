@@ -1,18 +1,18 @@
 //
 //  11210_OPC3A.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-6-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Arya and the exponacci
- ALGO: pre-compute
+ ALGO: pre-calculation
  Input:
  2
  3
  5
- 
+
  Output:
  4
  32

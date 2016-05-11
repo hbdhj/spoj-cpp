@@ -1,18 +1,18 @@
 //
 //  15965_ENIGMATH.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-9-16.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: PLAY WITH MATH
  Input :
  1
- 2 3 
- 
+ 2 3
+
  Ouput :
- 3 2 
+ 3 2
  */
 #include <iostream>
 

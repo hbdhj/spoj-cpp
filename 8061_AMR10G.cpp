@@ -1,23 +1,23 @@
 //
 //  8061.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-1-13.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  SAMPLE INPUT
- 3 
- 3 1 
- 2 5 4  
- 3 2 
- 5 2 4  
- 3 3 
- 2 5 4  
- SAMPLE OUTPUT 
- 0 
- 1 
- 3 
+ 3
+ 3 1
+ 2 5 4
+ 3 2
+ 5 2 4
+ 3 3
+ 2 5 4
+ SAMPLE OUTPUT
+ 0
+ 1
+ 3
  */
 #include <iostream>
 #include <vector>
@@ -48,6 +48,6 @@ int main()
                 large=hss[i][j]-hss[i][j-ks[i]+1];
         }
         printf("%ld\n",large);
-    } 
+    }
     return 0;
 }

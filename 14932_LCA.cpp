@@ -1,9 +1,9 @@
 //
 //  14932_LCA.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-20.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 /*
  TASK: Lowest Common Ancestor
@@ -37,7 +37,7 @@ int main()
 {
     int t;
     cin>>t;
-	
+
     for (int ti=0;ti<t;ti++)
     {
         int n;
@@ -91,7 +91,7 @@ int main()
             }
 			int s_n=queries[i].first;
 			int t_n=queries[i].second;
-			
+
 			if(ancestors[s_n].size()==2)
 			{
 				int ans=ancestors[s_n][1];
@@ -122,7 +122,7 @@ int main()
 			}*/
 			//printf("%d have %d ancestors\n",t_n+1, ancestors[t_n].size());
 			int s_n_i, t_n_i;
-			for(s_n_i=ancestors[s_n].size()-1, t_n_i=ancestors[t_n].size()-1; 
+			for(s_n_i=ancestors[s_n].size()-1, t_n_i=ancestors[t_n].size()-1;
 				s_n_i>=0&&t_n_i>=0; s_n_i--, t_n_i--)
 			{
 				//printf("ancestors[%d][%d] = %d, ancestors[%d][%d] = %d\n", s_n, s_n_i, ancestors[s_n][s_n_i]+1, t_n, t_n_i, ancestors[t_n][t_n_i]+1);

@@ -7,7 +7,7 @@
 //
 /*
  TASK: Rectangles Perimeter
- ALGO: dynamic program
+ ALGO: dynamic programming
  */
 #include <cstdio>
 #include <cstdlib>

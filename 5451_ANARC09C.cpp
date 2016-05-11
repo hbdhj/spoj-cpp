@@ -1,9 +1,9 @@
 //
 //  5451_ANARC09C.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-4-20.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 
@@ -22,7 +22,7 @@ int flag[MAX>>6], primes[LEN], total;
 #define isc(x) (flag[x>>6]|=(1<<((x>>1)&31)))
 #define sq(x) ((x)*(x))
 
-void sieve() 
+void sieve()
 {
 	int i, j, k;
 	for(i=3; i<LMT; i+=2)
@@ -39,12 +39,12 @@ void sieve()
 void factor(int n, int *fact, int *cnt, int &len)
 {
 	len = 0;
-	for(int i=0; i<total && sq(primes[i])<=n; i++) 
+	for(int i=0; i<total && sq(primes[i])<=n; i++)
     {
-		if(n % primes[i] == 0) 
+		if(n % primes[i] == 0)
         {
 			cnt[len] = 0;
-			while(n % primes[i] == 0) 
+			while(n % primes[i] == 0)
             {
 				cnt[len]++;
 				n /= primes[i];
@@ -52,7 +52,7 @@ void factor(int n, int *fact, int *cnt, int &len)
 			fact[len++] = primes[i];
 		}
 	}
-	if(n>1) 
+	if(n>1)
     {
 		cnt[len] = 1;
 		fact[len++] = n;
@@ -68,13 +68,13 @@ int main() {
 		factor(a, fa, ca, la);
 		factor(b, fb, cb, lb);
 		fa[la] = fb[lb] = INF;
-		for(i=j=tot=mn=0; i<la || j<lb; mn++) 
+		for(i=j=tot=mn=0; i<la || j<lb; mn++)
         {
-			if(i<la && j<lb && fa[i]==fb[j]) 
+			if(i<la && j<lb && fa[i]==fb[j])
                 tot += abs(ca[i++]-cb[j++]);
-			else if(i>=la || fa[i] > fb[j]) 
+			else if(i>=la || fa[i] > fb[j])
                 tot += cb[j++];
-			else if(j>=lb || fa[i] < fb[j]) 
+			else if(j>=lb || fa[i] < fb[j])
                 tot += ca[i++];
 		}
 		printf("%d. %d:%d\n", cs++, mn, tot);

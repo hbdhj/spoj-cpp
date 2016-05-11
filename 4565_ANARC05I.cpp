@@ -1,9 +1,9 @@
 //
 //  4565_ANARC05I.cpp
-//  
+//
 //
 //  Created by Haijun Deng on 13-5-7.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
 /*
@@ -27,22 +27,22 @@ int main()
 		{
 			switch(str[i])
 			{
-                case 'U': 
-                    y += 1; 
+                case 'U':
+                    y += 1;
                     break;
-                case 'D': 
-                    y -= 1; 
+                case 'D':
+                    y -= 1;
                     break;
-                case 'R': 
-                    x += 1; 
+                case 'R':
+                    x += 1;
                     break;
-                case 'L': 
-                    x -= 1; 
+                case 'L':
+                    x -= 1;
                     break;
 			}
-			if(grid[x][y]==t) 
+			if(grid[x][y]==t)
                 cnt++;
-			else 
+			else
                 grid[x][y] = t;
 		}
 		printf("%d\n", cnt);
