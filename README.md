@@ -59,7 +59,7 @@
 * [warshall](#warshall)
 
 
-dynamic programming
+dynamic programming                                  [back](#Table-of-Contents)
 ========================
 14_IKEYB.cpp      	33_TRIP.cpp       	39_PIGBANK.cpp    	63_SQRBR.cpp      	
 64_PERMUT1.cpp    	101_FISHER.cpp    	137_PARTIT.cpp    	237_SUMITR.cpp    	
@@ -69,250 +69,250 @@ dynamic programming
 5295_GNYR09F.cpp  	6219_EDIST.cpp    	7217_TRIKA.cpp    	9387_MAIN113.cpp  	
 9820_WPC4F.cpp    	14930_FARIDA.cpp  	15259_LKS.cpp     	
 
-math
+math                                                 [back](#Table-of-Contents)
 ========================
 526_DIV.cpp       	1391_CZ_PROB1.cpp 	3713_PROOT.cpp    	3871_GCDEX.cpp    	
 4942_FACT.cpp     	5161_FACVSPOW.cpp 	5673_NG1FRCTN.cpp 	5971_LCMSUM.cpp   	
 7019_ZIGZAG.cpp   	7676_CPCRC1C.cpp  	7973_ACPC10E.cpp  	11560_PUCMM210.cpp	
 15143_POP1.cpp    	15164_PTRI.cpp    	15241_VPL2_AA.cpp 	26315_CRZYSMKR.cpp	
 
-ad-hoc
+ad-hoc                                               [back](#Table-of-Contents)
 ========================
 380_BINGO.cpp     	1787_ENCONDIN.cpp 	2525_GNY07C.cpp   	2529_GNY07C.cpp   	
 3374_SCAVHUNT.cpp 	3411_SAMER08G.cpp 	3934_MRECAMAN.cpp 	4452_ARITH2.cpp   	
 4549_ANARC08B.cpp 	7745_MBINGO.cpp   	8398_QUADRATE.cpp 	11573_TEAMS.cpp   	
 11581_CLOCK2.cpp  	12365_TAP2012B.cpp	13096_PCPC12J.cpp 	
 
-geometry
+geometry                                             [back](#Table-of-Contents)
 ========================
 16_TETRA.cpp      	22_TRICENTER.cpp  	23_PIR.cpp        	40_STONE.cpp      	
 2716_QUADAREA.cpp 	4456_ANTTT.cpp    	4987_GOALFR.cpp   	4993_FAKETSP.cpp  	
 5240_GARDENAR.cpp 	9334_TETRAHED.cpp 	11604_REBOUND.cpp 	14928_PIRACON.cpp 	
 15709_SMPCIRC.cpp 	
 
-sort
+sort                                                 [back](#Table-of-Contents)
 ========================
 661_QUEST5.cpp    	1296_SUMFOUR.cpp  	1874_BWHEELER.cpp 	3943_MDOLLS.cpp   	
 7240_PLYGRND.cpp  	7881_C1LJUTNJ.cpp 	8796_CUBARTWK.cpp 	9734_HACKRNDM.cpp 	
 11515_BUSYMAN.cpp 	11769_RPLK.cpp    	13090_PCPC12D.cpp 	14955_DCOWS.cpp   	
 
-simulation
+simulation                                           [back](#Table-of-Contents)
 ========================
 376_ACS.cpp       	726_PRO.cpp       	2006_BALIFE.cpp   	2526_GNY07D.cpp   	
 4565_ANARC05I.cpp 	4568_ANARC07C.cpp 	7034_CROBOTS.cpp  	7191_HEXBOARD.cpp 	
 8625_NY10C.cpp    	8626_NY10D.cpp    	8627_NY10F.cpp    	15243_VPL2_AC.cpp 	
 
-segment tree
+segment tree                                         [back](#Table-of-Contents)
 ========================
 61_BRCKTS.cpp     	227_ORDERS.cpp    	1684_FREQUENT.cpp 	1716_GSS3.cpp     	
 2916_GSS5.cpp     	7259_LITE.cpp     	7299_MULTQ3.cpp   	8002_HORRIBLE.cpp 	
 11578_CITY2.cpp   	
 
-warshall
+warshall                                             [back](#Table-of-Contents)
 ========================
 178_ROADNET.cpp   	381_CHICAGO.cpp   	1845_MICEMAZE.cpp 	4555_ANARC08F.cpp 	
 7025_CT25C.cpp    	8042_SOCIALNE.cpp 	9340_ARBITRAG.cpp 	
 
-breadth first search
-========================
-206_BITMAP.cpp    	402_HIKE.cpp      	733_MTWALK.cpp    	1436_PT07Y.cpp    	
-13091_PCPC12E.cpp 	
-
-binary search
-========================
-110_CISTFILL.cpp  	297_AGGRCOW.cpp   	3107_ODDDIV.cpp   	10239_ACPC11B.cpp 	
-12151_OPCPIZZA.cpp	
-
-dijkstra
-========================
-50_INCARDS.cpp    	96_SHOP.cpp       	3381_HIGHWAYS.cpp 	3643_TRAFFICN.cpp 	
-3920_BYTESE1.cpp  	
-
-sieve
+sieve                                                [back](#Table-of-Contents)
 ========================
 3587_PAGAIN.cpp   	3713_PROOT.cpp    	6470_TDKPRIME.cpp 	9032_CUBEFR.cpp   	
 15164_PTRI.cpp    	
 
-binary indexed tree
+dijkstra                                             [back](#Table-of-Contents)
+========================
+50_INCARDS.cpp    	96_SHOP.cpp       	3381_HIGHWAYS.cpp 	3643_TRAFFICN.cpp 	
+3920_BYTESE1.cpp  	
+
+binary search                                        [back](#Table-of-Contents)
+========================
+110_CISTFILL.cpp  	297_AGGRCOW.cpp   	3107_ODDDIV.cpp   	10239_ACPC11B.cpp 	
+12151_OPCPIZZA.cpp	
+
+breadth first search                                 [back](#Table-of-Contents)
+========================
+206_BITMAP.cpp    	402_HIKE.cpp      	733_MTWALK.cpp    	1436_PT07Y.cpp    	
+13091_PCPC12E.cpp 	
+
+binary indexed tree                                  [back](#Table-of-Contents)
 ========================
 1029_MATSUM.cpp   	2713_GSS4.cpp     	3267_DQUERY.cpp   	4226_MSE06H.cpp   	
 
-pre-calculation
+pre-calculation                                      [back](#Table-of-Contents)
 ========================
 7216_CLOCKS.cpp   	7753_HPYNOSII.cpp 	11210_OPC3A.cpp   	
 
-computational geometry
-========================
-35_EQBOX.cpp      	2270_BALLOON.cpp  	8793_SPOINTS.cpp  	
-
-merge sort
+merge sort                                           [back](#Table-of-Contents)
 ========================
 6256_INVCNT.cpp   	6294_YODANESS.cpp 	9722_CODESPTB.cpp 	
 
-gcd
+computational geometry                               [back](#Table-of-Contents)
+========================
+35_EQBOX.cpp      	2270_BALLOON.cpp  	8793_SPOINTS.cpp  	
+
+gcd                                                  [back](#Table-of-Contents)
 ========================
 5450_ANARC09B.cpp 	5673_NG1FRCTN.cpp 	
 
-big integer
-========================
-3973_M00PAIR.cpp  	7897_SKYLINE.cpp  	
-
-euler phi
+euler phi                                            [back](#Table-of-Contents)
 ========================
 3713_PROOT.cpp    	3871_GCDEX.cpp    	
 
-greedy
-========================
-247_CHOCOLA.cpp   	3943_MDOLLS.cpp   	
-
-prime
-========================
-4942_FACT.cpp     	15164_PTRI.cpp    	
-
-stack
+stack                                                [back](#Table-of-Contents)
 ========================
 1805_HISTOGRA.cpp 	7741_BOI7SEQ.cpp  	
 
-inclusion exclusion
+prime                                                [back](#Table-of-Contents)
 ========================
-4191_MSKYCODE.cpp 	6285_NGM2.cpp     	
+4942_FACT.cpp     	15164_PTRI.cpp    	
 
-recursion
+big integer                                          [back](#Table-of-Contents)
+========================
+3973_M00PAIR.cpp  	7897_SKYLINE.cpp  	
+
+recursion                                            [back](#Table-of-Contents)
 ========================
 5673_NG1FRCTN.cpp 	C8315_NUMWORD.cpp 	
 
-divide and conquer
+inclusion exclusion                                  [back](#Table-of-Contents)
+========================
+4191_MSKYCODE.cpp 	6285_NGM2.cpp     	
+
+greedy                                               [back](#Table-of-Contents)
+========================
+247_CHOCOLA.cpp   	3943_MDOLLS.cpp   	
+
+divide and conquer                                   [back](#Table-of-Contents)
 ========================
 6256_INVCNT.cpp   	6294_YODANESS.cpp 	
 
-flood fill
-========================
-4177_HERDING.cpp  	
-
-easy
-========================
-C8315_NUMWORD.cpp 	
-
-manachar
-========================
-4103_EPALIN.cpp   	
-
-match
-========================
-5450_ANARC09B.cpp 	
-
-sweep
-========================
-740_NICEDAY.cpp   	
-
-binary search tree
-========================
-138_POSTERS.cpp   	
-
-pegionhole principle
-========================
-1677_HALLOW.cpp   	
-
-subset partition
+subset partition                                     [back](#Table-of-Contents)
 ========================
 1296_SUMFOUR.cpp  	
 
-kruskal
-========================
-368_CSTREET.cpp   	
-
-karatsuba multiplication
-========================
-31_MUL.cpp        	
-
-lcd
-========================
-14971_UOFTAB.cpp  	
-
-nim game
-========================
-6772_HC.cpp       	
-
-oeis
-========================
-7430_RANJAN02.cpp 	
-
-knuth morris patt - kmp
-========================
-263_PERIOD.cpp    	
-
-euler cycle
-========================
-1785_CODE.cpp     	
-
-bipartite matching
-========================
-1435_PT07X.cpp    	
-
-depth first search
-========================
-56_DYZIO.cpp      	
-
-strongly connected component
-========================
-51_TOUR.cpp       	
-
-trie tree
-========================
-4033_PHONELST.cpp 	
-
-bottom-up dynamic programming
-========================
-8611_NY10E.cpp    	
-
-floyd-warshall
-========================
-15285_ROHAAN.cpp  	
-
-lcm
-========================
-5450_ANARC09B.cpp 	
-
-brute-force
-========================
-10232_AMR11E.cpp  	
-
-bruce-force compare
-========================
-7108_HEPNUM.cpp   	
-
-palindrome
-========================
-4103_EPALIN.cpp   	
-
-convex hull
-========================
-26_BSHEEP.cpp     	
-
-manacher
+manacher                                             [back](#Table-of-Contents)
 ========================
 3208_PALIM.cpp    	
 
-expression tree
+easy                                                 [back](#Table-of-Contents)
+========================
+C8315_NUMWORD.cpp 	
+
+convex hull                                          [back](#Table-of-Contents)
+========================
+26_BSHEEP.cpp     	
+
+expression tree                                      [back](#Table-of-Contents)
 ========================
 10_CMEXPR.cpp     	
 
-merge
+euler cycle                                          [back](#Table-of-Contents)
 ========================
-8796_CUBARTWK.cpp 	
+1785_CODE.cpp     	
 
-matrix exponentiation
+bipartite matching                                   [back](#Table-of-Contents)
+========================
+1435_PT07X.cpp    	
+
+sweep                                                [back](#Table-of-Contents)
+========================
+740_NICEDAY.cpp   	
+
+flood fill                                           [back](#Table-of-Contents)
+========================
+4177_HERDING.cpp  	
+
+karatsuba multiplication                             [back](#Table-of-Contents)
+========================
+31_MUL.cpp        	
+
+matrix exponentiation                                [back](#Table-of-Contents)
 ========================
 8001_FIBOSUM.cpp  	
 
-miller_robin
+bruce-force compare                                  [back](#Table-of-Contents)
+========================
+7108_HEPNUM.cpp   	
+
+kruskal                                              [back](#Table-of-Contents)
+========================
+368_CSTREET.cpp   	
+
+map                                                  [back](#Table-of-Contents)
+========================
+14927_CHIGAME.cpp 	
+
+trie tree                                            [back](#Table-of-Contents)
+========================
+4033_PHONELST.cpp 	
+
+lcd                                                  [back](#Table-of-Contents)
+========================
+14971_UOFTAB.cpp  	
+
+nim game                                             [back](#Table-of-Contents)
+========================
+6772_HC.cpp       	
+
+knuth morris patt - kmp                              [back](#Table-of-Contents)
+========================
+263_PERIOD.cpp    	
+
+miller_robin                                         [back](#Table-of-Contents)
 ========================
 288_PON.cpp       	
 
-nim game bouton's theorem
+binary search tree                                   [back](#Table-of-Contents)
+========================
+138_POSTERS.cpp   	
+
+strongly connected component                         [back](#Table-of-Contents)
+========================
+51_TOUR.cpp       	
+
+floyd-warshall                                       [back](#Table-of-Contents)
+========================
+15285_ROHAAN.cpp  	
+
+match                                                [back](#Table-of-Contents)
+========================
+5450_ANARC09B.cpp 	
+
+pegionhole principle                                 [back](#Table-of-Contents)
+========================
+1677_HALLOW.cpp   	
+
+bottom-up dynamic programming                        [back](#Table-of-Contents)
+========================
+8611_NY10E.cpp    	
+
+brute-force                                          [back](#Table-of-Contents)
+========================
+10232_AMR11E.cpp  	
+
+depth first search                                   [back](#Table-of-Contents)
+========================
+56_DYZIO.cpp      	
+
+lcm                                                  [back](#Table-of-Contents)
+========================
+5450_ANARC09B.cpp 	
+
+palindrome                                           [back](#Table-of-Contents)
+========================
+4103_EPALIN.cpp   	
+
+nim game bouton's theorem                            [back](#Table-of-Contents)
 ========================
 3969_MMMGAME.cpp  	
 
-map
+oeis                                                 [back](#Table-of-Contents)
 ========================
-14927_CHIGAME.cpp 	
+7430_RANJAN02.cpp 	
+
+manachar                                             [back](#Table-of-Contents)
+========================
+4103_EPALIN.cpp   	
+
+merge                                                [back](#Table-of-Contents)
+========================
+8796_CUBARTWK.cpp 	
