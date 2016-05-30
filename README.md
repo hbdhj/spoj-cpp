@@ -87,17 +87,17 @@ geometry
 4456_ANTTT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4987_GOALFR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4993_FAKETSP.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5240_GARDENAR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9334_TETRAHED.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 11604_REBOUND.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14928_PIRACON.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15709_SMPCIRC.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-sort
-========================
-661_QUEST5.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1296_SUMFOUR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1874_BWHEELER.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3943_MDOLLS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7240_PLYGRND.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-7881_C1LJUTNJ.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8796_CUBARTWK.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9734_HACKRNDM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11515_BUSYMAN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11769_RPLK.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-13090_PCPC12D.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14955_DCOWS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 simulation
 ========================
 376_ACS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;726_PRO.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2006_BALIFE.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2526_GNY07D.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4565_ANARC05I.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 4568_ANARC07C.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7034_CROBOTS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7191_HEXBOARD.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8625_NY10C.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8626_NY10D.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 8627_NY10F.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15243_VPL2_AC.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+sort
+========================
+661_QUEST5.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1296_SUMFOUR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1874_BWHEELER.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3943_MDOLLS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7240_PLYGRND.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7881_C1LJUTNJ.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8796_CUBARTWK.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9734_HACKRNDM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11515_BUSYMAN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11769_RPLK.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+13090_PCPC12D.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14955_DCOWS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 segment tree
 ========================
@@ -129,25 +129,41 @@ binary indexed tree
 ========================
 1029_MATSUM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2713_GSS4.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3267_DQUERY.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4226_MSE06H.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-pre-calculation
-========================
-7216_CLOCKS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7753_HPYNOSII.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11210_OPC3A.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 computational geometry
 ========================
 35_EQBOX.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2270_BALLOON.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8793_SPOINTS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+pre-calculation
+========================
+7216_CLOCKS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7753_HPYNOSII.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11210_OPC3A.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 merge sort
 ========================
 6256_INVCNT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6294_YODANESS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9722_CODESPTB.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-prime
+stack
 ========================
-4942_FACT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15164_PTRI.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1805_HISTOGRA.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7741_BOI7SEQ.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+big integer
+========================
+3973_M00PAIR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7897_SKYLINE.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 divide and conquer
 ========================
 6256_INVCNT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6294_YODANESS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+euler phi
+========================
+3713_PROOT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3871_GCDEX.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+gcd
+========================
+5450_ANARC09B.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5673_NG1FRCTN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+prime
+========================
+4942_FACT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15164_PTRI.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 greedy
 ========================
@@ -161,135 +177,87 @@ recursion
 ========================
 5673_NG1FRCTN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C8315_NUMWORD.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-gcd
+euler cycle
 ========================
-5450_ANARC09B.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5673_NG1FRCTN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-stack
-========================
-1805_HISTOGRA.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7741_BOI7SEQ.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-euler phi
-========================
-3713_PROOT.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3871_GCDEX.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-big integer
-========================
-3973_M00PAIR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7897_SKYLINE.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-miller_robin
-========================
-288_PON.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-nim game
-========================
-6772_HC.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-matrix exponentiation
-========================
-8001_FIBOSUM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-easy
-========================
-C8315_NUMWORD.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-match
-========================
-5450_ANARC09B.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-lcd
-========================
-14971_UOFTAB.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-merge
-========================
-8796_CUBARTWK.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1785_CODE.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 bipartite matching
 ========================
 1435_PT07X.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-knuth morris patt - kmp
+manacher
 ========================
-263_PERIOD.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-strongly connected component
-========================
-51_TOUR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3208_PALIM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 map
 ========================
 14927_CHIGAME.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-trie tree
+lcm
 ========================
-4033_PHONELST.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5450_ANARC09B.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-binary search tree
+easy
 ========================
-138_POSTERS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-bruce-force compare
-========================
-7108_HEPNUM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-bottom-up dynamic programming
-========================
-8611_NY10E.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-kruskal
-========================
-368_CSTREET.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-convex hull
-========================
-26_BSHEEP.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C8315_NUMWORD.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 depth first search
 ========================
 56_DYZIO.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-manachar
+expression tree
 ========================
-4103_EPALIN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-euler cycle
-========================
-1785_CODE.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-manacher
-========================
-3208_PALIM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-brute-force
-========================
-10232_AMR11E.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-karatsuba multiplication
-========================
-31_MUL.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10_CMEXPR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 floyd-warshall
 ========================
 15285_ROHAAN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-flood fill
+miller_robin
 ========================
-4177_HERDING.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+288_PON.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-expression tree
+nim game bouton's theorem
 ========================
-10_CMEXPR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3969_MMMGAME.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 oeis
 ========================
 7430_RANJAN02.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+knuth morris patt - kmp
+========================
+263_PERIOD.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+bruce-force compare
+========================
+7108_HEPNUM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+pegionhole principle
+========================
+1677_HALLOW.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+nim game
+========================
+6772_HC.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+trie tree
+========================
+4033_PHONELST.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 palindrome
 ========================
 4103_EPALIN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-lcm
+kruskal
+========================
+368_CSTREET.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+sweep
+========================
+740_NICEDAY.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+match
 ========================
 5450_ANARC09B.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -297,14 +265,46 @@ subset partition
 ========================
 1296_SUMFOUR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-sweep
+matrix exponentiation
 ========================
-740_NICEDAY.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8001_FIBOSUM.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-pegionhole principle
+manachar
 ========================
-1677_HALLOW.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4103_EPALIN.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-nim game bouton's theorem
+strongly connected component
 ========================
-3969_MMMGAME.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+51_TOUR.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+bottom-up dynamic programming
+========================
+8611_NY10E.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+convex hull
+========================
+26_BSHEEP.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+binary search tree
+========================
+138_POSTERS.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+karatsuba multiplication
+========================
+31_MUL.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+lcd
+========================
+14971_UOFTAB.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+flood fill
+========================
+4177_HERDING.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+brute-force
+========================
+10232_AMR11E.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+merge
+========================
+8796_CUBARTWK.cpp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
